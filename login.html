@@ -1,1 +1,53 @@
-<!-- login.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login · Delta Gamma Iota</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <img src="assets/crest.png" alt="Delta Gamma Iota crest" class="login-crest" />
+    <h1>Member Access</h1>
+    <p class="muted">Log in or create an account.</p>
+
+    <button id="btn-netlify" class="btn" style="width:100%;margin-top:0.8rem;">
+      Open Login Window
+    </button>
+
+    <hr style="margin:1.4rem 0;border-color:rgba(255,255,255,0.06);" />
+
+    <h2>Create an Account</h2>
+    <p class="muted">
+      New members must enter the chapter passcode to register.
+    </p>
+
+    <form id="signup-form">
+      <label>
+        Email
+        <input type="email" id="signup-email" required />
+      </label>
+      <label>
+        Password
+        <input type="password" id="signup-password" required />
+      </label>
+      <label>
+        Chapter Passcode
+        <input type="text" id="signup-passcode" placeholder="1965" required />
+      </label>
+      <button type="submit" class="btn" style="width:100%;margin-top:0.9rem;">
+        Create Account
+      </button>
+      <p id="signup-msg" class="muted" style="margin-top:0.5rem;"></p>
+    </form>
+
+    <p class="small muted" style="margin-top:1rem;">
+      After confirming your email, you can log in and access member pages.
+    </p>
+  </main>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
