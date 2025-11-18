@@ -1,26 +1,144 @@
-<header class="site-header">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Council – Delta Gamma Iota</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
-  <!-- TOP STRIP WITH YEARS -->
-  <div class="header-topbar">
-    <span class="year-left">1965</span>
-    <span class="year-right">1998</span>
-  </div>
+<body>
 
-  <!-- MAIN CENTERED BRANDING -->
-  <div class="header-branding">
-    <div class="greek-letters">Δ&nbsp;&nbsp;Γ&nbsp;&nbsp;Ι</div>
-    <div class="greek-subtitle">Delta &nbsp;&nbsp; Gamma &nbsp;&nbsp; Iota</div>
-  </div>
+  <!-- HEADER (same on all pages) -->
+  <header class="site-header">
 
-  <!-- NAVIGATION BAR -->
-  <nav class="header-nav">
-    <a href="/">Home</a>
-    <a href="cardinal-beliefs.html">Beliefs</a>
-    <a href="philanthropy.html">Philanthropy</a>
-    <a href="executive-council.html">Council</a>
-    <a href="shop.html">Shop</a>
-    <a href="dues-donations.html">Dues</a>
-    <a href="login.html">Login</a>
-  </nav>
+    <div class="top-bar">
+      <span>1965</span>
+      <span>1998</span>
+    </div>
 
-</header>
+    <div class="header-main">
+      <img src="assets/crest.png" class="crest-logo" alt="Delta Gamma Iota Crest">
+
+      <div class="greek-letters">
+        <span class="letter">Δ</span>
+        <span class="letter">Γ</span>
+        <span class="letter">Ι</span>
+      </div>
+
+      <div class="chapter-name">
+        <span>DELTA</span>
+        <span>GAMMA</span>
+        <span>IOTA</span>
+      </div>
+    </div>
+
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+    <nav id="main-nav" class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="beliefs.html">Beliefs</a>
+      <a href="philanthropy.html">Philanthropy</a>
+      <a href="council.html">Council</a>
+      <a href="shop.html">Shop</a>
+      <a href="dues.html">Dues</a>
+      <a href="login.html">Login</a>
+    </nav>
+
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="page-main">
+    <div class="container">
+      <h1 class="page-title">Executive Council</h1>
+      <p class="page-subtitle">
+        Meet the elected officers who guide the direction, values, and operations of Delta Gamma Iota.
+      </p>
+
+      <div class="council-grid">
+
+        <!-- PRESIDENT -->
+        <div class="council-card">
+          <img src="assets/council-president.jpg" alt="President Photo" class="council-photo">
+          <h2>President</h2>
+          <h3 class="officer-name">Dylan Cakora</h3>
+          <p>
+            Leader of the fraternity, responsible for alumni board communication, alumni outreach,
+            and upholding the face and reputation of our brotherhood.
+          </p>
+        </div>
+
+        <!-- VICE PRESIDENT -->
+        <div class="council-card">
+          <img src="assets/council-vp.jpg" alt="Vice President Photo" class="council-photo">
+          <h2>Vice President</h2>
+          <h3 class="officer-name">Isaiah Grady</h3>
+          <p>
+            Holds members accountable, organizes the annual formal, assists the President in chapter matters,
+            and keeps operations focused and on track.
+          </p>
+        </div>
+
+        <!-- CONTROLLER -->
+        <div class="council-card">
+          <img src="assets/council-controller.jpg" alt="Controller Photo" class="council-photo">
+          <h2>Controller</h2>
+          <h3 class="officer-name">Jordan Dick</h3>
+          <p>
+            Manages fraternity finances, collects dues and donations, coordinates scholarship processes,
+            and helps orchestrate fundraising events.
+          </p>
+        </div>
+
+        <!-- CHAPLAIN -->
+        <div class="council-card">
+          <img src="assets/council-chaplain.jpg" alt="Chaplain Photo" class="council-photo">
+          <h2>Chaplain</h2>
+          <h3 class="officer-name">William Rouse</h3>
+          <p>
+            Oversees mental health check-ins, religious outreach, and conflict resolution.
+            Ensures brotherhood unity, peace, and wellbeing.
+          </p>
+        </div>
+
+        <!-- SECRETARY -->
+        <div class="council-card">
+          <img src="assets/council-secretary.jpg" alt="Secretary Photo" class="council-photo">
+          <h2>Secretary</h2>
+          <h3 class="officer-name">Colin Yoder</h3>
+          <p>
+            Conducts academic check-ins, study tables, grade monitoring, and keeps fraternity records organized.
+            Ensures GPA excellence across the chapter.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <h3 class="footer-title">Contact Us</h3>
+      <div class="footer-contact">
+        <a href="mailto:deltagammaiota2@gmail.com">
+          <img class="icon" src="assets/email-icon.png"> deltagammaiota2@gmail.com
+        </a>
+        <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank">
+          <img class="icon" src="assets/instagram-icon.png"> Instagram
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  function toggleMobileMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
