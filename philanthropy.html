@@ -1,26 +1,144 @@
-<header class="site-header">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Philanthropy · Delta Gamma Iota</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
 
-  <!-- TOP STRIP WITH YEARS -->
-  <div class="header-topbar">
-    <span class="year-left">1965</span>
-    <span class="year-right">1998</span>
-  </div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="top-bar">
+      <span>1965</span>
+      <span>1998</span>
+    </div>
 
-  <!-- MAIN CENTERED BRANDING -->
-  <div class="header-branding">
-    <div class="greek-letters">Δ&nbsp;&nbsp;Γ&nbsp;&nbsp;Ι</div>
-    <div class="greek-subtitle">Delta &nbsp;&nbsp; Gamma &nbsp;&nbsp; Iota</div>
-  </div>
+    <div class="header-main">
+      <div class="greek-letters">
+        <span>Δ</span>
+        <span>Γ</span>
+        <span>Ι</span>
+      </div>
+      <div class="chapter-name">
+        <span>DELTA</span>
+        <span>GAMMA</span>
+        <span>IOTA</span>
+      </div>
+    </div>
 
-  <!-- NAVIGATION BAR -->
-  <nav class="header-nav">
-    <a href="/">Home</a>
-    <a href="cardinal-beliefs.html">Beliefs</a>
-    <a href="philanthropy.html">Philanthropy</a>
-    <a href="executive-council.html">Council</a>
-    <a href="shop.html">Shop</a>
-    <a href="dues-donations.html">Dues</a>
-    <a href="login.html">Login</a>
-  </nav>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
-</header>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="cardinal-beliefs.html">Beliefs</a>
+      <a href="philanthropy.html">Philanthropy</a>
+      <a href="executive-council.html">Council</a>
+      <a href="shop.html">Shop</a>
+      <a href="dues-donations.html">Dues</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container page-main">
+
+    <h1>Philanthropy</h1>
+    <p style="font-size:1rem; color:#444; max-width:900px; margin-bottom:2.5rem;">
+      Delta Gamma Iota is committed to serving the Muncie community with humility, compassion,
+      and purpose. Our brotherhood proudly participates in annual philanthropic events benefiting
+      organizations that make a meaningful difference in the lives of others.
+    </p>
+
+    <!-- ===================== -->
+    <!--    ARF OF MUNCIE      -->
+    <!-- ===================== -->
+    <section style="margin-bottom:3.5rem;">
+      <h2 style="font-size:1.8rem; font-weight:700; color:#7A0E19; margin-bottom:0.5rem;">Animal Rescue Fund of Muncie (ARF)</h2>
+      <p style="font-style:italic; margin-bottom:1rem; color:#444;">
+        Annual Fall Philanthropy: <strong>Pelt-a-Delt</strong>
+      </p>
+
+      <p style="max-width:900px; line-height:1.7;">
+        Each fall semester, during the first weeks of school, Delta Gamma Iota partners with the
+        Animal Rescue Fund of Muncie to raise money and supplies that directly support animals in need.
+        Our signature event, <strong>Pelt-a-Delt</strong>, invites students and members of the community
+        to “throw” soft items—water balloons, shaving cream, or similar harmless materials—at volunteer
+        brothers to raise funds in a fun, engaging way.
+        <br><br>
+        This long-standing tradition not only raises important resources but also builds community
+        spirit and awareness for one of Muncie’s most beloved nonprofit organizations.
+      </p>
+    </section>
+
+    <hr style="border:0; border-top:1px solid rgba(0,0,0,0.15); margin:2.5rem 0;">
+
+    <!-- ===================== -->
+    <!--    MUNCIE MISSION     -->
+    <!-- ===================== -->
+    <section style="margin-bottom:3.5rem;">
+      <h2 style="font-size:1.8rem; font-weight:700; color:#7A0E19; margin-bottom:0.5rem;">Muncie Mission</h2>
+      <p style="font-style:italic; margin-bottom:1rem; color:#444;">
+        Annual Winter Philanthropy: <strong>Hot Cocoa for the Homeless</strong>
+      </p>
+
+      <p style="max-width:900px; line-height:1.7;">
+        During the winter and spring semester, the brothers of Delta Gamma Iota host
+        <strong>Hot Cocoa for the Homeless</strong>, an outreach initiative raising funds and awareness
+        for the Muncie Mission. At this event, we provide hot beverages on campus in exchange for
+        donations, directing 100% of funds raised toward supporting individuals experiencing
+        homelessness in our community.
+        <br><br>
+        This event not only warms the hands of participants—it helps warm the hearts of those
+        in need during the coldest months of the year.
+      </p>
+    </section>
+
+    <hr style="border:0; border-top:1px solid rgba(0,0,0,0.15); margin:2.5rem 0;">
+
+    <!-- ===================== -->
+    <!--    VETERANS AFFAIRS    -->
+    <!-- ===================== -->
+    <section style="margin-bottom:3rem;">
+      <h2 style="font-size:1.8rem; font-weight:700; color:#7A0E19; margin-bottom:0.5rem;">Veterans Affairs (VA)</h2>
+      <p style="font-style:italic; margin-bottom:1rem; color:#444;">
+        Annual Winter Event: <strong>Pie-A-DGI</strong>
+      </p>
+
+      <p style="max-width:900px; line-height:1.7;">
+        One of our most spirited winter traditions, <strong>Pie-A-DGI</strong> raises funds for
+        Veterans Affairs organizations through a light-hearted competition.
+        Students and supporters donate for the chance to “pie” a DGI brother—creating a humorous,
+        memorable event for an honorable cause.
+        <br><br>
+        Through this event, we show appreciation for those who have served our country and ensure that
+        our philanthropic mission extends to veterans in the Muncie community.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-title">Contact Us</div>
+      <div class="footer-contact">
+        <a href="mailto:deltagammaiota2@gmail.com">
+          <img src="assets/email-icon.png" class="icon"> deltagammaiota2@gmail.com
+        </a>
+        <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank">
+          <img src="assets/instagram-icon.png" class="icon"> Instagram
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('main-nav').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
