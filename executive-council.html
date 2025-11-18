@@ -1,149 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Executive Council – Delta Gamma Iota</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Council – Delta Gamma Iota</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
+<!-- HEADER (uses your existing one) -->
+<?php include 'header.html'; ?>
 
-    <div class="top-bar">
-      <span>1965</span>
-      <span>1998</span>
-    </div>
-
-    <div class="header-main">
-      <img src="assets/crest.png" alt="Crest" class="crest-logo">
-
-      <div class="greek-letters">
-        <span class="letter">Δ</span>
-        <span class="letter">Γ</span>
-        <span class="letter">Ι</span>
-      </div>
-
-      <div class="chapter-name">
-        <span>DELTA</span>
-        <span>GAMMA</span>
-        <span>IOTA</span>
-      </div>
-    </div>
-
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-
-    <nav id="main-nav" class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="beliefs.html">Beliefs</a>
-      <a href="philanthropy.html">Philanthropy</a>
-      <a href="council.html">Council</a>
-      <a href="shop.html">Shop</a>
-      <a href="dues.html">Dues</a>
-      <a href="login.html">Login</a>
-    </nav>
-
-  </header>
-
-
-  <!-- MAIN CONTENT -->
-  <main class="page-main">
+<main class="page-main">
     <div class="container">
 
-      <h1 class="page-title">Executive Council</h1>
-      <p class="page-subtitle">
-        The elected leaders who uphold the standards, values, and vision of Delta Gamma Iota.
-      </p>
+        <h1 class="page-title">Executive Council</h1>
+        <p class="page-subtitle">Leadership dedicated to guiding the brotherhood with honor, purpose, and tradition.</p>
 
-      <div class="council-grid">
+        <!-- Council Grid -->
+        <div class="council-grid">
 
-        <!-- PRESIDENT -->
-        <div class="council-card">
-          <img src="assets/council-president.jpg" alt="President Photo" class="council-photo">
-          <h2>President</h2>
-          <h3 class="officer-name">Dylan Cakora</h3>
-          <p>
-            The President serves as the chief representative of Delta Gamma Iota, overseeing all chapter operations 
-            and acting as the primary liaison to the Alumni Board. He upholds the integrity, reputation, and long-term vision 
-            of the fraternity while guiding its members with purpose and distinction.
-          </p>
+            <!-- President -->
+            <div class="council-card">
+                <img src="assets/council/dylan.jpg" alt="President Dylan Cakora" class="council-photo">
+                <div class="council-info">
+                    <h2>President — <span class="name">Dylan Cakora</span></h2>
+                    <p>The President serves as the chief representative of Delta Gamma Iota, overseeing fraternity operations, 
+                    alumni engagement, and the preservation of the fraternity’s values and reputation. The President ensures that 
+                    all initiatives reflect the excellence and unity of the brotherhood.</p>
+                </div>
+            </div>
+
+            <!-- Vice President -->
+            <div class="council-card">
+                <img src="assets/council/isaiah.jpg" alt="Vice President Isaiah Grady" class="council-photo">
+                <div class="council-info">
+                    <h2>Vice President — <span class="name">Isaiah Grady</span></h2>
+                    <p>The Vice President maintains chapter accountability, organizes annual formal events, and supports the 
+                    President in managing fraternity operations. This role ensures structure, focus, and consistent progress 
+                    across all fraternal responsibilities.</p>
+                </div>
+            </div>
+
+            <!-- Controller -->
+            <div class="council-card">
+                <img src="assets/council/jordan.jpg" alt="Controller Jordan Dick" class="council-photo">
+                <div class="council-info">
+                    <h2>Controller — <span class="name">Jordan Dick</span></h2>
+                    <p>The Controller manages the financial well-being of the fraternity. Duties include collecting dues, 
+                    overseeing donations and scholarships, and coordinating fundraising efforts to support chapter success.</p>
+                </div>
+            </div>
+
+            <!-- Chaplain -->
+            <div class="council-card">
+                <img src="assets/council/william.jpg" alt="Chaplain William Rouse" class="council-photo">
+                <div class="council-info">
+                    <h2>Chaplain — <span class="name">William Rouse</span></h2>
+                    <p>The Chaplain supports the emotional, mental, and spiritual well-being of the brotherhood. This role guides 
+                    conflict resolution, promotes unity, and strengthens the fraternal bond through mentorship and encouragement.</p>
+                </div>
+            </div>
+
+            <!-- Secretary -->
+            <div class="council-card">
+                <img src="assets/council/colin.jpg" alt="Secretary Colin Yoder" class="council-photo placeholder">
+                <div class="council-info">
+                    <h2>Secretary — <span class="name">Colin Yoder</span></h2>
+                    <p>The Secretary manages academic evaluations, study tables, and grade tracking to uphold the fraternity’s 
+                    academic excellence. They also maintain records and help coordinate organizational logistics.</p>
+                </div>
+            </div>
+
         </div>
-
-        <!-- VICE PRESIDENT -->
-        <div class="council-card">
-          <img src="assets/council-vp.jpg" alt="Vice President Photo" class="council-photo">
-          <h2>Vice President</h2>
-          <h3 class="officer-name">Isaiah Grady</h3>
-          <p>
-            The Vice President supports the internal structure of the fraternity by ensuring accountability, discipline, 
-            and organizational order. He coordinates major chapter functions such as formal, assists the President in all 
-            administrative matters, and maintains focus on meaningful chapter progress.
-          </p>
-        </div>
-
-        <!-- CONTROLLER -->
-        <div class="council-card">
-          <img src="assets/council-controller.jpg" alt="Controller Photo" class="council-photo">
-          <h2>Controller</h2>
-          <h3 class="officer-name">Jordan Dick</h3>
-          <p>
-            The Controller manages the financial health of the fraternity by overseeing all dues, donations, and scholarship funds. 
-            He maintains transparent records, plans financial strategies, and supports philanthropic and fundraising efforts essential 
-            to chapter sustainability.
-          </p>
-        </div>
-
-        <!-- CHAPLAIN -->
-        <div class="council-card">
-          <img src="assets/council-chaplain.jpg" alt="Chaplain Photo" class="council-photo">
-          <h2>Chaplain</h2>
-          <h3 class="officer-name">William Rouse</h3>
-          <p>
-            The Chaplain strengthens fraternity brotherhood through emotional, moral, and spiritual support. He facilitates mental health outreach, 
-            guides members through conflict resolution, and promotes unity and character development rooted in fraternity values and respect.
-          </p>
-        </div>
-
-        <!-- SECRETARY -->
-        <div class="council-card">
-          <img src="assets/council-secretary.jpg" alt="Secretary Photo" class="council-photo">
-          <h2>Secretary</h2>
-          <h3 class="officer-name">Colin Yoder</h3>
-          <p>
-            The Secretary upholds the academic excellence of Delta Gamma Iota by conducting grade checks, managing academic support initiatives, 
-            keeping records, and organizing essential fraternity documentation to ensure operational clarity and success.
-          </p>
-        </div>
-
-      </div>
-
     </div>
-  </main>
+</main>
 
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <h3 class="footer-title">Contact Us</h3>
-      <div class="footer-contact">
-        <a href="mailto:deltagammaiota2@gmail.com">
-          <img class="icon" src="assets/email-icon.png"> deltagammaiota2@gmail.com
-        </a>
-        <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank">
-          <img class="icon" src="assets/instagram-icon.png"> Instagram
-        </a>
-      </div>
-    </div>
-  </footer>
-
-
-<script>
-  function toggleMobileMenu() {
-    document.getElementById('main-nav').classList.toggle('open');
-  }
-</script>
+<!-- FOOTER -->
+<?php include 'footer.html'; ?>
 
 </body>
 </html>
