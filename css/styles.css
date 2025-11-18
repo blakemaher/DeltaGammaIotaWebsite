@@ -13,6 +13,51 @@ body{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--offwhite);
   color: var(--black);
+/* BODY SHOULD FEEL BIGGER AND MORE OPEN */
+body {
+  font-size: 20px;             /* Larger default text */
+  line-height: 1.65;           /* More breathing room between lines */
+  padding-top: 1rem;           /* Space above main content */
+}
+
+/* MAIN PAGE CONTAINER SPACING */
+.container {
+  max-width: 1300px;           /* Wider page content */
+  padding: 0 2rem;             /* More space on left/right */
+}
+
+/* HERO SECTION SPREAD */
+.hero {
+  padding: 5rem 0 5rem;        /* Taller hero section */
+}
+.hero-inner {
+  gap: 4rem;                   /* More space between text & crest */
+}
+
+/* NAVIGATION SPACING */
+.nav {
+  gap: 2rem;                   /* More space between nav items */
+  margin-top: 1.4rem;          /* Push nav lower under Greek text */
+}
+
+/* CARD GRID SPACING */
+.quick-links {
+  gap: 2rem;                   /* More space between cards */
+  padding-bottom: 4rem;
+}
+.card {
+  padding: 2rem;               /* Bigger card interiors */
+  border-radius: 1rem;         /* Slightly rounder */
+}
+
+/* PAGE MAIN SECTIONS */
+.page-main {
+  padding: 3rem 0 4rem;        /* More padding on dashboard/beliefs/etc */
+}
+.page-main h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
 }
 
 /* HEADER */
