@@ -212,3 +212,90 @@ body {
   height:170px;
   filter:drop-shadow(0 0 20px rgba(0,0,0,0.8));
 }
+/* --- HOME PAGE PROFESSIONAL UPGRADE --- */
+
+/* HERO TITLE — classier, more academic look */
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #2a2a2a;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.2rem;
+}
+
+/* HERO SUBTITLE — subtle and elegant */
+.hero-sub {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.18rem;
+  color: #7A0E19;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+/* LEAD PARAGRAPH — softer, more refined */
+.hero p.lead {
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.75;
+  max-width: 650px;
+}
+
+/* BUTTONS — sleeker */
+.btn {
+  padding: 0.55rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+/* QUICK LINK CARDS — more premium look */
+.quick-links {
+  margin-top: 1rem;
+  gap: 2.2rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.7rem 1.8rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.65;
+}
+
+.card .link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 0.7rem;
+}
+
+/* CREST SECTION — more presence */
+.hero-crest {
+  height: 220px;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.25));
+}
+
+.hero-crest-caption {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.7rem;
+}
+
