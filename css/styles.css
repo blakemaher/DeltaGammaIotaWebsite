@@ -298,4 +298,89 @@ body {
   color: #555;
   margin-top: 0.7rem;
 }
+/* ============ HEADER PROFESSIONAL REDESIGN ============ */
+
+.site-header {
+  width: 100%;
+  background: #7A0E19; /* Maroon */
+  border-bottom: 3px solid black;
+}
+
+/* TOP BAR WITH YEARS */
+.header-topbar {
+  background: #111;
+  color: white;
+  padding: 4px 35px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.year-left, .year-right {
+  opacity: 0.85;
+}
+
+/* MAIN BRANDING AREA */
+.header-branding {
+  text-align: center;
+  padding: 1.8rem 0 1.6rem;
+  position: relative;
+}
+
+.greek-letters {
+  font-size: 4.2rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: -3px 3px 0 black,
+               3px 3px 0 black,
+               3px -3px 0 black,
+               -3px -3px 0 black;
+  letter-spacing: 1.3rem;
+}
+
+.greek-subtitle {
+  margin-top: 0.4rem;
+  font-size: 1.1rem;
+  color: #f4f4f4;
+  font-weight: 600;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+}
+
+/* NAV BAR */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+  padding: 0.9rem 0;
+  background: #6b0c15; /* slightly darker maroon */
+  border-top: 1px solid rgba(0,0,0,0.4);
+}
+
+.header-nav a {
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.05rem;
+  position: relative;
+}
+
+.header-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.header-nav a:hover::after {
+  width: 100%;
+}
 
