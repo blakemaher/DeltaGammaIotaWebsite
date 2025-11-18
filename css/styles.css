@@ -1,4 +1,4 @@
-:root{
+:root {
   --maroon: #7A0E19;
   --black: #000000;
   --white: #ffffff;
@@ -8,216 +8,133 @@
 }
 
 /* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--offwhite);
   color: var(--black);
-
-  /* Larger, more open layout */
   font-size: 20px;
   line-height: 1.65;
   padding-top: 1rem;
+  overflow-x: hidden;
 }
 
-/* Main container */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   max-width: 1300px;
-  padding: 0 2rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
-/* Hero */
+/* ---------- HEADER ---------- */
+.site-header {
+  width: 100%;
+  background: var(--maroon);
+  color: var(--white);
+  text-align: center;
+  overflow: hidden;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background: var(--black);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.header-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0 5px 0;
+}
+
+.greek-letters {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 95px;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: -4px 4px 0 var(--black);
+  margin-bottom: 10px;
+}
+
+.chapter-name {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  font-size: 16px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+/* NAVIGATION (Desktop) */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+  background: var(--maroon);
+}
+
+.main-nav a {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--white);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+  display: none;
+  width: 100%;
+  padding: 15px;
+  font-size: 28px;
+  background: #5a0505;
+  color: var(--white);
+  border: none;
+}
+
+/* ---------- HERO + CARDS ---------- */
 .hero {
   padding: 5rem 0;
 }
+
 .hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+  align-items: center;
   gap: 4rem;
 }
 
-/* Navigation spacing */
-.nav {
-  gap: 2rem;
-  margin-top: 1.4rem;
-}
-
-/* Cards */
-.quick-links {
-  gap: 2rem;
-  padding-bottom: 4rem;
-}
-.card {
-  padding: 2rem;
-  border-radius: 1rem;
-}
-
-/* Page sections */
-.page-main {
-  padding: 3rem 0 4rem;
-}
-.page-main h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-}
-
-/* HEADER */
-.site-header{
-  width:100%;
-  background: var(--maroon);
-  padding: 1.4rem 0 0.5rem;
-  border-bottom: 3px solid var(--black);
-}
-
-.header-top{
-  text-align:center;
-  position:relative;
-  padding-bottom: 0.5rem;
-}
-
-.header-years-left{
-  position:absolute;
-  left:20px;
-  top:0.3rem;
-  font-size:1.1rem;
-  font-weight:700;
-  color:var(--white);
-  text-shadow:0 0 3px var(--black);
-}
-.header-years-right{
-  position:absolute;
-  right:20px;
-  top:0.3rem;
-  font-size:1.1rem;
-  font-weight:700;
-  color:var(--white);
-  text-shadow:0 0 3px var(--black);
-}
-
-.greeks{
-  font-size:3.2rem;
-  color:var(--white);
-  letter-spacing:0.35rem;
-  font-weight:900;
-  -webkit-text-stroke: 3px var(--black);
-}
-
-.greeks-names{
-  font-size:1rem;
-  color:var(--white);
-  letter-spacing:0.2rem;
-  margin-top: 0.25rem;
-  font-weight:600;
-}
-
-/* NAVIGATION */
-.nav{
-  display:flex;
-  justify-content:center;
-  gap:1.4rem;
-  margin-top:0.9rem;
-}
-
-.nav a{
-  text-decoration:none;
-  color:var(--white);
-  font-size:1rem;
-  font-weight:500;
-}
-
-.nav a:hover{
-  text-decoration:underline;
-}
-
-/* FOOTER */
-.site-footer{
-  width:100%;
-  background: var(--black);
-  color: var(--white);
-  padding:1.4rem 0;
-  border-top:3px solid var(--maroon);
-}
-
-.footer-inner{
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 1rem;
-}
-
-.footer-title{
-  font-size:1.2rem;
-  font-weight:700;
-  margin-bottom:0.6rem;
-}
-
-.footer-contact{
-  display:flex;
-  flex-direction:column;
-  gap:0.3rem;
-}
-
-.footer-contact a{
-  color:var(--white);
-  text-decoration:none;
-  font-size:0.95rem;
-}
-
-.footer-contact a:hover{
-  color:var(--maroon);
-}
-
-/* ICONS */
-.icon{
-  height:18px;
-  width:18px;
-  vertical-align:middle;
-  margin-right:6px;
-}
-
-
-/* HERO + CARDS FROM PREVIOUS CODE (kept for now) */
-.container{
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 1rem;
-}
-.hero{
-  padding: 3rem 0 3.5rem;
-}
-.hero-inner{
-  display:grid;
-  grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
-  align-items:center;
-  gap:2.5rem;
-}
-.hero-title{
-  font-size:2.2rem;
-  margin-bottom:0.75rem;
-}
-.hero-sub{
-  text-transform:uppercase;
-  letter-spacing:0.12em;
-  font-size:0.75rem;
-  color:var(--muted);
-  margin-bottom:0.3rem;
-}
-.hero p.lead{
-  color:var(--muted);
-  margin-bottom:1.5rem;
-}
-.hero-actions{
-  display:flex;
-  gap:0.75rem;
-}
-.hero-crest{
-  height:170px;
-  filter:drop-shadow(0 0 20px rgba(0,0,0,0.8));
-}
-/* --- HOME PAGE PROFESSIONAL UPGRADE --- */
-
-/* HERO TITLE — classier, more academic look */
 .hero-title {
   font-size: 2.8rem;
   font-weight: 800;
@@ -226,40 +143,49 @@ body {
   margin-bottom: 1.2rem;
 }
 
-/* HERO SUBTITLE — subtle and elegant */
 .hero-sub {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.18rem;
-  color: #7A0E19;
-  text-transform: uppercase;
+  color: var(--maroon);
   margin-bottom: 0.8rem;
 }
 
-/* LEAD PARAGRAPH — softer, more refined */
 .hero p.lead {
   font-size: 1.15rem;
   color: #555;
   line-height: 1.75;
   max-width: 650px;
+  margin-bottom: 1.5rem;
 }
 
-/* BUTTONS — sleeker */
-.btn {
-  padding: 0.55rem 1.1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
 }
 
-/* QUICK LINK CARDS — more premium look */
+.hero-crest {
+  height: 220px;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.25));
+}
+
+.hero-crest-caption {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.7rem;
+}
+
 .quick-links {
   margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
   gap: 2.2rem;
+  padding-bottom: 4rem;
 }
 
 .card {
-  background: #ffffff;
+  background: var(--white);
   border-radius: 12px;
   padding: 1.7rem 1.8rem;
   border: 1px solid rgba(0,0,0,0.08);
@@ -290,232 +216,140 @@ body {
   margin-top: 0.7rem;
 }
 
-/* CREST SECTION — more presence */
-.hero-crest {
-  height: 220px;
-  filter: drop-shadow(0 0 10px rgba(0,0,0,0.25));
+/* ---------- PAGE MAIN SECTIONS ---------- */
+.page-main {
+  padding: 3rem 0 4rem;
 }
 
-.hero-crest-caption {
+.page-main h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  width: 100%;
+  background: var(--black);
+  color: var(--white);
+  padding: 1.4rem 0;
+  border-top: 3px solid var(--maroon);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.footer-contact a {
+  color: var(--white);
   font-size: 0.95rem;
-  color: #555;
-  margin-top: 0.7rem;
-}
-/* ============ HEADER PROFESSIONAL REDESIGN ============ */
-
-.site-header {
-  width: 100%;
-  background: #7A0E19; /* Maroon */
-  border-bottom: 3px solid black;
 }
 
-/* TOP BAR WITH YEARS */
-.header-topbar {
-  background: #111;
-  color: white;
-  padding: 4px 35px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.15rem;
-  display: flex;
-  justify-content: space-between;
-  text-transform: uppercase;
+.footer-contact a:hover {
+  color: var(--maroon);
 }
 
-.year-left, .year-right {
-  opacity: 0.85;
+.icon {
+  height: 18px;
+  width: 18px;
+  vertical-align: middle;
+  margin-right: 6px;
 }
 
-/* MAIN BRANDING AREA */
-.header-branding {
-  text-align: center;
-  padding: 1.8rem 0 1.6rem;
-  position: relative;
-}
-
-.greek-letters {
-  font-size: 4.2rem;
-  font-weight: 900;
-  color: white;
-  text-shadow: -3px 3px 0 black,
-               3px 3px 0 black,
-               3px -3px 0 black,
-               -3px -3px 0 black;
-  letter-spacing: 1.3rem;
-}
-
-.greek-subtitle {
-  margin-top: 0.4rem;
-  font-size: 1.1rem;
-  color: #f4f4f4;
-  font-weight: 600;
-  letter-spacing: 0.35rem;
-  text-transform: uppercase;
-}
-
-/* NAV BAR */
-.header-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2.2rem;
-  padding: 0.9rem 0;
-  background: #6b0c15; /* slightly darker maroon */
-  border-top: 1px solid rgba(0,0,0,0.4);
-}
-
-.header-nav a {
-  font-weight: 600;
-  letter-spacing: 0.03rem;
-  text-decoration: none;
-  color: white;
-  font-size: 1.05rem;
-  position: relative;
-}
-
-.header-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background: white;
-  transition: 0.3s ease;
-}
-
-.header-nav a:hover::after {
-  width: 100%;
-}
-/* ----------------------- */
-/*  RESPONSIVE MOBILE FIX  */
-/* ----------------------- */
-
+/* ---------- MOBILE RESPONSIVE ---------- */
 @media (max-width: 768px) {
-
-    /* Prevent ANY horizontal scrolling */
-    body, html {
-        overflow-x: hidden;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* Header container fix */
-    .header-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    /* Years repositioned & scaled down */
-    .header-year {
-        font-size: 14px;
-        padding: 0;
-        margin: 0;
-    }
-
-    /* Greek letters */
-    .greek-letters {
-        font-size: 40px;   /* Adjusted for mobile */
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-
-    /* Greek letter labels */
-    .greek-labels {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        width: 100%;
-        font-size: 12px;
-        letter-spacing: 2px;
-    }
-
-    /* Navigation fixes */
-    nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        padding: 5px 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-        padding: 6px;
-    }
-
-    /* Body container fix */
-    .content-wrapper {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 10px 15px;
-        box-sizing: border-box;
-    }
-
-    /* Fix the cards on the homepage */
-    .info-card {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    /* Footer fixes */
-    footer {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-        padding: 20px 10px;
-        text-align: left;
-    }
-}
-/* ============================
-   CLEAN MOBILE FIX (SAFE)
-   Keeps desktop untouched
-   Fixes header, nav, scaling
-============================ */
-@media (max-width: 768px) {
-
-  /* Prevent page from zooming out */
   html, body {
     overflow-x: hidden;
     max-width: 100%;
   }
 
-  /* Top bar */
   .top-bar {
     padding: 6px 20px;
+    font-size: 14px;
+  }
+
+  .crest-logo {
+    width: 65px;
+  }
+
+  .greek-letters {
+    font-size: 60px;
+    gap: 25px;
+  }
+
+  .chapter-name {
+    gap: 25px;
     font-size: 12px;
   }
 
-  /* Crest */
-  .crest-logo {
-    width: 70px;
-    height: auto;
-    margin-bottom: 10px;
-  }
-
-  /* Greek letters row */
-  .greek-letters {
-    font-size: 48px;
-    gap: 18px;
-  }
-
-  /* Chapter name */
-  .chapter-name span {
-    font-size: 13px;
-    letter-spacing: 1px;
-  }
-
-  /* Mobile menu button */
   .mobile-menu-toggle {
     display: block;
-    w
+  }
 
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 0;
+    background: var(--maroon);
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .main-nav a {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero p.lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .quick-links {
+    gap: 1.8rem;
+    padding-bottom: 3rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .site-footer {
+    padding: 2rem 0;
+    text-align: center;
+  }
+}
