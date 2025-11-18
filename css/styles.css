@@ -426,3 +426,40 @@ a {
         max-width: 260px;
     }
 }
+.council-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.council-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.8rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.council-photo {
+  width: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.officer-name {
+  color: #7A0E19;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .council-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .council-photo {
+    width: 75%;
+    max-width: 240px;
+  }
+}
