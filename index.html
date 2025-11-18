@@ -9,37 +9,52 @@
 </head>
 <body>
  <header class="site-header">
+
   <div class="top-bar">
-      <span>1965</span>
-      <span>1998</span>
+    <span>1965</span>
+    <span>1998</span>
   </div>
 
   <div class="header-main">
-      <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="crest-logo">
+    <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="crest-logo">
 
-      <div class="greek-letters">
-        <span class="letter">Δ</span>
-        <span class="letter">Γ</span>
-        <span class="letter">Ι</span>
-      </div>
+    <div class="greek-letters">
+      <span class="letter">Δ</span>
+      <span class="letter">Γ</span>
+      <span class="letter">Ι</span>
+    </div>
 
-      <div class="chapter-name">
-        <span>DELTA</span>
-        <span>GAMMA</span>
-        <span>IOTA</span>
-      </div>
+    <div class="chapter-name">
+      <span>DELTA</span>
+      <span>GAMMA</span>
+      <span>IOTA</span>
+    </div>
   </div>
 
-  <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="beliefs.html">Beliefs</a>
-      <a href="philanthropy.html">Philanthropy</a>
-      <a href="council.html">Council</a>
-      <a href="shop.html">Shop</a>
-      <a href="dues.html">Dues</a>
-      <a href="login.html">Login</a>
+  <!-- MOBILE MENU BUTTON -->
+  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+    ☰
+  </button>
+
+  <!-- NAVIGATION -->
+  <nav id="main-nav" class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="beliefs.html">Beliefs</a>
+    <a href="philanthropy.html">Philanthropy</a>
+    <a href="council.html">Council</a>
+    <a href="shop.html">Shop</a>
+    <a href="dues.html">Dues</a>
+    <a href="login.html">Login</a>
   </nav>
+
 </header>
+
+<script>
+  function toggleMobileMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+</script>
+
 
 
 
