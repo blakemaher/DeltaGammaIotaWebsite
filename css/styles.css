@@ -353,3 +353,76 @@ a {
     text-align: center;
   }
 }
+/* ============================
+   EXECUTIVE COUNCIL PAGE
+============================ */
+
+.page-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2.5rem;
+}
+
+.council-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.council-card {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.8rem;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.council-photo {
+    width: 160px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.council-photo.placeholder {
+    background: #ddd;
+}
+
+.council-info h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.council-info .name {
+    color: #7A0E19;
+    font-weight: 800;
+}
+
+.council-info p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .council-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .council-photo {
+        width: 75%;
+        max-width: 260px;
+    }
+}
