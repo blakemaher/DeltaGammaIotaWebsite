@@ -6,144 +6,97 @@
   <title>Cardinal Beliefs · Delta Gamma Iota</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-
 <body>
 
-  <!-- HEADER (kept same across all pages) -->
   <header class="site-header">
-  <div class="top-bar">
+    <div class="top-bar">
       <span>1965</span>
       <span>1998</span>
-  </div>
+    </div>
 
-  <div class="header-main">
-      <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="crest-logo">
-
+    <div class="header-main">
       <div class="greek-letters">
-        <span class="letter">Δ</span>
-        <span class="letter">Γ</span>
-        <span class="letter">Ι</span>
+        <span>Δ</span>
+        <span>Γ</span>
+        <span>Ι</span>
       </div>
-
       <div class="chapter-name">
         <span>DELTA</span>
         <span>GAMMA</span>
         <span>IOTA</span>
       </div>
-  </div>
+    </div>
 
-  <nav class="main-nav">
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+    <nav id="main-nav" class="main-nav">
       <a href="index.html">Home</a>
-      <a href="beliefs.html">Beliefs</a>
+      <a href="cardinal-beliefs.html">Beliefs</a>
       <a href="philanthropy.html">Philanthropy</a>
-      <a href="council.html">Council</a>
+      <a href="executive-council.html">Council</a>
       <a href="shop.html">Shop</a>
-      <a href="dues.html">Dues</a>
+      <a href="dues-donations.html">Dues</a>
       <a href="login.html">Login</a>
-  </nav>
-</header>
+    </nav>
+  </header>
 
-
-
-
-  <!-- MAIN CONTENT -->
   <main class="container page-main">
-
     <h1>Cardinal Beliefs</h1>
     <p class="muted" style="font-size:1rem; margin-bottom:2.5rem;">
       The foundational principles that guide every brother of Delta Gamma Iota.
     </p>
 
-
-    <!-- BELIEF BLOCK -->
     <section style="margin-bottom:3.5rem;">
-      <h2 style="
-        font-size:1.8rem;
-        font-weight:700;
-        margin-bottom:0.5rem;
-        color:#7A0E19;
-      ">Diligence</h2>
-
+      <h2 style="font-size:1.8rem; font-weight:700; margin-bottom:0.5rem; color:#7A0E19;">Diligence</h2>
       <p style="font-style:italic; color:#444; margin-bottom:1rem;">
         “Careful and persistent work or effort”
       </p>
-
       <p style="max-width:900px; line-height:1.7;">
         As college students, it is ever prevalent that we are diligent in all of the work we do.
-        We believe in diligence in all aspects of life, but especially in college.
-        We came to Ball State to get a degree. Our passion for our fraternity is as strong as the
-        blood that runs through our veins, but our stewardship for academic excellence is an even
-        stronger belief.
+        We believe in diligence in all aspects of life, but especially in college. We came to Ball State to get a degree.
+        Our passion for our fraternity is as strong as the blood that runs through our veins, but our stewardship for academic excellence is an even stronger belief.
       </p>
     </section>
 
-
     <hr style="border:0; border-top:1px solid rgba(0,0,0,0.15); margin:2.5rem 0;">
 
-
-    <!-- BELIEF BLOCK -->
     <section style="margin-bottom:3.5rem;">
-      <h2 style="
-        font-size:1.8rem;
-        font-weight:700;
-        margin-bottom:0.5rem;
-        color:#7A0E19;
-      ">Brotherhood</h2>
-
+      <h2 style="font-size:1.8rem; font-weight:700; margin-bottom:0.5rem; color:#7A0E19;">Brotherhood</h2>
       <p style="font-style:italic; color:#444; margin-bottom:1rem;">
         “The feeling of kinship with and closeness to a group of people”
       </p>
-
       <p style="max-width:900px; line-height:1.7;">
-        We believe that no fraternity has bounds without true close connection.
-        We do not believe that fraternities can exist without truly being a family,
-        and that is a main focus for us—providing a space for people to feel at home and safe.
+        We believe that no fraternity has bounds without true close connection. We do not believe that fraternities can exist without truly being a family and that is a main focus for us, providing a space for people to feel at home and safe.
       </p>
     </section>
-
 
     <hr style="border:0; border-top:1px solid rgba(0,0,0,0.15); margin:2.5rem 0;">
 
-
-    <!-- BELIEF BLOCK -->
     <section style="margin-bottom:3rem;">
-      <h2 style="
-        font-size:1.8rem;
-        font-weight:700;
-        margin-bottom:0.5rem;
-        color:#7A0E19;
-      ">Integrity</h2>
-
+      <h2 style="font-size:1.8rem; font-weight:700; margin-bottom:0.5rem; color:#7A0E19;">Integrity</h2>
       <p style="font-style:italic; color:#444; margin-bottom:1rem;">
         “The quality of being honest and having strong moral principles; moral uprightness.”
       </p>
-
       <p style="max-width:900px; line-height:1.7;">
-        Integrity to our fraternity is the value of being an honest man who does his best
-        to be a good samaritan in life and make a difference in the world for the better
-        with his actions or demeanor.
+        Integrity to our fraternity is the value of being an honest man who does his best to be a good samaritan in life and make a difference in the world for the better with his actions or demeanor.
       </p>
     </section>
-
   </main>
 
-
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-title">Contact Us</div>
-
       <div class="footer-contact">
-        <a href="mailto:deltagammaiota2@gmail.com">
-          <img src="assets/email-icon.png" class="icon"> deltagammaiota2@gmail.com
-        </a>
-
-        <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank">
-          <img src="assets/instagram-icon.png" class="icon"> Instagram
-        </a>
+        <a href="mailto:deltagammaiota2@gmail.com"><img src="assets/email-icon.png" class="icon"> deltagammaiota2@gmail.com</a>
+        <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank"><img src="assets/instagram-icon.png" class="icon"> Instagram</a>
       </div>
     </div>
   </footer>
 
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('main-nav').classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
