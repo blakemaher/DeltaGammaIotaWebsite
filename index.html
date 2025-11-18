@@ -2,138 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Delta Gamma Iota</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <meta name="theme-color" content="#7A0E19" />
 </head>
 <body>
- <header class="site-header">
 
-  <div class="top-bar">
-    <span>1965</span>
-    <span>1998</span>
-  </div>
-
-  <div class="header-main">
-    <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="crest-logo">
-
-    <div class="greek-letters">
-      <span class="letter">Δ</span>
-      <span class="letter">Γ</span>
-      <span class="letter">Ι</span>
+  <header class="site-header">
+    <div class="top-bar">
+      <span>1965</span>
+      <span>1998</span>
     </div>
 
-    <div class="chapter-name">
-      <span>DELTA</span>
-      <span>GAMMA</span>
-      <span>IOTA</span>
+    <div class="header-main">
+      <div class="greek-letters">
+        <span>Δ</span>
+        <span>Γ</span>
+        <span>Ι</span>
+      </div>
+      <div class="chapter-name">
+        <span>DELTA</span>
+        <span>GAMMA</span>
+        <span>IOTA</span>
+      </div>
     </div>
-  </div>
 
-  <!-- MOBILE MENU BUTTON -->
-  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-    ☰
-  </button>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
-  <!-- NAVIGATION -->
-  <nav id="main-nav" class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="beliefs.html">Beliefs</a>
-    <a href="philanthropy.html">Philanthropy</a>
-    <a href="council.html">Council</a>
-    <a href="shop.html">Shop</a>
-    <a href="dues.html">Dues</a>
-    <a href="login.html">Login</a>
-  </nav>
+    <nav id="main-nav" class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="cardinal-beliefs.html">Beliefs</a>
+      <a href="philanthropy.html">Philanthropy</a>
+      <a href="executive-council.html">Council</a>
+      <a href="shop.html">Shop</a>
+      <a href="dues-donations.html">Dues</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
 
-</header>
-
-<script>
-  function toggleMobileMenu() {
-    document.getElementById('main-nav').classList.toggle('open');
-  }
-</script>
-
-
-
-
-
-  <main>
+  <main class="container">
     <section class="hero">
-      <div class="container hero-inner">
-        <!-- LEFT SIDE: text -->
+      <div class="hero-inner">
         <div>
           <div class="hero-sub">Delta Gamma Iota</div>
-          <h1 class="hero-title">Brotherhood, Leadership, and Honor.</h1>
+          <h1 class="hero-title">Shaping Men of Honor, Purpose, and Brotherhood.</h1>
           <p class="lead">
-            A fraternity committed to building men of character through
-            scholarship, service, and lifelong brotherhood.
+            For generations, Delta Gamma Iota has fostered excellence through leadership,
+            academic ambition, resilience, and an unbreakable bond of brotherhood.
+            We are committed to forming men of integrity who uplift their communities and each other.
           </p>
           <div class="hero-actions">
             <a href="login.html" class="btn">Member Login</a>
             <a href="cardinal-beliefs.html" class="btn btn-login">Our Beliefs</a>
           </div>
         </div>
-
-        <!-- RIGHT SIDE: crest -->
         <div class="hero-crest-wrap">
-          <img src="assets/crest.png" alt="Delta Gamma Iota crest" class="hero-crest" />
-          <div class="hero-crest-caption">
-            Est. 1965 &mdash; Delta Gamma Iota
-          </div>
+          <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="hero-crest" />
+          <div class="hero-crest-caption">Est. 1965 &mdash; Delta Gamma Iota</div>
         </div>
       </div>
     </section>
 
-    <section class="container quick-links">
+    <section class="quick-links">
       <div class="card">
         <h3>Our Mission</h3>
-        <p>
-          To foster a community where men grow into leaders, scholars, and
-          lifelong brothers committed to excellence and positive impact.
-        </p>
+        <p>We develop leaders, scholars, and men of character—anchored in brotherhood, guided by purpose, and united through shared values.</p>
         <a href="cardinal-beliefs.html" class="link">Read our beliefs</a>
       </div>
 
       <div class="card">
         <h3>Philanthropy</h3>
-        <p>
-          Service with purpose: learn more about the causes we support and our
-          annual philanthropy events.
-        </p>
+        <p>Through dedicated service and charitable engagement, our brothers create a meaningful impact within our community and beyond.</p>
         <a href="philanthropy.html" class="link">View philanthropy</a>
       </div>
 
       <div class="card">
         <h3>Members Area</h3>
-        <p>
-          Members can access schedules, announcements, and resources in the
-          dashboard.
-        </p>
+        <p>Stay connected with schedules, communications, resources, and official chapter announcements.</p>
         <a href="members/dashboard.html" class="link">Go to dashboard</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-title">Contact Us</div>
-
-    <div class="footer-contact">
-      <a href="mailto:deltagammaiota2@gmail.com">
-        <img src="assets/email-icon.png" class="icon"> deltagammaiota2@gmail.com
-      </a>
-
-      <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank">
-        <img src="assets/instagram-icon.png" class="icon"> Instagram
-      </a>
+    <div class="footer-inner">
+      <div class="footer-title">Contact Us</div>
+      <div class="footer-contact">
+        <a href="mailto:deltagammaiota2@gmail.com"><img src="assets/email-icon.png" class="icon"> deltagammaiota2@gmail.com</a>
+        <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank"><img src="assets/instagram-icon.png" class="icon"> Instagram</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('main-nav').classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
