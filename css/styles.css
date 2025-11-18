@@ -383,4 +383,94 @@ body {
 .header-nav a:hover::after {
   width: 100%;
 }
+/* ----------------------- */
+/*  RESPONSIVE MOBILE FIX  */
+/* ----------------------- */
+
+@media (max-width: 768px) {
+
+    /* Prevent ANY horizontal scrolling */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Header container fix */
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    /* Years repositioned & scaled down */
+    .header-year {
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Greek letters */
+    .greek-letters {
+        font-size: 40px;   /* Adjusted for mobile */
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    /* Greek letter labels */
+    .greek-labels {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    /* Navigation fixes */
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    /* Body container fix */
+    .content-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 10px 15px;
+        box-sizing: border-box;
+    }
+
+    /* Fix the cards on the homepage */
+    .info-card {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Footer fixes */
+    footer {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 20px 10px;
+        text-align: left;
+    }
+}
 
