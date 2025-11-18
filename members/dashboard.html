@@ -1,1 +1,84 @@
-<!-- dashboard.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Member Dashboard · Delta Gamma Iota</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">Delta Gamma Iota</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="../cardinal-beliefs.html">Beliefs</a>
+        <a href="../philanthropy.html">Philanthropy</a>
+        <a href="../executive-council.html">Council</a>
+        <a href="../login.html" class="btn btn-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-main">
+    <h1>Member Dashboard</h1>
+    <p class="muted">
+      Private information for brothers of Delta Gamma Iota.
+    </p>
+
+    <div class="member-layout" id="member-content" style="display:none;">
+      <div class="card">
+        <h3>Annual Schedule</h3>
+        <p>
+          <!-- Edit this text with your real schedule -->
+          Upcoming meetings, rituals, and events will appear here.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Announcements</h3>
+        <ul style="font-size:0.9rem;color:var(--muted);">
+          <li>Example announcement 1</li>
+          <li>Example announcement 2</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Resources</h3>
+        <p>Links to forms, minutes, and other chapter materials.</p>
+      </div>
+    </div>
+
+    <div class="card" id="member-loading">
+      <p class="muted">
+        Checking your login status… if you are not logged in, you will be asked
+        to sign in.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="../assets/crest.png" alt="crest" class="crest-small" />
+        <span>© Delta Gamma Iota</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Require login, then show content
+    window.netlifyIdentity && window.netlifyIdentity.on("init", function (user) {
+      if (!user) {
+        window.netlifyIdentity.open("login");
+      } else {
+        document.getElementById("member-content").style.display = "grid";
+        document.getElementById("member-loading").style.display = "none";
+      }
+    });
+    window.netlifyIdentity && window.netlifyIdentity.init();
+  </script>
+</body>
+</html>
