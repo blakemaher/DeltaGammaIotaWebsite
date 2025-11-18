@@ -473,4 +473,46 @@ body {
         text-align: left;
     }
 }
+/* ============================
+   CLEAN MOBILE FIX (SAFE)
+   Keeps desktop untouched
+   Fixes header, nav, scaling
+============================ */
+@media (max-width: 768px) {
+
+  /* Prevent page from zooming out */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  /* Top bar */
+  .top-bar {
+    padding: 6px 20px;
+    font-size: 12px;
+  }
+
+  /* Crest */
+  .crest-logo {
+    width: 70px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  /* Greek letters row */
+  .greek-letters {
+    font-size: 48px;
+    gap: 18px;
+  }
+
+  /* Chapter name */
+  .chapter-name span {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  /* Mobile menu button */
+  .mobile-menu-toggle {
+    display: block;
+    w
 
