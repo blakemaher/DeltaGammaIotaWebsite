@@ -1,53 +1,153 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Login · Delta Gamma Iota</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Login – Delta Gamma Iota</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    body, h1, h2, p, a, label, input {
+      font-family: "Segoe UI", "Inter", Helvetica, Arial, sans-serif;
+    }
+
+    .login-container {
+      max-width: 420px;
+      margin: 4rem auto;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    .login-container img {
+      height: 180px;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-title {
+      font-size: 1.9rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: #1f1f1f;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    input[type="email"], input[type="password"], input[type="text"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: #7A0E19;
+      color: white;
+      border: none;
+      margin-top: 1rem;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      background: #5d0b14;
+    }
+  </style>
 </head>
-<body class="login-page">
-  <main class="login-card">
-    <img src="assets/crest.png" alt="Delta Gamma Iota crest" class="login-crest" />
-    <h1>Member Access</h1>
-    <p class="muted">Log in or create an account.</p>
 
-    <button id="btn-netlify" class="btn" style="width:100%;margin-top:0.8rem;">
-      Open Login Window
-    </button>
+<body>
 
-    <hr style="margin:1.4rem 0;border-color:rgba(255,255,255,0.06);" />
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="top-bar">
+      <span>1965</span>
+      <span>1998</span>
+    </div>
 
-    <h2>Create an Account</h2>
-    <p class="muted">
-      New members must enter the chapter passcode to register.
-    </p>
+    <div class="header-main">
+      <div class="greek-letters">
+        <span>Δ</span>
+        <span>Γ</span>
+        <span>Ι</span>
+      </div>
+      <div class="chapter-name">
+        <span>DELTA</span>
+        <span>GAMMA</span>
+        <span>IOTA</span>
+      </div>
+    </div>
 
-    <form id="signup-form">
-      <label>
-        Email
-        <input type="email" id="signup-email" required />
-      </label>
-      <label>
-        Password
-        <input type="password" id="signup-password" required />
-      </label>
-      <label>
-        Chapter Passcode
-        <input type="text" id="signup-passcode" placeholder="1965" required />
-      </label>
-      <button type="submit" class="btn" style="width:100%;margin-top:0.9rem;">
-        Create Account
-      </button>
-      <p id="signup-msg" class="muted" style="margin-top:0.5rem;"></p>
-    </form>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
-    <p class="small muted" style="margin-top:1rem;">
-      After confirming your email, you can log in and access member pages.
-    </p>
+    <nav id="main-nav" class="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../cardinal-beliefs.html">Beliefs</a>
+      <a href="../philanthropy.html">Philanthropy</a>
+      <a href="../executive-council.html">Council</a>
+      <a href="../shop.html">Shop</a>
+      <a href="../dues-donations.html">Dues</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <img src="../assets/crest.png" alt="Delta Gamma Iota Crest" />
+      <div class="login-title">Member Login</div>
+
+      <form>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" />
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Enter your password" />
+        </div>
+
+        <div class="form-group">
+          <label>Chapter Passcode</label>
+          <input type="text" placeholder="Enter chapter passcode" />
+        </div>
+
+        <button class="login-btn">Log In</button>
+      </form>
+    </div>
   </main>
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="js/main.js"></script>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <h3 class="footer-title">Contact Us</h3>
+      <div class="footer-contact">
+        <a href="mailto:deltagammaiota2@gmail.com">deltagammaiota2@gmail.com</a>
+        <a href="https://www.instagram.com/deltagammaiota/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('main-nav').classList.toggle('open');
+    }
+  </script>
+
 </body>
 </html>
