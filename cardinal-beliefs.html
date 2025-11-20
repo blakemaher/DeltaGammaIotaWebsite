@@ -1,231 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cardinal Beliefs – Delta Gamma Iota</title>
-
-  <link rel="stylesheet" href="../css/styles.css" />
-
-  <style>
-    /* MATCH SITE TYPOGRAPHY */
-    body, h1, h2, p {
-      font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
-    }
-
-    .beliefs-page {
-      max-width: 900px;
-      margin: 3rem auto 5rem;
-    }
-
-    .page-title {
-      font-size: 2.5rem;
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      color: #7A0E19;
-      text-align: center;
-      margin-bottom: 1rem;
-      letter-spacing: 0.5px;
-    }
-
-    .page-subtitle {
-      text-align: center;
-      color: #555;
-      font-size: 1.05rem;
-      margin-bottom: 3rem;
-      line-height: 1.6;
-    }
-
-    /* BELIEF BLOCKS */
-    .belief-block {
-      margin-bottom: 3rem;
-      padding: 1.8rem 2rem;
-      background: #ffffff;
-      border-radius: 14px;
-      border: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 5px 22px rgba(0,0,0,0.06);
-    }
-
-    .belief-title-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 0.8rem;
-    }
-
-    /* STYLED GREEK LETTERS — professional, unique look */
-    .belief-greek {
-      font-size: 3rem;
-      font-weight: 900;
-      color: #7A0E19;
-      font-family: "Merriweather", serif;
-
-      /* Prestige shadowing */
-      text-shadow:
-        0px 3px 3px rgba(0,0,0,0.25),
-        1px 1px 0px #ffffff,
-        -1px -1px 0px #ffffff;
-    }
-
-    .belief-title {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #222;
-      font-family: "Merriweather", serif;
-    }
-
-    .belief-definition {
-      font-size: 1rem;
-      color: #444;
-      font-style: italic;
-      margin-bottom: 0.8rem;
-    }
-
-    .belief-body {
-      font-size: 1.06rem;
-      line-height: 1.7;
-      color: #333;
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="top-bar">
-      <span>1965</span>
-      <span>1998</span>
-    </div>
+<header class="site-header">
+  <div class="top-bar">
+    <span>1965</span>
+    <span>1998</span>
+  </div>
 
-    <div class="header-main">
-      <div class="greek-letters">
-        <span>Δ</span><span>Γ</span><span>Ι</span>
-      </div>
-      <div class="chapter-name">
-        <span>DELTA</span><span>GAMMA</span><span>IOTA</span>
-      </div>
-    </div>
+  <div class="header-main">
+    <div class="greek-letters"><span>Δ</span><span>Γ</span><span>Ι</span></div>
+    <div class="chapter-name"><span>DELTA</span><span>GAMMA</span><span>IOTA</span></div>
+  </div>
 
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
-    <nav id="main-nav" class="main-nav">
-      <a href="../index.html">Home</a>
-      <a class="active" href="cardinal-beliefs.html">Beliefs</a>
-      <a href="philanthropy.html">Philanthropy</a>
-      <a href="executive-council.html">Council</a>
-      <a href="shop.html">Shop</a>
-      <a href="dues-donations.html">Dues</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
+  <nav id="main-nav" class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="cardinal-beliefs.html" class="active">Beliefs</a>
+    <a href="philanthropy.html">Philanthropy</a>
+    <a href="community-service.html">Community Service</a>
+    <a href="executive-council.html">Council</a>
+    <a href="shop.html">Shop</a>
+    <a href="dues-donations.html">Dues</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
 
+<main class="page-main container">
 
+  <h1 class="page-title">Our Cardinal Beliefs</h1>
 
-  <!-- MAIN CONTENT -->
-  <main class="beliefs-page">
+  <section class="belief-card">
+    <h2>Δ — Diligence</h2>
+    <p>“Careful and persistent work or effort.”  
+    As college students, we believe diligence is essential...</p>
+  </section>
 
-    <h1 class="page-title">Cardinal Beliefs</h1>
-    <p class="page-subtitle">
-      The foundational principles that guide the character, actions, and brotherhood of Delta Gamma Iota.
-    </p>
+  <section class="belief-card">
+    <h2>Γ — Brotherhood</h2>
+    <p>“A feeling of kinship and closeness.”  
+    Brotherhood is the heart of Delta Gamma Iota...</p>
+  </section>
 
-    <!-- DILIGENCE -->
-    <div class="belief-block">
-      <div class="belief-title-wrapper">
-        <div class="belief-greek">Δ</div>
-        <h2 class="belief-title">Diligence</h2>
-      </div>
+  <section class="belief-card">
+    <h2>Ι — Integrity</h2>
+    <p>“The quality of being honest and having strong moral principles.”  
+    We believe in being men of honor, respect, and accountability...</p>
+  </section>
 
-      <p class="belief-definition">
-        “Careful and persistent work or effort.”
-      </p>
+</main>
 
-      <p class="belief-body">
-        As college men, diligence forms the backbone of our academic and personal success.
-        We pursue excellence in every endeavor, knowing that discipline and persistence
-        are essential to becoming the best versions of ourselves. Our brotherhood thrives
-        on the commitment each member brings to both personal growth and service to the fraternity.
-      </p>
-    </div>
-
-
-    <!-- BROTHERHOOD -->
-    <div class="belief-block">
-      <div class="belief-title-wrapper">
-        <div class="belief-greek">Γ</div>
-        <h2 class="belief-title">Brotherhood</h2>
-      </div>
-
-      <p class="belief-definition">
-        “The feeling of kinship with and closeness to a group of people.”
-      </p>
-
-      <p class="belief-body">
-        Brotherhood is our foundation – the bond that unites us beyond the classroom,
-        beyond the campus, and beyond our years at Ball State. We believe that a true fraternity
-        is not built on numbers, but on the strength of its relationships. Delta Gamma Iota
-        provides a home, a support system, and a lifelong family for every man who wears our letters.
-      </p>
-    </div>
-
-
-    <!-- INTEGRITY -->
-    <div class="belief-block">
-      <div class="belief-title-wrapper">
-        <div class="belief-greek">Ι</div>
-        <h2 class="belief-title">Integrity</h2>
-      </div>
-
-      <p class="belief-definition">
-        “The quality of being honest and having strong moral principles; moral uprightness.”
-      </p>
-
-      <p class="belief-body">
-        Integrity defines the character of a Delta Gamma Iota man.
-        We strive to lead with honor, act with honesty, and represent our fraternity
-        and university with dignity. Integrity is not simply a value — it is the measure
-        of our actions, the standard for our behavior, and the example we set for others.
-      </p>
-    </div>
-
-  </main>
-
-
-
-  <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-
     <div class="footer-title">Contact Us</div>
-
     <div class="footer-contact">
-      <a href="mailto:deltagammaiota2@gmail.com">
-        <img src="../assets/mail.png" class="icon" alt="Email Icon">
-        deltagammaiota2@gmail.com
-      </a>
-
-      <a href="https://www.instagram.com/deltagammaiota" target="_blank">
-        <img src="../assets/instagram.webp" class="icon" alt="Instagram Icon">
-        Instagram
-      </a>
+      <a href="mailto:deltagammaiota2@gmail.com"><img src="assets/mail.png" class="icon"> deltagammaiota2@gmail.com</a>
+      <a href="https://www.instagram.com/deltagammaiota" target="_blank"><img src="assets/instagram.webp" class="icon"> Instagram</a>
     </div>
-
-    <div class="footer-copy">
-      © 2025 Delta Gamma Iota — All Rights Reserved
-    </div>
-
+    <div class="footer-copy">© 2025 Delta Gamma Iota — All Rights Reserved</div>
   </div>
 </footer>
 
-
-
-
-  <script>
-    function toggleMobileMenu() {
-      document.getElementById('main-nav').classList.toggle('open');
-    }
-  </script>
+<script>
+  function toggleMobileMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
