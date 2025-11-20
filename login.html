@@ -1,48 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member Login | Delta Gamma Iota</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.5/auth0-spa-js.production.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DGI Member Login</title>
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Auth0 Lock Script -->
+  <script src="https://cdn.auth0.com/js/lock/11.34/lock.min.js"></script>
+
+  <style>
+    body, h1, h2, h3, p, a, span {
+      font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .login-container {
+      max-width: 420px;
+      margin: 3rem auto 4rem auto;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+
+    .crest-login {
+      width: 160px;
+      height: auto;
+      display: block;
+      margin: 0 auto 1.5rem auto;
+      filter: drop-shadow(0 0 8px rgba(0,0,0,0.25));
+    }
+
+    #auth0-login-box {
+      margin-top: 1rem;
+    }
+
+    /* spacing for footer */
+    .footer-spacer {
+      height: 40px;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-    <nav class="navbar">
-        <a href="index.html" class="logo">ΔΓΙ</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="council.html">Executive Council</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="login.html" class="active">Member Login</a></li>
-        </ul>
-    </nav>
-</header>
-
-<!-- LOGIN BOX -->
-<section class="login-section">
-    <img src="assets/crest.png" class="login-crest" alt="DGI Crest">
-
-    <div class="login-container">
-        <h2>Member Portal Login</h2>
-
-        <button id="loginBtn" class="login-btn">Login with Auth0</button>
-
-        <p class="login-note">
-            Only Active Members & DGI Alumni have access.
-        </p>
+  <!-- HEADER (same as rest of site) -->
+  <header class="site-header">
+    <div class="top-bar">
+      <span>1965</span>
+      <span>1998</span>
     </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-    <p>© 2024 Delta Gamma Iota Fraternity • All Rights Reserved</p>
-</footer>
+    <div class="header-main">
+      <div class="greek-letters">
+        <span>Δ</span>
+        <span>Γ</span>
+        <span>Ι</span>
+      </div>
+      <div class="chapter-name">
+        <span>DELTA</span>
+        <span>GAMMA</span>
+        <span>IOTA</span>
+      </div>
+    </div>
 
-<script src="auth.js"></script>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+    <nav id="main-nav" class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="cardinal-beliefs.html">Beliefs</a>
+      <a href="philanthropy.html">Philanthropy</a>
+      <a href="executive-council.html">Council</a>
+      <a href="shop.html">Shop</a>
+      <a href="dues-donations.html">Dues</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
+  </header>
+
+
+
+  <!-- LOGIN CONTENT -->
+  <main>
+    <div class="login-container">
+
+      <!-- Crest -->
+      <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="crest-login" />
+
+      <h2 style="margin-bottom: 10px; color:#7A0E19; letter-spacing:1px;">
+        Member Login
+      </h2>
+
+      <p style="font-size: 0.95rem; color:#555; margin-bottom:20px;">
+        Authorized members only. Use your email and password to sign in.
+      </p>
+
+      <!-- Auth0 Login Box -->
+      <div id="auth0-login-box"></div>
+    </div>
+
+    <div class="footer-spacer"></div>
+  </main>
+
+
+
+  <!-- FOOTER (same as other pages) -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-title">Contact Us</div>
+      <div class="footer-contact">
+        <a href="mailto:deltagammaiota2@gmail.com">
+          <img src="assets/email-icon.png" class="icon"> deltagammaiota2@gmail.com
+        </a>
+        <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank">
+          <img src="assets/instagram-icon.png" class="icon"> Instagram
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Auth0 Script Initialization -->
+  <script>
+    const lock = new Auth0Lock(
+      "xjYAzMY8g40A6QiRUcJpeIyWGxMqzA2V", // YOUR CLIENT ID
+      "dev-hu8eek57hiyfzcts.us.auth0.com", // YOUR DOMAIN
+      {
+        container: "auth0-login-box",
+        theme: {
+          primaryColor: "#7A0E19"
+        },
+        auth: {
+          redirectUrl: "https://deltagammaiota.netlify.app/members/dashboard.html",
+          responseType: "token id_token",
+          params: {
+            scope: "openid profile email"
+          }
+        },
+        allowSignUp: false
+      }
+    );
+
+    lock.show();
+  </script>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('main-nav').classList.toggle('open');
+    }
+  </script>
+
 </body>
 </html>
