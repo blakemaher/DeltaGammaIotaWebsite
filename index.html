@@ -5,193 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Delta Gamma Iota</title>
   <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- Enhanced Typography -->
-  <style>
-    body, h1, h2, h3, p, a, span {
-      font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
-      letter-spacing: .3px;
-    }
-
-    .hero-title {
-      font-family: "Merriweather", "Georgia", serif;
-      font-weight: 900;
-      font-size: 3rem;
-      color: #1f1f1f;
-      margin-bottom: 1.2rem;
-      line-height: 1.3;
-    }
-
-    .hero-sub {
-      font-family: "Merriweather", serif;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.2rem;
-      text-transform: uppercase;
-      color: #7A0E19;
-      margin-bottom: 0.5rem;
-    }
-
-    .lead {
-      font-size: 1.2rem !important;
-      font-weight: 400 !important;
-      color: #444 !important;
-      line-height: 1.75 !important;
-      max-width: 700px;
-    }
-
-    /* Enlarge & center crest cleanly next to text */
-    .hero-crest-wrap {
-      text-align: center;
-    }
-
-    .hero-crest {
-      height: 300px !important;
-      width: auto;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      filter: drop-shadow(0 0 18px rgba(0,0,0,0.45));
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      align-items: center;
-      gap: 3rem;
-    }
-
-    @media (max-width: 800px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-title {
-        font-size: 2.4rem;
-      }
-
-      .hero-crest {
-        height: 250px !important;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="top-bar">
-      <span>1965</span>
-      <span>1998</span>
+<header class="site-header">
+  <div class="top-bar">
+    <span>1965</span>
+    <span>1998</span>
+  </div>
+
+  <div class="header-main">
+    <div class="greek-letters">
+      <span>Δ</span><span>Γ</span><span>Ι</span>
+    </div>
+    <div class="chapter-name">
+      <span>DELTA</span><span>GAMMA</span><span>IOTA</span>
+    </div>
+  </div>
+
+  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+  <nav id="main-nav" class="main-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="cardinal-beliefs.html">Beliefs</a>
+    <a href="philanthropy.html">Philanthropy</a>
+    <a href="community-service.html">Community Service</a>
+    <a href="executive-council.html">Council</a>
+    <a href="shop.html">Shop</a>
+    <a href="dues-donations.html">Dues</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-sub">Delta Gamma Iota</div>
+        <h1 class="hero-title">Shaping Men of Honor, Purpose, and Brotherhood.</h1>
+
+        <p class="lead">
+          For generations, Delta Gamma Iota has fostered excellence through leadership,
+          academic ambition, resilience, and an unbreakable bond of brotherhood.
+        </p>
+      </div>
+
+      <div class="hero-crest-wrap">
+        <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="hero-crest" />
+        <div class="hero-crest-caption">Est. 1965 — Delta Gamma Iota</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-links">
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>We develop leaders, scholars, and men of character.</p>
+      <a href="cardinal-beliefs.html" class="link">Read our beliefs</a>
     </div>
 
-    <div class="header-main">
-      <div class="greek-letters">
-        <span>Δ</span>
-        <span>Γ</span>
-        <span>Ι</span>
-      </div>
-      <div class="chapter-name">
-        <span>DELTA</span>
-        <span>GAMMA</span>
-        <span>IOTA</span>
-      </div>
+    <div class="card">
+      <h3>Philanthropy</h3>
+      <p>Our brothers create meaningful impact within the community.</p>
+      <a href="philanthropy.html" class="link">View philanthropy</a>
     </div>
 
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    <div class="card">
+      <h3>Members Area</h3>
+      <p>Access events, announcements, and internal resources.</p>
+      <a href="login.html" class="link">Member login</a>
+    </div>
+  </section>
+</main>
 
-    <nav id="main-nav" class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="cardinal-beliefs.html">Beliefs</a>
-      <a href="philanthropy.html">Philanthropy</a>
-      <a href="executive-council.html">Council</a>
-      <a href="shop.html">Shop</a>
-      <a href="dues-donations.html">Dues</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
-
-  <!-- MAIN CONTENT -->
-  <main class="container">
-    <section class="hero">
-      <div class="hero-inner">
-
-        <!-- LEFT TEXT SIDE -->
-        <div>
-          <div class="hero-sub">Delta Gamma Iota</div>
-
-          <h1 class="hero-title">Shaping Men of Honor, Purpose, and Brotherhood.</h1>
-
-          <p class="lead">
-            For generations, Delta Gamma Iota has fostered excellence through leadership,
-            academic ambition, resilience, and an unbreakable bond of brotherhood.
-            We are committed to forming men of integrity who uplift their communities and each other.
-          </p>
-        </div>
-
-        <!-- RIGHT CREST SIDE -->
-        <div class="hero-crest-wrap">
-          <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="hero-crest" />
-        </div>
-
-      </div>
-    </section>
-
-    <!-- FEATURE CARDS -->
-    <section class="quick-links">
-      <div class="card">
-        <h3>Our Mission</h3>
-        <p>We develop leaders, scholars, and men of character—anchored in brotherhood, guided by purpose, and united through shared values.</p>
-        <a href="cardinal-beliefs.html" class="link">Read our beliefs</a>
-      </div>
-
-      <div class="card">
-        <h3>Philanthropy</h3>
-        <p>Through dedicated service and charitable engagement, our brothers create a meaningful impact within our community and beyond.</p>
-        <a href="philanthropy.html" class="link">View philanthropy</a>
-      </div>
-
-      <div class="card">
-        <h3>Members Area</h3>
-        <p>Stay connected with schedules, communications, resources, and official chapter announcements.</p>
-        <a href="members/dashboard.html" class="link">Go to dashboard</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
+<footer class="site-footer">
   <div class="footer-inner">
-
     <div class="footer-title">Contact Us</div>
-
     <div class="footer-contact">
       <a href="mailto:deltagammaiota2@gmail.com">
-        <img src="assets/mail.png" class="icon" alt="Email Icon">
-        deltagammaiota2@gmail.com
+        <img src="assets/mail.png" class="icon"> deltagammaiota2@gmail.com
       </a>
-
       <a href="https://www.instagram.com/deltagammaiota" target="_blank">
-        <img src="assets/instagram.webp" class="icon" alt="Instagram Icon">
-        Instagram
+        <img src="assets/instagram.webp" class="icon"> Instagram
       </a>
     </div>
 
-    <div class="footer-copy">
-      © 2025 Delta Gamma Iota — All Rights Reserved
-    </div>
-
+    <div class="footer-copy">© 2025 Delta Gamma Iota — All Rights Reserved</div>
   </div>
 </footer>
 
+<script>
+  function toggleMobileMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+</script>
 
-  <script>
-    function toggleMobileMenu() {
-      document.getElementById('main-nav').classList.toggle('open');
-    }
-  </script>
 </body>
 </html>
