@@ -463,3 +463,43 @@ a {
     max-width: 240px;
   }
 }
+/* LOGIN PAGE */
+.login-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.login-crest {
+    width: 180px;
+    margin-bottom: 30px;
+}
+
+.login-container {
+    width: 350px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #002d62;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #001933;
+}
+
+.login-note {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #666;
+}
