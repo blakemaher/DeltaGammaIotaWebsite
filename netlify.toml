@@ -1,1 +1,8 @@
-# netlify config placeholder
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/members/*"
+  to = "/members/:splat"
+  status = 200
+  conditions = { Role = ["member"] }
