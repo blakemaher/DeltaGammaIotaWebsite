@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="../css/styles.css">
 
   <style>
+    body, h1, h2, p, a, span {
+      font-family: "Segoe UI", "Inter", Helvetica, Arial, sans-serif;
+      letter-spacing: .2px;
+    }
+
     .page-title {
       font-family: "Merriweather", serif;
       font-size: 2.6rem;
@@ -21,21 +26,30 @@
       text-align: center;
       color: #555;
       font-size: 1.05rem;
-      margin-bottom: 3rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
     }
 
-    .service-container {
-      max-width: 1000px;
-      margin: 0 auto 5rem;
+    .service-section {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
       padding: 0 1rem;
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
     }
 
+    @media (min-width: 900px) {
+      .service-section {
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+      }
+    }
+
     .service-card {
       background: #fff;
-      padding: 2rem;
+      padding: 2rem 2rem;
       border-radius: 14px;
       border: 1px solid rgba(0,0,0,0.08);
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
@@ -44,17 +58,23 @@
     .service-card h2 {
       font-family: "Merriweather", serif;
       font-size: 1.9rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
       color: #222;
     }
 
     .service-card p {
-      font-size: 1rem;
-      line-height: 1.65;
-      color: #444;
-      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #333;
+      margin-bottom: 0.8rem;
     }
 
+    .image-stack img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 
@@ -63,8 +83,7 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="top-bar">
-    <span>1965</span>
-    <span>1998</span>
+    <span>1965</span><span>1998</span>
   </div>
 
   <div class="header-main">
@@ -75,7 +94,7 @@
   <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
   <nav id="main-nav" class="main-nav">
-    <a href="../index.html">Home</a>
+    <a href="index.html">Home</a>
     <a href="cardinal-beliefs.html">Beliefs</a>
     <a href="philanthropy.html">Philanthropy</a>
     <a href="community-service.html" class="active">Community Service</a>
@@ -92,35 +111,35 @@
 
   <h1 class="page-title">Community Service</h1>
   <p class="page-subtitle">
-    Service to our local community is a core pillar of Delta Gamma Iota.  
-    Below is one of our signature annual service events.
+    Delta Gamma Iota is committed to serving the Muncie community through hands-on volunteerism.
+    One of our signature annual service traditions is highlighted below.
   </p>
 
-  <div class="service-container">
+  <div class="service-section">
 
-    <!-- HOLIDAYS AT GRESHAM -->
+    <!-- TEXT CARD -->
     <div class="service-card">
       <h2>Holidays at Gresham</h2>
       <p>
-        Holidays at Gresham is a cherished annual community service event where 
-        our brothers volunteer at the Suzanne Gresham Center's drive-through 
-        Christmas light show, hosted by Meridian Health Services.
+        Holidays at Gresham is an annual drive-through Christmas light experience hosted by
+        Meridian Health Services at the Suzanne Gresham Center. Thousands of families attend
+        each year to enjoy the festive displays.
       </p>
-
       <p>
-        During this event, members dress in festive Christmas outfits and help 
-        guide vehicles safely through the beautifully decorated light displays. 
-        Our role is to assist with traffic flow, greet families, and ensure 
-        guests enjoy a smooth, memorable holiday experience.
-      </p>
-
-      <p>
-        This event allows Delta Gamma Iota to directly support the Muncie 
-        community while spreading joy and positivity during the holiday season.
+        Our brothers volunteer by dressing in holiday-themed outfits and assisting with traffic
+        flow, greeting families, and ensuring the event runs smoothly. It is one of our most
+        cherished opportunities to give back and bring joy to the Muncie community.
       </p>
     </div>
 
+    <!-- IMAGES -->
+    <div class="image-stack">
+      <img src="../assets/greshamone.png" alt="Holidays at Gresham Event">
+      <img src="../assets/greshamtwo.png" alt="Gresham Christmas Lights">
+    </div>
+
   </div>
+
 </main>
 
 
@@ -144,9 +163,9 @@
 
 
 <script>
-  function toggleMobileMenu() {
-    document.getElementById('main-nav').classList.toggle('open');
-  }
+function toggleMobileMenu() {
+  document.getElementById('main-nav').classList.toggle('open');
+}
 </script>
 
 </body>
