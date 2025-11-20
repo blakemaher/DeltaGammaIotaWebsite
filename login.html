@@ -3,56 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DGI Member Login</title>
-  <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- Auth0 Lock Script -->
-  <script src="https://cdn.auth0.com/js/lock/11.34/lock.min.js"></script>
+  <title>Member Login · Delta Gamma Iota</title>
+  <link rel="stylesheet" href="../css/styles.css" />
 
   <style>
-    body, h1, h2, p, a, span {
-      font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+    body, h1, h2, h3, p, a, span, input, button {
+      font-family: "Segoe UI", "Inter", Helvetica, Arial, sans-serif;
+      letter-spacing: .2px;
     }
-
-    .login-container {
-      max-width: 380px;
-      margin: 3rem auto 4rem auto;
-      background: #ffffff;
-      padding: 2rem 2.2rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+    .page-main {
+      padding: 3rem 0 4rem;
+      display: flex;
+      justify-content: center;
+    }
+    .login-wrapper {
+      width: 100%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.2rem 2.4rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    }
+    .login-title {
+      font-family: "Merriweather", serif;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 0.4rem;
+      color: #1f1f1f;
       text-align: center;
     }
-
-    .crest-login {
-      width: 130px;
-      margin: 0 auto 1rem auto;
+    .login-subtitle {
+      text-align: center;
+      font-size: 0.98rem;
+      color: #555;
+      margin-bottom: 1.8rem;
     }
-
-    .passcode-label {
-      text-align: left;
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+    .form-group label {
+      display: block;
       font-size: 0.9rem;
-      margin-bottom: 4px;
-      color: #333;
+      color: #444;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
     }
-
-    .passcode-input {
+    .form-group input {
       width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #bbb;
+      padding: 0.7rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.18);
       font-size: 0.95rem;
-      margin-bottom: 1rem;
     }
-
-    #auth0-login-box {
-      margin-top: 0.5rem;
-      transform: scale(0.92);
-      transform-origin: top center;
+    .form-group input:focus {
+      outline: none;
+      border-color: #7A0E19;
+      box-shadow: 0 0 0 1px rgba(122,14,25,0.25);
     }
-
-    .footer-spacer {
-      height: 40px;
+    .login-actions {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .btn-primary {
+      border: none;
+      border-radius: 999px;
+      padding: 0.75rem 1rem;
+      background: #7A0E19;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.98rem;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      opacity: 0.95;
+    }
+    .helper-text {
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -75,87 +107,4 @@
       </div>
     </div>
 
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-
-    <nav id="main-nav" class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="cardinal-beliefs.html">Beliefs</a>
-      <a href="philanthropy.html">Philanthropy</a>
-      <a href="executive-council.html">Council</a>
-      <a href="shop.html">Shop</a>
-      <a href="dues-donations.html">Dues</a>
-      <a href="login.html" class="active">Login</a>
-    </nav>
-  </header>
-
-
-  <!-- LOGIN CONTENT -->
-  <main>
-    <div class="login-container">
-
-      <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="crest-login" />
-
-      <h2 style="margin-bottom: 10px; color:#7A0E19; letter-spacing:0.5px;">
-        Member Login
-      </h2>
-
-      <p style="font-size: 0.9rem; color:#555; margin-bottom:18px;">
-        Authorized members only. Enter the chapter passcode and sign in below.
-      </p>
-
-      <!-- PASSCODE -->
-      <label class="passcode-label" for="chapter-passcode">Chapter Passcode</label>
-      <input type="password" id="chapter-passcode" class="passcode-input" placeholder="Enter passcode" />
-
-      <!-- AUTH0 LOGIN BOX -->
-      <div id="auth0-login-box"></div>
-
-    </div>
-
-    <div class="footer-spacer"></div>
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-title">Contact Us</div>
-      <div class="footer-contact">
-        <a href="mailto:deltagammaiota2@gmail.com">
-          <img src="assets/email-icon.png" class="icon"> deltagammaiota2@gmail.com
-        </a>
-        <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank">
-          <img src="assets/instagram-icon.png" class="icon"> Instagram
-        </a>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- Auth0 Lock Initialization -->
-  <script>
-    const lock = new Auth0Lock(
-      "xjYAzMY8g40A6QiRUcJpeIyWGxMqzA2V",
-      "dev-hu8eek57hiyfzcts.us.auth0.com",
-      {
-        container: "auth0-login-box",
-        theme: { primaryColor: "#7A0E19" },
-        auth: {
-          redirectUrl: "https://deltagammaiota.netlify.app/members/dashboard.html",
-          responseType: "token id_token",
-          params: {
-            scope: "openid profile email"
-          }
-        },
-        allowSignUp: false
-      }
-    );
-
-    lock.show();
-
-    function toggleMobileMenu() {
-      document.getElementById('main-nav').classList.toggle('open');
-    }
-  </script>
-</body>
-</html>
+    <button c
