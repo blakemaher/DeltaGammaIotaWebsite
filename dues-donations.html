@@ -1,26 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dues & Donations – Delta Gamma Iota</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .page-title {
+      font-family: "Merriweather", serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      text-align: center;
+      color: #7A0E19;
+      margin-top: 3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 3rem;
+    }
+
+    .dues-container {
+      max-width: 900px;
+      margin: 0 auto 5rem;
+      padding: 0 1rem;
+    }
+
+    .dues-card {
+      background: #fff;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    }
+
+    .dues-card h2 {
+      font-family: "Merriweather", serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: #222;
+    }
+
+    .dues-card p {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .coming-soon {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #7A0E19;
+      letter-spacing: 0.1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
 <header class="site-header">
-
-  <!-- TOP STRIP WITH YEARS -->
-  <div class="header-topbar">
-    <span class="year-left">1965</span>
-    <span class="year-right">1998</span>
+  <div class="top-bar">
+    <span>1965</span>
+    <span>1998</span>
   </div>
 
-  <!-- MAIN CENTERED BRANDING -->
-  <div class="header-branding">
-    <div class="greek-letters">Δ&nbsp;&nbsp;Γ&nbsp;&nbsp;Ι</div>
-    <div class="greek-subtitle">Delta &nbsp;&nbsp; Gamma &nbsp;&nbsp; Iota</div>
+  <div class="header-main">
+    <div class="greek-letters"><span>Δ</span><span>Γ</span><span>Ι</span></div>
+    <div class="chapter-name"><span>DELTA</span><span>GAMMA</span><span>IOTA</span></div>
   </div>
 
-  <!-- NAVIGATION BAR -->
-  <nav class="header-nav">
-    <a href="/">Home</a>
+  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+  <nav id="main-nav" class="main-nav">
+    <a href="../index.html">Home</a>
     <a href="cardinal-beliefs.html">Beliefs</a>
     <a href="philanthropy.html">Philanthropy</a>
     <a href="executive-council.html">Council</a>
     <a href="shop.html">Shop</a>
-    <a href="dues-donations.html">Dues</a>
+    <a class="active" href="dues-donations.html">Dues</a>
     <a href="login.html">Login</a>
   </nav>
-
 </header>
+
+
+<!-- MAIN CONTENT -->
+<main>
+  <h1 class="page-title">Dues & Donations</h1>
+  <p class="page-subtitle">Support the growth, operations, and philanthropy of Delta Gamma Iota.</p>
+
+  <div class="dues-container">
+
+    <div class="dues-card">
+      <h2>Chapter Dues</h2>
+      <p>
+        Chapter dues fund operations, events, scholarships, and chapter growth.
+        Members will soon be able to submit dues digitally through multiple platforms.
+      </p>
+      <div class="coming-soon">Payment Links Coming Soon</div>
+    </div>
+
+    <div class="dues-card">
+      <h2>Donations</h2>
+      <p>
+        Support the brotherhood through direct donations. Contributions help
+        strengthen our philanthropy efforts, alumni outreach, and chapter initiatives.
+      </p>
+      <div class="coming-soon">Donation Methods Coming Soon</div>
+    </div>
+
+    <div class="dues-card">
+      <h2>Scholarship & Assistance Fund</h2>
+      <p>
+        Delta Gamma Iota is committed to the academic and personal success of its members.
+        A scholarship assistance fund will soon be available for brothers in need.
+      </p>
+      <div class="coming-soon">Details Coming Soon</div>
+    </div>
+
+  </div>
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-title">Contact Us</div>
+    <div class="footer-contact">
+      <a href="mailto:deltagammaiota2@gmail.com">
+        <img src="../assets/mail.png" class="icon"> deltagammaiota2@gmail.com
+      </a>
+      <a href="https://www.instagram.com/deltagammaiota" target="_blank">
+        <img src="../assets/instagram.webp" class="icon"> Instagram
+      </a>
+    </div>
+    <div class="footer-copy">© 2025 Delta Gamma Iota — All Rights Reserved</div>
+  </div>
+</footer>
+
+
+<script>
+  function toggleMobileMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
