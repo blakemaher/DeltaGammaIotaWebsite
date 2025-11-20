@@ -10,33 +10,47 @@
   <script src="https://cdn.auth0.com/js/lock/11.34/lock.min.js"></script>
 
   <style>
-    body, h1, h2, h3, p, a, span {
+    body, h1, h2, p, a, span {
       font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
     }
 
     .login-container {
-      max-width: 420px;
+      max-width: 380px;
       margin: 3rem auto 4rem auto;
       background: #ffffff;
-      padding: 2.5rem;
+      padding: 2rem 2.2rem;
       border-radius: 12px;
-      box-shadow: 0 5px 30px rgba(0,0,0,0.12);
+      box-shadow: 0 5px 25px rgba(0,0,0,0.12);
       text-align: center;
     }
 
     .crest-login {
-      width: 160px;
-      height: auto;
-      display: block;
-      margin: 0 auto 1.5rem auto;
-      filter: drop-shadow(0 0 8px rgba(0,0,0,0.25));
+      width: 130px;
+      margin: 0 auto 1rem auto;
+    }
+
+    .passcode-label {
+      text-align: left;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      color: #333;
+    }
+
+    .passcode-input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #bbb;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
     }
 
     #auth0-login-box {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
+      transform: scale(0.92);
+      transform-origin: top center;
     }
 
-    /* spacing for footer */
     .footer-spacer {
       height: 40px;
     }
@@ -45,7 +59,7 @@
 
 <body>
 
-  <!-- HEADER (same as rest of site) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="top-bar">
       <span>1965</span>
@@ -54,14 +68,10 @@
 
     <div class="header-main">
       <div class="greek-letters">
-        <span>Δ</span>
-        <span>Γ</span>
-        <span>Ι</span>
+        <span>Δ</span><span>Γ</span><span>Ι</span>
       </div>
       <div class="chapter-name">
-        <span>DELTA</span>
-        <span>GAMMA</span>
-        <span>IOTA</span>
+        <span>DELTA</span><span>GAMMA</span><span>IOTA</span>
       </div>
     </div>
 
@@ -79,32 +89,34 @@
   </header>
 
 
-
   <!-- LOGIN CONTENT -->
   <main>
     <div class="login-container">
 
-      <!-- Crest -->
       <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="crest-login" />
 
-      <h2 style="margin-bottom: 10px; color:#7A0E19; letter-spacing:1px;">
+      <h2 style="margin-bottom: 10px; color:#7A0E19; letter-spacing:0.5px;">
         Member Login
       </h2>
 
-      <p style="font-size: 0.95rem; color:#555; margin-bottom:20px;">
-        Authorized members only. Use your email and password to sign in.
+      <p style="font-size: 0.9rem; color:#555; margin-bottom:18px;">
+        Authorized members only. Enter the chapter passcode and sign in below.
       </p>
 
-      <!-- Auth0 Login Box -->
+      <!-- PASSCODE -->
+      <label class="passcode-label" for="chapter-passcode">Chapter Passcode</label>
+      <input type="password" id="chapter-passcode" class="passcode-input" placeholder="Enter passcode" />
+
+      <!-- AUTH0 LOGIN BOX -->
       <div id="auth0-login-box"></div>
+
     </div>
 
     <div class="footer-spacer"></div>
   </main>
 
 
-
-  <!-- FOOTER (same as other pages) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-title">Contact Us</div>
@@ -120,17 +132,14 @@
   </footer>
 
 
-
-  <!-- Auth0 Script Initialization -->
+  <!-- Auth0 Lock Initialization -->
   <script>
     const lock = new Auth0Lock(
-      "xjYAzMY8g40A6QiRUcJpeIyWGxMqzA2V", // YOUR CLIENT ID
-      "dev-hu8eek57hiyfzcts.us.auth0.com", // YOUR DOMAIN
+      "xjYAzMY8g40A6QiRUcJpeIyWGxMqzA2V",
+      "dev-hu8eek57hiyfzcts.us.auth0.com",
       {
         container: "auth0-login-box",
-        theme: {
-          primaryColor: "#7A0E19"
-        },
+        theme: { primaryColor: "#7A0E19" },
         auth: {
           redirectUrl: "https://deltagammaiota.netlify.app/members/dashboard.html",
           responseType: "token id_token",
@@ -143,13 +152,10 @@
     );
 
     lock.show();
-  </script>
 
-  <script>
     function toggleMobileMenu() {
       document.getElementById('main-nav').classList.toggle('open');
     }
   </script>
-
 </body>
 </html>
