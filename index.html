@@ -4,11 +4,67 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Delta Gamma Iota</title>
+
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* HOME PAGE UPGRADE */
+    .home-hero {
+      padding: 4rem 0 5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .home-title {
+      font-family: "Merriweather", serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #2a2a2a;
+      margin-bottom: 1.1rem;
+    }
+
+    .home-sub {
+      font-size: 0.95rem;
+      color: #7A0E19;
+      text-transform: uppercase;
+      letter-spacing: 0.18rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .home-lead {
+      font-size: 1.15rem;
+      color: #444;
+      line-height: 1.75;
+      max-width: 650px;
+      margin-bottom: 2rem;
+    }
+
+    .home-crest {
+      height: 260px;
+      filter: drop-shadow(0 0 14px rgba(0,0,0,0.18));
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title {
+      font-family: "Merriweather", serif;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+      font-weight: 900;
+      color: #7A0E19;
+    }
+  </style>
 </head>
 
 <body>
 
+<!-- HEADER (unchanged) -->
 <header class="site-header">
   <div class="top-bar">
     <span>1965</span>
@@ -38,50 +94,60 @@
   </nav>
 </header>
 
-<main class="container">
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-sub">Delta Gamma Iota</div>
-        <h1 class="hero-title">Shaping Men of Honor, Purpose, and Brotherhood.</h1>
 
-        <p class="lead">
-          For generations, Delta Gamma Iota has fostered excellence through leadership,
-          academic ambition, resilience, and an unbreakable bond of brotherhood.
-        </p>
-      </div>
+<!-- MAIN CONTENT -->
+<main class="page-main container">
 
-      <div class="hero-crest-wrap">
-        <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="hero-crest" />
-        <div class="hero-crest-caption">Est. 1965 — Delta Gamma Iota</div>
-      </div>
+  <!-- HERO SECTION -->
+  <section class="home-hero">
+    <div>
+      <div class="home-sub">Delta Gamma Iota</div>
+
+      <h1 class="home-title">Shaping Men of Honor, Purpose, and Brotherhood.</h1>
+
+      <p class="home-lead">
+        For generations, Delta Gamma Iota has fostered excellence through leadership,
+        academic ambition, resilience, and an unbreakable bond of brotherhood. We are 
+        committed to forming men of integrity who uplift their communities and each other.
+      </p>
+    </div>
+
+    <div>
+      <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="home-crest">
     </div>
   </section>
+
+  <!-- QUICK LINKS SECTION -->
+  <h2 class="section-title">Explore Delta Gamma Iota</h2>
 
   <section class="quick-links">
     <div class="card">
       <h3>Our Mission</h3>
-      <p>We develop leaders, scholars, and men of character.</p>
+      <p>We develop leaders, scholars, and men of character—anchored in brotherhood, guided by purpose, and united through shared values.</p>
       <a href="cardinal-beliefs.html" class="link">Read our beliefs</a>
     </div>
 
     <div class="card">
       <h3>Philanthropy</h3>
-      <p>Our brothers create meaningful impact within the community.</p>
+      <p>Through service and charity, our brothers create meaningful impact in Muncie and beyond.</p>
       <a href="philanthropy.html" class="link">View philanthropy</a>
     </div>
 
     <div class="card">
       <h3>Members Area</h3>
-      <p>Access events, announcements, and internal resources.</p>
-      <a href="login.html" class="link">Member login</a>
+      <p>Access schedules, announcements, and chapter resources.</p>
+      <a href="login.html" class="link">Login to members area</a>
     </div>
   </section>
+
 </main>
 
+
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-title">Contact Us</div>
+
     <div class="footer-contact">
       <a href="mailto:deltagammaiota2@gmail.com">
         <img src="assets/mail.png" class="icon"> deltagammaiota2@gmail.com
