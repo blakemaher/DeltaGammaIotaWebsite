@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Service – Delta Gamma Iota</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .page-title {
+      font-family: "Merriweather", serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      text-align: center;
+      color: #7A0E19;
+      margin-top: 3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      color: #555;
+      font-size: 1.05rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-container {
+      max-width: 1000px;
+      margin: 0 auto 5rem;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    }
+
+    .service-card h2 {
+      font-family: "Merriweather", serif;
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: #444;
+      margin-bottom: 0.4rem;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="top-bar">
+    <span>1965</span>
+    <span>1998</span>
+  </div>
+
+  <div class="header-main">
+    <div class="greek-letters"><span>Δ</span><span>Γ</span><span>Ι</span></div>
+    <div class="chapter-name"><span>DELTA</span><span>GAMMA</span><span>IOTA</span></div>
+  </div>
+
+  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+  <nav id="main-nav" class="main-nav">
+    <a href="../index.html">Home</a>
+    <a href="cardinal-beliefs.html">Beliefs</a>
+    <a href="philanthropy.html">Philanthropy</a>
+    <a href="community-service.html" class="active">Community Service</a>
+    <a href="executive-council.html">Council</a>
+    <a href="shop.html">Shop</a>
+    <a href="dues-donations.html">Dues</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
+
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <h1 class="page-title">Community Service</h1>
+  <p class="page-subtitle">
+    Service to our local community is a core pillar of Delta Gamma Iota.  
+    Below is one of our signature annual service events.
+  </p>
+
+  <div class="service-container">
+
+    <!-- HOLIDAYS AT GRESHAM -->
+    <div class="service-card">
+      <h2>Holidays at Gresham</h2>
+      <p>
+        Holidays at Gresham is a cherished annual community service event where 
+        our brothers volunteer at the Suzanne Gresham Center's drive-through 
+        Christmas light show, hosted by Meridian Health Services.
+      </p>
+
+      <p>
+        During this event, members dress in festive Christmas outfits and help 
+        guide vehicles safely through the beautifully decorated light displays. 
+        Our role is to assist with traffic flow, greet families, and ensure 
+        guests enjoy a smooth, memorable holiday experience.
+      </p>
+
+      <p>
+        This event allows Delta Gamma Iota to directly support the Muncie 
+        community while spreading joy and positivity during the holiday season.
+      </p>
+    </div>
+
+  </div>
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-title">Contact Us</div>
+
+    <div class="footer-contact">
+      <a href="mailto:deltagammaiota2@gmail.com">
+        <img src="../assets/mail.png" class="icon"> deltagammaiota2@gmail.com
+      </a>
+      <a href="https://www.instagram.com/deltagammaiota" target="_blank">
+        <img src="../assets/instagram.webp" class="icon"> Instagram
+      </a>
+    </div>
+
+    <div class="footer-copy">© 2025 Delta Gamma Iota — All Rights Reserved</div>
+  </div>
+</footer>
+
+
+<script>
+  function toggleMobileMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
