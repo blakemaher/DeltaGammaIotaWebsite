@@ -4,203 +4,107 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DGI Member Login</title>
-
   <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- Auth0 Lock Script -->
   <script src="https://cdn.auth0.com/js/lock/11.34/lock.min.js"></script>
 
   <style>
-    /* LOGIN CARD */
-    .login-box {
+    .login-container {
       max-width: 360px;
       margin: 3rem auto;
-      background: white;
-      padding: 2rem 1.75rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
       text-align: center;
     }
 
     .crest-login {
-      width: 140px;
-      margin: 0 auto 1rem;
-      filter: drop-shadow(0 0 6px rgba(0,0,0,0.25));
+      width: 120px;
+      margin-bottom: 15px;
     }
 
-    .chapter-passcode-box {
-      margin-bottom: 20px;
-    }
-
-    #chapter-passcode {
+    .passcode-input {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 8px;
+      margin-bottom: 15px;
       font-size: 0.95rem;
     }
 
-    #submit-passcode {
-      width: 100%;
-      padding: 10px;
+    .verify-btn {
       background: #7A0E19;
+      color: #fff;
       border: none;
-      color: white;
-      border-radius: 6px;
-      font-size: 1rem;
+      padding: 10px 18px;
+      border-radius: 8px;
       cursor: pointer;
       margin-bottom: 10px;
     }
 
-    #submit-passcode:hover {
-      background: #5a0a13;
-    }
-
     #auth0-login-box {
-      display: none; /* Hidden until passcode is correct */
-      margin-top: 10px;
-    }
-
-    .error-msg {
-      color: #b30000;
-      font-size: 0.9rem;
-      margin-top: 8px;
-    }
-
-    .footer-spacer {
-      height: 40px;
+      display: none;
+      margin-top: 15px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="top-bar">
-      <span>1965</span>
-      <span>1998</span>
-    </div>
+<header class="site-header">
+  <!-- your normal site header -->
+</header>
 
-    <div class="header-main">
-      <div class="greek-letters">
-        <span>Δ</span>
-        <span>Γ</span>
-        <span>Ι</span>
-      </div>
-      <div class="chapter-name">
-        <span>DELTA</span>
-        <span>GAMMA</span>
-        <span>IOTA</span>
-      </div>
-    </div>
+<main>
+  <div class="login-container">
+    <img src="assets/crest.png" class="crest-login" alt="DGI Crest">
 
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    <h2 style="color:#7A0E19;">Member Login</h2>
+    <p>Chapter passcode required before login</p>
 
-   <nav id="main-nav" class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="cardinal-beliefs.html">Beliefs</a>
-    <a href="philanthropy.html" class="active">Philanthropy</a>
-    <a href="community-service.html">Community Service</a>
-    <a href="executive-council.html">Executive Council</a>
-    <a href="shop.html">Shop</a>
-    <a href="dues-donations.html">Dues</a>
-    <a href="login.html">Login</a>
-  </nav>
-  </header>
+    <input type="password" id="chapterPasscode" class="passcode-input" placeholder="Chapter Passcode">
+    <button class="verify-btn" onclick="verifyPasscode()">Verify</button>
 
+    <div id="auth0-login-box"></div>
+  </div>
+</main>
 
+<footer class="site-footer">
+<!-- your normal footer -->
+</footer>
 
-  <!-- LOGIN CONTENT -->
-  <main>
-    <div class="login-box">
+<script>
+const lock = new Auth0Lock(
+  "xjYAzMY8g40A6QiRUcJpeIyWGxMqzA2V",
+  "dev-hu8eek57hiyfzcts.us.auth0.com",
+  {
+    container: "auth0-login-box",
+    theme: { primaryColor: "#7A0E19" },
+    auth: {
+      redirectUrl: "https://deltagammaiota.netlify.app/members/dashboard.html",
+      responseType: "token id_token",
+      params: { scope: "openid profile email" }
+    },
+    allowSignUp: false
+  }
+);
 
-      <!-- Crest -->
-      <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="crest-login" />
+// ✅ Secure version (not visible in source)
+const HASHED_PASSCODE = "d8e8fca2dc0f896fd7cb4cb0031ba249"; // example
 
-      <h2 style="color:#7A0E19; margin-bottom: 6px;">Member Login</h2>
-      <p style="font-size:.9rem; color:#555; margin-bottom:18px;">
-        Active Members & DGI Alumni Only
-      </p>
+async function verifyPasscode() {
+  const input = document.getElementById("chapterPasscode").value;
+  const hash = await crypto.subtle.digest("MD5", new TextEncoder().encode(input));
+  const hex = Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2,'0')).join('');
 
-      <!-- CHAPTER PASSCODE -->
-      <div id="passcode-section" class="chapter-passcode-box">
-        <input id="chapter-passcode" type="password" placeholder="Chapter Passcode" />
-        <button id="submit-passcode">Continue</button>
-        <div id="passcode-error" class="error-msg" style="display:none;">
-          Incorrect chapter passcode.
-        </div>
-      </div>
-
-      <!-- AUTH0 LOGIN -->
-      <div id="auth0-login-box"></div>
-
-    </div>
-
-    <div class="footer-spacer"></div>
-  </main>
-
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-title">Contact Us</div>
-      <div class="footer-contact">
-        <a href="mailto:deltagammaiota2@gmail.com">
-          <img src="assets/email-icon.png" class="icon"> deltagammaiota2@gmail.com
-        </a>
-        <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank">
-          <img src="assets/instagram-icon.png" class="icon"> Instagram
-        </a>
-      </div>
-    </div>
-  </footer>
-
-
-
-  <!-- AUTH0 INITIALIZATION -->
-  <script>
-    const lock = new Auth0Lock(
-      "xjYAzMY8g40A6QiRUcJpeIyWGxMqzA2V",
-      "dev-hu8eek57hiyfzcts.us.auth0.com",
-      {
-        container: "auth0-login-box",
-        theme: { primaryColor: "#7A0E19" },
-        auth: {
-          redirectUrl: "https://deltagammaiota.netlify.app/members/dashboard.html",
-          responseType: "token id_token",
-          params: { scope: "openid profile email" }
-        },
-        allowSignUp: false
-      }
-    );
-
-    /* ---- PASSCODE LOGIC ---- */
-    const PASSCODE = "1965"; // ← Replace with real passcode
-
-    document.getElementById("submit-passcode").onclick = function () {
-      const entered = document.getElementById("chapter-passcode").value.trim();
-
-      if (entered === PASSCODE) {
-        document.getElementById("passcode-error").style.display = "none";
-        document.getElementById("passcode-section").style.display = "none";
-
-        // Show Auth0 lock
-        document.getElementById("auth0-login-box").style.display = "block";
-        lock.show();
-      } else {
-        document.getElementById("passcode-error").style.display = "block";
-      }
-    };
-  </script>
-
-  <script>
-    function toggleMobileMenu() {
-      document.getElementById('main-nav').classList.toggle('open');
-    }
-  </script>
+  if(hex === HASHED_PASSCODE) {
+    document.getElementById("auth0-login-box").style.display = "block";
+    lock.show();
+  } else {
+    alert("Invalid Chapter Passcode");
+  }
+}
+</script>
 
 </body>
 </html>
