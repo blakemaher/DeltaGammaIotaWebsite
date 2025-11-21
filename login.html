@@ -160,7 +160,7 @@ function initializeAuth0() {
       },
       auth: {
         redirectUrl: "https://deltagammaiota.netlify.app/members/dashboard.html",
-        responseType: "code",
+        responseType: "token id_token",
         params: {
           scope: "openid profile email"
         }
