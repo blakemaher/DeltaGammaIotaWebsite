@@ -27,6 +27,7 @@
 
     .chapter-passcode-box {
       margin-bottom: 20px;
+      text-align: left;
     }
 
     #chapter-passcode {
@@ -97,7 +98,7 @@
       <a href="community-service.html">Community Service</a>
       <a href="executive-council.html">Executive Council</a>
       <a href="shop.html">Shop</a>
-      <a href="dues-donations.html">Dues & Donations</a>
+      <a href="dues-donations.html">Dues &amp; Donations</a>
       <a href="login.html" class="active">Login</a>
     </nav>
   </header>
@@ -118,7 +119,10 @@
 
       <!-- CHAPTER PASSCODE -->
       <div id="passcode-section" class="chapter-passcode-box">
-        <input id="chapter-passcode" type="password" placeholder="Chapter Passcode" />
+        <label for="chapter-passcode" style="font-size:0.9rem; color:#333; display:block; margin-bottom:4px;">
+          Chapter Passcode
+        </label>
+        <input id="chapter-passcode" type="password" placeholder="Enter passcode" />
         <button id="submit-passcode">Continue</button>
         <div id="passcode-error" class="error-msg" style="display:none;">
           Incorrect chapter passcode.
@@ -128,6 +132,8 @@
       <p id="redirect-hint" style="display:none; font-size:0.85rem; color:#555; margin-top: 10px;">
         Redirecting to secure DGI login&hellip;
       </p>
+
+      <p id="auth-error" class="error-msg" style="display:none;"></p>
 
     </div>
 
@@ -170,34 +176,49 @@
 
 
 
-  <!-- SIMPLE AUTH0 REDIRECT FLOW (UNIVERSAL LOGIN) -->
   <script>
     const AUTH0_DOMAIN    = "dev-vrv7ebflsu4wba1z.us.auth0.com";
     const AUTH0_CLIENT_ID = "oh3uJuWWaU7CMQYLLtY0I9lDxIQyRKRu";
-    const REDIRECT_URI    = "https://bsudeltagammaiota.netlify.app/members/dashboard.html";
+    const REDIRECT_URI    = "https://bsudeltagammaiota.netlify.app/login.html";
 
     const PASSCODE = "1965"; // chapter passcode
 
     function startAuth0Redirect() {
       const authUrl =
         "https://" + AUTH0_DOMAIN + "/authorize" +
-        "?response_type=" + encodeURIComponent("token") +              // <-- no id_token, so no nonce needed
+        "?response_type=" + encodeURIComponent("token") +
         "&client_id="     + encodeURIComponent(AUTH0_CLIENT_ID) +
         "&redirect_uri="  + encodeURIComponent(REDIRECT_URI) +
         "&scope="         + encodeURIComponent("openid profile email");
 
-      // Send browser to Auth0 Universal Login
       window.location.href = authUrl;
     }
 
+    // Handle coming BACK from Auth0
+    (function handleAuthCallback() {
+      const hash = window.location.hash || "";
+
+      if (hash.includes("access_token=")) {
+        // Optionally, you could parse/store the token here.
+        // For now, just clean up the URL and send them to the dashboard.
+        window.location.hash = "";
+        window.location.href = "members/dashboard.html";
+      } else if (hash.includes("error=")) {
+        const params = new URLSearchParams(hash.replace(/^#/, ""));
+        const err = params.get("error_description") || params.get("error");
+        const authErrEl = document.getElementById("auth-error");
+        authErrEl.textContent = "Login error: " + (err || "Unknown error");
+        authErrEl.style.display = "block";
+      }
+    })();
+
+    // Passcode gate
     document.getElementById("submit-passcode").onclick = function () {
       const entered = document.getElementById("chapter-passcode").value.trim();
 
       if (entered === PASSCODE) {
         document.getElementById("passcode-error").style.display = "none";
         document.getElementById("redirect-hint").style.display = "block";
-
-        // Small delay just so the user sees the message
         setTimeout(startAuth0Redirect, 500);
       } else {
         document.getElementById("passcode-error").style.display = "block";
