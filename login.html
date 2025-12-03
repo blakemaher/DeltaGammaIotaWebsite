@@ -7,9 +7,6 @@
 
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Auth0 Lock Script -->
-  <script src="https://cdn.auth0.com/js/lock/11.34/lock.min.js"></script>
-
   <style>
     /* LOGIN CARD */
     .login-box {
@@ -55,11 +52,6 @@
 
     #submit-passcode:hover {
       background: #5a0a13;
-    }
-
-    #auth0-login-box {
-      display: none; /* Hidden until passcode is correct */
-      margin-top: 10px;
     }
 
     .error-msg {
@@ -108,7 +100,6 @@
       <a href="dues-donations.html">Dues & Donations</a>
       <a href="login.html" class="active">Login</a>
     </nav>
-
   </header>
 
 
@@ -134,8 +125,9 @@
         </div>
       </div>
 
-      <!-- AUTH0 LOGIN -->
-      <div id="auth0-login-box"></div>
+      <p id="redirect-hint" style="display:none; font-size:0.85rem; color:#555; margin-top: 10px;">
+        Redirecting to secure DGI login&hellip;
+      </p>
 
     </div>
 
@@ -178,43 +170,40 @@
 
 
 
-  <!-- AUTH0 INITIALIZATION -->
+  <!-- SIMPLE AUTH0 REDIRECT FLOW (UNIVERSAL LOGIN) -->
   <script>
-    const lock = new Auth0Lock(
-      "oh3uJuWWaU7CMQYLLtY0I9lDxIQyRKRu", // client id
-      "dev-vrv7ebflsu4wba1z.us.auth0.com", // ← new tenant domain
-      {
-        container: "auth0-login-box",
-        theme: { primaryColor: "#7A0E19" },
-        auth: {
-          redirectUrl: "https://bsudeltagammaiota.netlify.app/members/dashboard.html",
-          responseType: "token id_token",
-          params: { scope: "openid profile email" }
-        },
-        allowSignUp: false
-      }
-    );
+    const AUTH0_DOMAIN   = "dev-vrv7ebflsu4wba1z.us.auth0.com";
+    const AUTH0_CLIENT_ID = "oh3uJuWWaU7CMQYLLtY0I9lDxIQyRKRu";
+    const REDIRECT_URI   = "https://bsudeltagammaiota.netlify.app/members/dashboard.html";
 
-    /* ---- PASSCODE LOGIC ---- */
-    const PASSCODE = "1965"; // chapter passcode
+    const PASSCODE = "1965";
+
+    function startAuth0Redirect() {
+      const authUrl =
+        "https://" + AUTH0_DOMAIN + "/authorize" +
+        "?response_type=token%20id_token" +
+        "&client_id=" + encodeURIComponent(AUTH0_CLIENT_ID) +
+        "&redirect_uri=" + encodeURIComponent(REDIRECT_URI) +
+        "&scope=" + encodeURIComponent("openid profile email");
+
+      // Send browser to Auth0 Universal Login
+      window.location.href = authUrl;
+    }
 
     document.getElementById("submit-passcode").onclick = function () {
       const entered = document.getElementById("chapter-passcode").value.trim();
 
       if (entered === PASSCODE) {
         document.getElementById("passcode-error").style.display = "none";
-        document.getElementById("passcode-section").style.display = "none";
+        document.getElementById("redirect-hint").style.display = "block";
 
-        // Show Auth0 lock
-        document.getElementById("auth0-login-box").style.display = "block";
-        lock.show();
+        // Small delay just so the user sees the message
+        setTimeout(startAuth0Redirect, 500);
       } else {
         document.getElementById("passcode-error").style.display = "block";
       }
     };
-  </script>
 
-  <script>
     function toggleMobileMenu() {
       document.getElementById('main-nav').classList.toggle('open');
     }
