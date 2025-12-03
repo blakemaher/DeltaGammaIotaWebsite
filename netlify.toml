@@ -1,8 +1,8 @@
 [build]
   publish = "."
 
+# Allow all files inside /members to load normally
 [[redirects]]
   from = "/members/*"
   to = "/members/:splat"
   status = 200
-  conditions = { Role = ["member"] }
