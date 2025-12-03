@@ -172,19 +172,19 @@
 
   <!-- SIMPLE AUTH0 REDIRECT FLOW (UNIVERSAL LOGIN) -->
   <script>
-    const AUTH0_DOMAIN   = "dev-vrv7ebflsu4wba1z.us.auth0.com";
+    const AUTH0_DOMAIN    = "dev-vrv7ebflsu4wba1z.us.auth0.com";
     const AUTH0_CLIENT_ID = "oh3uJuWWaU7CMQYLLtY0I9lDxIQyRKRu";
-    const REDIRECT_URI   = "https://bsudeltagammaiota.netlify.app/members/dashboard.html";
+    const REDIRECT_URI    = "https://bsudeltagammaiota.netlify.app/members/dashboard.html";
 
-    const PASSCODE = "1965";
+    const PASSCODE = "1965"; // chapter passcode
 
     function startAuth0Redirect() {
       const authUrl =
         "https://" + AUTH0_DOMAIN + "/authorize" +
-        "?response_type=token%20id_token" +
-        "&client_id=" + encodeURIComponent(AUTH0_CLIENT_ID) +
-        "&redirect_uri=" + encodeURIComponent(REDIRECT_URI) +
-        "&scope=" + encodeURIComponent("openid profile email");
+        "?response_type=" + encodeURIComponent("token") +              // <-- no id_token, so no nonce needed
+        "&client_id="     + encodeURIComponent(AUTH0_CLIENT_ID) +
+        "&redirect_uri="  + encodeURIComponent(REDIRECT_URI) +
+        "&scope="         + encodeURIComponent("openid profile email");
 
       // Send browser to Auth0 Universal Login
       window.location.href = authUrl;
