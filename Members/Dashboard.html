@@ -3,117 +3,99 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Members Dashboard – Delta Gamma Iota</title>
+  <title>Member Dashboard · Delta Gamma Iota</title>
   <link rel="stylesheet" href="../css/styles.css" />
-  <style>
-    body{ background:#FAF9F6; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:#111; }
-    .container{ max-width:1100px; margin:2.5rem auto; padding:1rem; }
-    .card{ background:#fff; padding:1.6rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.06); }
-    .profile { display:flex; gap:1rem; align-items:center; }
-    .profile img{ height:90px; border-radius:50%; object-fit:cover; }
-    .btn { padding:.6rem .95rem; border-radius:8px; font-weight:700; cursor:pointer; border:0; }
-    .btn-primary{ background:#7A0E19; color:#fff; }
-  </style>
 </head>
 <body>
 
-  <!-- Header (same) -->
+  <!-- HEADER -->
   <header class="site-header">
-    <div class="top-bar"><span>1965</span><span>1998</span></div>
-    <div class="header-main">
-      <div class="greek-letters"><span>Δ</span><span>Γ</span><span>Ι</span></div>
-      <div class="chapter-name"><span>DELTA</span><span>GAMMA</span><span>IOTA</span></div>
+    <div class="top-bar">
+      <span>1965</span>
+      <span>1998</span>
     </div>
+
+    <div class="header-main">
+      <div class="greek-letters">
+        <span>Δ</span><span>Γ</span><span>Ι</span>
+      </div>
+      <div class="chapter-name">
+        <span>DELTA</span><span>GAMMA</span><span>IOTA</span>
+      </div>
+    </div>
+
     <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
     <nav id="main-nav" class="main-nav">
       <a href="../index.html">Home</a>
       <a href="../cardinal-beliefs.html">Beliefs</a>
       <a href="../philanthropy.html">Philanthropy</a>
-      <a href="../executive-council.html">Council</a>
+      <a href="../community-service.html">Community Service</a>
+      <a href="../executive-council.html">Executive Council</a>
       <a href="../shop.html">Shop</a>
-      <a href="../dues-donations.html">Dues</a>
+      <a href="../dues-donations.html">Dues & Donations</a>
       <a href="../login.html">Login</a>
     </nav>
   </header>
 
-  <main class="container">
-    <div class="card">
-      <div id="loading" class="note">Checking your login status…</div>
+  <!-- MAIN -->
+  <main class="page-main">
+    <div class="container">
+      <h1 class="page-title">Member Dashboard</h1>
+      <p class="page-subtitle">
+        Welcome to the private members’ area of Delta Gamma Iota.
+        Here you’ll eventually find schedules, announcements, and internal chapter resources.
+      </p>
 
-      <div id="dashboardContent" style="display:none;">
-        <div class="profile">
-          <img id="avatar" src="../assets/crest.png" alt="User avatar">
-          <div>
-            <h2 id="fullName"></h2>
-            <div id="email"></div>
-            <div style="margin-top:6px;">
-              <button id="signout" class="btn btn-primary">Sign Out</button>
-            </div>
-          </div>
+      <section class="quick-links">
+        <div class="card">
+          <h3>Announcements</h3>
+          <p>Post important chapter updates, meetings, and reminders here.</p>
         </div>
-
-        <hr style="margin:1rem 0;">
-        <h3>Member Resources</h3>
-        <p>Welcome to the members area. Add links, schedules, documents, and private content here.</p>
-      </div>
+        <div class="card">
+          <h3>Upcoming Events</h3>
+          <p>Add links to work weeks, socials, philanthropy events, and formals.</p>
+        </div>
+        <div class="card">
+          <h3>Resources</h3>
+          <p>Space for bylaws, contact lists, academic resources, and more.</p>
+        </div>
+      </section>
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-title">Contact Us</div>
+
       <div class="footer-contact">
-        <a href="mailto:deltagammaiota2@gmail.com"><img src="../assets/email-icon.png" class="icon"> deltagammaiota2@gmail.com</a>
-        <a href="https://www.instagram.com/deltagammaiota/?hl=en" target="_blank"><img src="../assets/instagram-icon.png" class="icon"> Instagram</a>
+        <a href="mailto:deltagammaiota2@gmail.com">
+          <img src="../assets/mail.png" class="icon" alt="Email Icon">
+          deltagammaiota2@gmail.com
+        </a>
+
+        <a href="https://www.instagram.com/deltagammaiota" target="_blank">
+          <img src="../assets/instagram.webp" class="icon" alt="Instagram Icon">
+          Instagram
+        </a>
+
+        <a href="https://www.linkedin.com/company/delta-gamma-iota/" target="_blank">
+          <img src="../assets/linkedin.webp" class="icon" alt="LinkedIn Icon">
+          LinkedIn
+        </a>
+      </div>
+
+      <div class="footer-copy">
+        © 2025 Delta Gamma Iota — All Rights Reserved
       </div>
     </div>
   </footer>
 
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
   <script>
-    const AUTH0_DOMAIN = "dev-hu8eek57hiyfzcts.us.auth0.com";
-    const AUTH0_CLIENT_ID = "xjYAzMY8g40A6QiRUcJpeIyWGxMqzA2V";
-
-    let auth0Client;
-    async function protect() {
-      auth0Client = await createAuth0Client({
-        domain: AUTH0_DOMAIN,
-        client_id: AUTH0_CLIENT_ID,
-      });
-
-      // If returning from Auth0 redirect (shouldn't be here often, dashboard is callback)
-      if (window.location.search.includes("code=") && window.location.search.includes("state=")) {
-        try {
-          await auth0Client.handleRedirectCallback();
-          window.history.replaceState({}, document.title, "/members/dashboard.html");
-        } catch (e) {
-          console.error("Callback handling error", e);
-        }
-      }
-
-      const isAuthenticated = await auth0Client.isAuthenticated();
-      if (!isAuthenticated) {
-        // not logged in → redirect to login page
-        window.location.href = "/login.html";
-        return;
-      }
-
-      // Logged in: show info
-      const user = await auth0Client.getUser();
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('dashboardContent').style.display = 'block';
-      document.getElementById('fullName').textContent = user.name || user.email || "Member";
-      document.getElementById('email').textContent = user.email || "";
-      // if user picture is available, use it
-      if (user.picture) document.getElementById('avatar').src = user.picture;
-
-      document.getElementById('signout').addEventListener('click', async () => {
-        await auth0Client.logout({ logoutParams: { returnTo: window.location.origin + "/login.html" } });
-      });
+    function toggleMobileMenu() {
+      document.getElementById('main-nav').classList.toggle('open');
     }
-
-    protect();
-    function toggleMobileMenu(){ document.getElementById('main-nav').classList.toggle('open'); }
   </script>
 </body>
 </html>
