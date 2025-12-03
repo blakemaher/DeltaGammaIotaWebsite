@@ -43,8 +43,9 @@
     <div class="container">
       <h1 class="page-title">Member Dashboard</h1>
       <p class="page-subtitle">
-        Welcome to the private members’ area of Delta Gamma Iota.
-        Here you’ll eventually find schedules, announcements, and internal chapter resources.
+        Welcome, <span id="member-name">Member</span>.<br />
+        This is the private members’ area of Delta Gamma Iota. Here you’ll eventually find schedules,
+        announcements, and internal chapter resources.
       </p>
 
       <section class="quick-links">
@@ -92,10 +93,17 @@
     </div>
   </footer>
 
+  <!-- AUTH + MENU SCRIPTS -->
+  <script src="auth.js"></script>
   <script>
     function toggleMobileMenu() {
       document.getElementById('main-nav').classList.toggle('open');
     }
+
+    // Enforce that only logged-in users can see this page.
+    // If you're just debugging layout and want to see the page without login,
+    // you can temporarily comment out the next line:
+    requireAuth();
   </script>
 </body>
 </html>
