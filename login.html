@@ -3,20 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DGI Member Login</title>
+  <title>DGI Member Login · Delta Gamma Iota</title>
 
   <link rel="stylesheet" href="css/styles.css" />
 
   <style>
+    body {
+      background: #f5f2f2;
+    }
+
     /* LOGIN CARD */
     .login-box {
-      max-width: 360px;
-      margin: 3rem auto;
-      background: white;
-      padding: 2rem 1.75rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      max-width: 380px;
+      margin: 3rem auto 4rem;
+      background: #ffffff;
+      padding: 2.25rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.14);
       text-align: center;
+      border-top: 6px solid #7A0E19;
     }
 
     .crest-login {
@@ -25,8 +30,21 @@
       filter: drop-shadow(0 0 6px rgba(0,0,0,0.25));
     }
 
+    .login-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #7A0E19;
+      margin-bottom: 4px;
+    }
+
+    .login-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
     .chapter-passcode-box {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     #chapter-passcode {
@@ -47,7 +65,7 @@
       border-radius: 6px;
       font-size: 1rem;
       cursor: pointer;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     #submit-passcode:hover {
@@ -57,11 +75,69 @@
     .error-msg {
       color: #b30000;
       font-size: 0.9rem;
-      margin-top: 8px;
+      margin-top: 4px;
     }
 
     .footer-spacer {
       height: 40px;
+    }
+
+    /* POST-PASSCODE SECTION */
+    .post-passcode-box {
+      margin-top: 1.5rem;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .post-passcode-box h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: #7A0E19;
+      font-weight: 700;
+    }
+
+    .post-passcode-box p {
+      margin-bottom: 0.6rem;
+      color: #444;
+    }
+
+    .login-existing-btn {
+      width: 100%;
+      padding: 10px;
+      margin: 0.5rem 0 1rem;
+      background: #222;
+      color: #fff;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .login-existing-btn:hover {
+      background: #000;
+    }
+
+    .signup-link-wrapper {
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
+    .signup-link-wrapper a {
+      color: #7A0E19;
+      font-weight: 600;
+      font-size: 0.97rem;
+      text-decoration: underline;
+    }
+
+    .signup-link-wrapper a:hover {
+      color: #5a0a13;
+    }
+
+    .signup-link-wrapper .note {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 0.25rem;
     }
   </style>
 </head>
@@ -77,14 +153,10 @@
 
     <div class="header-main">
       <div class="greek-letters">
-        <span>Δ</span>
-        <span>Γ</span>
-        <span>Ι</span>
+        <span>Δ</span><span>Γ</span><span>Ι</span>
       </div>
       <div class="chapter-name">
-        <span>DELTA</span>
-        <span>GAMMA</span>
-        <span>IOTA</span>
+        <span>DELTA</span><span>GAMMA</span><span>IOTA</span>
       </div>
     </div>
 
@@ -97,7 +169,7 @@
       <a href="community-service.html">Community Service</a>
       <a href="executive-council.html">Executive Council</a>
       <a href="shop.html">Shop</a>
-      <a href="dues-donations.html">Dues & Donations</a>
+      <a href="dues-donations.html">Dues &amp; Donations</a>
       <a href="login.html" class="active">Login</a>
     </nav>
   </header>
@@ -111,8 +183,8 @@
       <!-- Crest -->
       <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="crest-login" />
 
-      <h2 style="color:#7A0E19; margin-bottom: 6px;">Member Login</h2>
-      <p style="font-size:.9rem; color:#555; margin-bottom:18px;">
+      <div class="login-title">Member Login</div>
+      <p class="login-subtitle">
         Active Members &amp; DGI Alumni Only
       </p>
 
@@ -125,9 +197,34 @@
         </div>
       </div>
 
-      <p id="redirect-hint" style="display:none; font-size:0.85rem; color:#555; margin-top: 10px;">
-        Redirecting to secure DGI login&hellip;
-      </p>
+      <!-- AFTER PASSCODE: EXISTING LOGIN + SIGN UP LINK -->
+      <div id="post-passcode-section" class="post-passcode-box" style="display:none;">
+
+        <h3>Welcome, Brother</h3>
+        <p>
+          If you already have a DGI member account, log in below.<br>
+          If you need an account, click "Sign Up" to submit your information.
+        </p>
+
+        <!-- Existing account login -->
+        <button id="existing-login-btn" class="login-existing-btn">
+          Log In (Existing Account)
+        </button>
+
+        <!-- SIGN UP LINK -->
+        <div class="signup-link-wrapper">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScAcwwaa_5NQX4GKeKEzwabr8elmOIHJH068tpcc9-npfXN2A/viewform?usp=sharing"
+            target="_blank"
+          >
+            Sign Up (Request a Member Account)
+          </a>
+          <div class="note">
+            Opens a secure form to request access. An officer will create your login and send details.
+          </div>
+        </div>
+
+      </div>
 
     </div>
 
@@ -170,7 +267,7 @@
 
 
 
-  <!-- SIMPLE AUTH0 REDIRECT FLOW (UNIVERSAL LOGIN) -->
+  <!-- AUTH0 REDIRECT + PASSCODE LOGIC -->
   <script>
     const AUTH0_DOMAIN    = "dev-vrv7ebflsu4wba1z.us.auth0.com";
     const AUTH0_CLIENT_ID = "oh3uJuWWaU7CMQYLLtY0I9lDxIQyRKRu";
@@ -181,12 +278,11 @@
     function startAuth0Redirect() {
       const authUrl =
         "https://" + AUTH0_DOMAIN + "/authorize" +
-        "?response_type=" + encodeURIComponent("token") +              // <-- no id_token, so no nonce needed
+        "?response_type=" + encodeURIComponent("token") +
         "&client_id="     + encodeURIComponent(AUTH0_CLIENT_ID) +
         "&redirect_uri="  + encodeURIComponent(REDIRECT_URI) +
         "&scope="         + encodeURIComponent("openid profile email");
 
-      // Send browser to Auth0 Universal Login
       window.location.href = authUrl;
     }
 
@@ -195,13 +291,15 @@
 
       if (entered === PASSCODE) {
         document.getElementById("passcode-error").style.display = "none";
-        document.getElementById("redirect-hint").style.display = "block";
-
-        // Small delay just so the user sees the message
-        setTimeout(startAuth0Redirect, 500);
+        document.getElementById("passcode-section").style.display = "none";
+        document.getElementById("post-passcode-section").style.display = "block";
       } else {
         document.getElementById("passcode-error").style.display = "block";
       }
+    };
+
+    document.getElementById("existing-login-btn").onclick = function () {
+      startAuth0Redirect();
     };
 
     function toggleMobileMenu() {
