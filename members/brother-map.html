@@ -5,6 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brother Map · Delta Gamma Iota</title>
   <link rel="stylesheet" href="../css/styles.css" />
+
+  <style>
+    /* Optional: make the map nicely responsive */
+    .map-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .map-frame-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 60%; /* Adjust height ratio (60% ≈ 3:2) */
+      background: #f4f4f4;
+    }
+
+    .map-frame-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
 
@@ -50,15 +74,30 @@
     <div class="container">
       <h1 class="page-title">Brother Map</h1>
       <p class="page-subtitle">
-        Visual overview of where DGI brothers and alumni are located.
-        This can eventually embed Google Maps or another mapping tool.
+        Interactive map of DGI brothers and alumni locations.
       </p>
 
+      <!-- EMBEDDED GOOGLE MY MAPS -->
+      <section class="card map-card">
+        <div class="map-frame-wrapper">
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=1_NmQB2zGXBUUOuD0SSk9KzG2KrcWYxA"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
       <section class="card">
-        <h3>Coming Soon</h3>
+        <h3>About This Map</h3>
         <p>
-          This section will feature an interactive map showing brothers by city/state,
-          plus filters for pledge class, graduation year, and more.
+          Use this map to see where brothers and alumni are living after graduation.
+          You can pan, zoom, and click on markers for more details.
+        </p>
+        <p>
+          If you need to update locations or add new brothers, talk to the chapter officer
+          managing this map so they can edit it directly in Google My Maps.
         </p>
       </section>
     </div>
