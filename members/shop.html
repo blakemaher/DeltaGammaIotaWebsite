@@ -1,52 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shop · Delta Gamma Iota</title>
-  <link rel="stylesheet" href="../css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DGI Shop – Delta Gamma Iota</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    /* PAGE TITLE */
+    .page-title {
+      font-size: 2.6rem;
+      font-family: "Merriweather", serif;
+      font-weight: 900;
+      color: #7A0E19;
+      text-align: center;
+      margin: 3rem 0 0.5rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      color: #555;
+      margin-bottom: 3rem;
+      font-size: 1.05rem;
+    }
+
+    /* PRODUCT GRID */
+    .product-grid {
+      max-width: 1100px;
+      margin: 0 auto 5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+
+    .product-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.07);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      background: #f2f2f2;
+    }
+
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+      font-family: "Merriweather", serif;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 0.7rem;
+    }
+
+    .coming-soon {
+      font-size: 0.9rem;
+      color: #7A0E19;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08rem;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="top-bar">
-      <span>1965</span>
-      <span>1998</span>
-    </div>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="top-bar">
+    <span>1965</span>
+    <span>1998</span>
+  </div>
 
-    <div class="header-main">
-      <div class="greek-letters">
-        <span>Δ</span><span>Γ</span><span>Ι</span>
-      </div>
-      <div class="chapter-name">
-        <span>DELTA</span><span>GAMMA</span><span>IOTA</span>
-      </div>
-    </div>
+  <div class="header-main">
+    <div class="greek-letters"><span>Δ</span><span>Γ</span><span>Ι</span></div>
+    <div class="chapter-name"><span>DELTA</span><span>GAMMA</span><span>IOTA</span></div>
+  </div>
 
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
-    <!-- MEMBER-ONLY NAV -->
-    <nav id="main-nav" class="main-nav">
-      <a href="../index.html">Home</a>
+  <!-- MEMBER-ONLY NAV -->
+  <nav id="main-nav" class="main-nav">
+    <a href="../index.html">Home</a>
 
-      <a href="dashboard.html">Member Dashboard</a>
-      <a href="brother-map.html">Brother Map</a>
-      <a href="phone-book.html">Phone Book</a>
+    <a href="dashboard.html">Member Dashboard</a>
+    <a href="brother-map.html">Brother Map</a>
+    <a href="phone-book.html">Phone Book</a>
 
-      <a href="executive-council.html">Executive Council</a>
-      <a href="shop.html" class="active">Shop</a>
-      <a href="dues-donations.html">Dues &amp; Donations</a>
+    <a href="executive-council.html">Executive Council</a>
+    <a href="shop.html" class="active">Shop</a>
+    <a href="dues-donations.html">Dues &amp; Donations</a>
 
-      <a href="important-links.html">Important Links</a>
-      <a href="annual-schedule.html">Annual Schedule</a>
+    <a href="important-links.html">Important Links</a>
+    <a href="annual-schedule.html">Annual Schedule</a>
 
-      <a href="#" onclick="logout(); return false;">Logout</a>
-    </nav>
-  </header>
+    <a href="#" onclick="logout(); return false;">Logout</a>
+  </nav>
+</header>
 
-  <!-- MAIN CONTENT -->
-<main>
+
+<!-- MAIN CONTENT -->
+<main class="page-main">
   <h1 class="page-title">DGI Shop</h1>
   <p class="page-subtitle">Official merchandise is coming soon. Preview some of the items below.</p>
 
@@ -83,41 +149,47 @@
   </div>
 </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-title">Contact Us</div>
 
-      <div class="footer-contact">
-        <a href="mailto:deltagammaiota2@gmail.com">
-          <img src="../assets/mail.png" class="icon" alt="Email Icon">
-          deltagammaiota2@gmail.com
-        </a>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
 
-        <a href="https://www.instagram.com/deltagammaiota" target="_blank">
-          <img src="../assets/instagram.webp" class="icon" alt="Instagram Icon">
-          Instagram
-        </a>
+    <div class="footer-title">Contact Us</div>
 
-        <a href="https://www.linkedin.com/company/delta-gamma-iota/" target="_blank">
-          <img src="../assets/linkedin.webp" class="icon" alt="LinkedIn Icon">
-          LinkedIn
-        </a>
-      </div>
+    <div class="footer-contact">
 
-      <div class="footer-copy">
-        © 2025 Delta Gamma Iota — All Rights Reserved
-      </div>
+      <a href="mailto:deltagammaiota2@gmail.com">
+        <img src="../assets/mail.png" class="icon" alt="Email Icon">
+        deltagammaiota2@gmail.com
+      </a>
+
+      <a href="https://www.instagram.com/deltagammaiota" target="_blank">
+        <img src="../assets/instagram.webp" class="icon" alt="Instagram Icon">
+        Instagram
+      </a>
+
+      <a href="https://www.linkedin.com/company/delta-gamma-iota/" target="_blank">
+        <img src="../assets/linkedin.webp" class="icon" alt="LinkedIn Icon">
+        LinkedIn
+      </a>
+
     </div>
-  </footer>
 
-  <script src="auth.js"></script>
-  <script>
-    function toggleMobileMenu() {
-      document.getElementById('main-nav').classList.toggle('open');
-    }
+    <div class="footer-copy">
+      © 2025 Delta Gamma Iota — All Rights Reserved
+    </div>
 
-    requireAuth();
-  </script>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+  function toggleMobileMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+
+  requireAuth();
+</script>
+
 </body>
 </html>
