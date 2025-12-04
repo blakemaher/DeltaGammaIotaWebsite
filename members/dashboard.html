@@ -26,15 +26,26 @@
 
     <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
+    <!-- MEMBER-ONLY NAV (used on pages under /members/) -->
     <nav id="main-nav" class="main-nav">
+      <!-- Only tab that takes you back out to the public site + public nav -->
       <a href="../index.html">Home</a>
-      <a href="../cardinal-beliefs.html">Beliefs</a>
-      <a href="../philanthropy.html">Philanthropy</a>
-      <a href="../community-service.html">Community Service</a>
-      <a href="../executive-council.html">Executive Council</a>
-      <a href="../shop.html">Shop</a>
-      <a href="../dues-donations.html">Dues & Donations</a>
-      <a href="../login.html">Login</a>
+
+      <!-- Members-only area tabs (stay inside /members/) -->
+      <a href="dashboard.html" class="active">Member Dashboard</a>
+      <a href="brother-map.html">Brother Map</a>
+      <a href="phone-book.html">Phone Book</a>
+
+      <!-- Member versions of these sections (we’ll create them under /members/) -->
+      <a href="executive-council.html">Executive Council</a>
+      <a href="shop.html">Shop</a>
+      <a href="dues-donations.html">Dues &amp; Donations</a>
+
+      <a href="important-links.html">Important Links</a>
+      <a href="annual-schedule.html">Annual Schedule</a>
+
+      <!-- Logout stays in the member nav -->
+      <a href="#" onclick="logout(); return false;">Logout</a>
     </nav>
   </header>
 
@@ -44,7 +55,7 @@
       <h1 class="page-title">Member Dashboard</h1>
       <p class="page-subtitle">
         Welcome, <span id="member-name">Member</span>.<br />
-        This is the private members’ area of Delta Gamma Iota. Here you’ll eventually find schedules,
+        This is the private members’ area of Delta Gamma Iota. Here you’ll find schedules,
         announcements, and internal chapter resources.
       </p>
 
@@ -100,9 +111,7 @@
       document.getElementById('main-nav').classList.toggle('open');
     }
 
-    // Enforce that only logged-in users can see this page.
-    // If you're just debugging layout and want to see the page without login,
-    // you can temporarily comment out the next line:
+    // Enforce that only logged-in users can see this page
     requireAuth();
   </script>
 </body>
