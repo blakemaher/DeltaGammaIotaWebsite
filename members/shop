@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop · Delta Gamma Iota</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="top-bar">
+      <span>1965</span>
+      <span>1998</span>
+    </div>
+
+    <div class="header-main">
+      <div class="greek-letters">
+        <span>Δ</span><span>Γ</span><span>Ι</span>
+      </div>
+      <div class="chapter-name">
+        <span>DELTA</span><span>GAMMA</span><span>IOTA</span>
+      </div>
+    </div>
+
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+    <!-- MEMBER-ONLY NAV -->
+    <nav id="main-nav" class="main-nav">
+      <a href="../index.html">Home</a>
+
+      <a href="dashboard.html">Member Dashboard</a>
+      <a href="brother-map.html">Brother Map</a>
+      <a href="phone-book.html">Phone Book</a>
+
+      <a href="executive-council.html">Executive Council</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="dues-donations.html">Dues &amp; Donations</a>
+
+      <a href="important-links.html">Important Links</a>
+      <a href="annual-schedule.html">Annual Schedule</a>
+
+      <a href="#" onclick="logout(); return false;">Logout</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="page-main">
+    <div class="container">
+      <h1 class="page-title">Member Shop</h1>
+      <p class="page-subtitle">
+        Private access to DGI apparel, merchandise, and special member-only items.
+      </p>
+
+      <section class="card">
+        <h3>Coming Soon</h3>
+        <p>
+          This page can embed links to an online store, order forms, or a payment portal
+          specifically for members and alumni.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-title">Contact Us</div>
+
+      <div class="footer-contact">
+        <a href="mailto:deltagammaiota2@gmail.com">
+          <img src="../assets/mail.png" class="icon" alt="Email Icon">
+          deltagammaiota2@gmail.com
+        </a>
+
+        <a href="https://www.instagram.com/deltagammaiota" target="_blank">
+          <img src="../assets/instagram.webp" class="icon" alt="Instagram Icon">
+          Instagram
+        </a>
+
+        <a href="https://www.linkedin.com/company/delta-gamma-iota/" target="_blank">
+          <img src="../assets/linkedin.webp" class="icon" alt="LinkedIn Icon">
+          LinkedIn
+        </a>
+      </div>
+
+      <div class="footer-copy">
+        © 2025 Delta Gamma Iota — All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('main-nav').classList.toggle('open');
+    }
+
+    requireAuth();
+  </script>
+</body>
+</html>
