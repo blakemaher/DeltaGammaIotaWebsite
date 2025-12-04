@@ -28,6 +28,17 @@
       width: 100%;
       height: 100%;
     }
+
+    .form-frame-wrapper {
+      width: 100%;
+      min-height: 900px;
+    }
+
+    .form-frame-wrapper iframe {
+      width: 100%;
+      height: 900px;
+      border: 0;
+    }
   </style>
 </head>
 <body>
@@ -74,7 +85,7 @@
     <div class="container">
       <h1 class="page-title">Brother Map</h1>
       <p class="page-subtitle">
-        Interactive map of DGI brothers and alumni locations. Fill out form below!
+        Interactive map of DGI brothers and alumni locations.
       </p>
 
       <!-- EMBEDDED GOOGLE MY MAPS -->
@@ -89,15 +100,32 @@
         </div>
       </section>
 
+      <!-- ABOUT TEXT UNDER THE MAP -->
       <section class="card">
         <h3>About This Map</h3>
         <p>
-          Use this map to see where brothers and alumni are living.
-          You can pan, zoom, and click on markers for more details. Alpha is colored Maroon, Beta is colored Gray, and Gamma is colored Black.
+          Use this map to see where brothers and alumni are living after graduation.
+          You can pan, zoom, and click on markers for more details.
         </p>
         <p>
-          If you need to update locations or add your information, fill out the google forms below the map!
+          If you need to update locations or add new brothers, use the form below so
+          the chapter officer managing this map can keep it up to date.
         </p>
+      </section>
+
+      <!-- GOOGLE FORM EMBEDDED UNDER THE TEXT -->
+      <section class="card">
+        <h3>Update Your Information</h3>
+        <p>
+          Please complete this form to add or update your information for the Brother Map.
+        </p>
+        <div class="form-frame-wrapper">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfWpYS0B71x1E6s99gt2TyqCX8mmR9L7c0lVZMLSn1SVgICRA/viewform?embedded=true"
+            loading="lazy">
+            Loading…
+          </iframe>
+        </div>
       </section>
     </div>
   </main>
