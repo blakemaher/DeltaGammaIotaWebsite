@@ -533,3 +533,23 @@ a {
   opacity: 0.75;
   text-align: left;
 }
+.history-section {
+  padding: 4rem 1rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #7A0E19;
+  font-family: "Merriweather", serif;
+  margin-bottom: 1.8rem;
+}
+
+.history-text {
+  max-width: 900px;
+  margin: 0 auto 1.2rem auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
