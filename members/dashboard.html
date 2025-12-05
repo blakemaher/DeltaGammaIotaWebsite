@@ -5,6 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Member Dashboard · Delta Gamma Iota</title>
   <link rel="stylesheet" href="../css/styles.css" />
+
+  <style>
+    .dashboard-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .dashboard-title {
+      font-family: "Merriweather", serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #7A0E19;
+      margin-bottom: 0.4rem;
+    }
+
+    .dashboard-subtitle {
+      font-size: 1rem;
+      color: #555;
+      max-width: 720px;
+      margin: 0.5rem auto 0;
+      line-height: 1.6;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 4rem;
+    }
+
+    .dashboard-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .dashboard-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      color: #7A0E19;
+      margin-bottom: 0.5rem;
+    }
+
+    .dashboard-card h3 {
+      font-family: "Merriweather", serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+      color: #222;
+    }
+
+    .dashboard-card p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .dashboard-link {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08rem;
+      color: #7A0E19;
+    }
+
+    .dashboard-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
@@ -26,17 +101,14 @@
 
     <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
-    <!-- MEMBER-ONLY NAV (used on pages under /members/) -->
+    <!-- MEMBER-ONLY NAV -->
     <nav id="main-nav" class="main-nav">
-      <!-- Only tab that takes you back out to the public site + public nav -->
       <a href="../index.html">Home</a>
 
-      <!-- Members-only area tabs (stay inside /members/) -->
       <a href="dashboard.html" class="active">Member Dashboard</a>
       <a href="brother-map.html">Brother Map</a>
       <a href="phone-book.html">Phone Book</a>
 
-      <!-- Member versions of these sections (we’ll create them under /members/) -->
       <a href="executive-council.html">Executive Council</a>
       <a href="shop.html">Shop</a>
       <a href="dues-donations.html">Dues &amp; Donations</a>
@@ -44,7 +116,6 @@
       <a href="important-links.html">Important Links</a>
       <a href="annual-schedule.html">Annual Schedule</a>
 
-      <!-- Logout stays in the member nav -->
       <a href="#" onclick="logout(); return false;">Logout</a>
     </nav>
   </header>
@@ -52,27 +123,95 @@
   <!-- MAIN -->
   <main class="page-main">
     <div class="container">
-      <h1 class="page-title">Member Dashboard</h1>
-      <p class="page-subtitle">
-        Welcome, <span id="member-name">Member</span>.<br />
-        This is the private members’ area of Delta Gamma Iota. Here you’ll find schedules,
-        announcements, and internal chapter resources.
-      </p>
 
-      <section class="quick-links">
-        <div class="card">
-          <h3>Announcements</h3>
-          <p>Post important chapter updates, meetings, and reminders here.</p>
+      <div class="dashboard-header">
+        <h1 class="dashboard-title">Member Dashboard</h1>
+        <p class="dashboard-subtitle">
+          Welcome to the private members’ area of Delta Gamma Iota. Here you’ll find key
+          links, upcoming events, and tools to stay connected and engaged with the chapter.
+        </p>
+      </div>
+
+      <section class="dashboard-grid">
+
+        <!-- Get Connected -->
+        <div class="dashboard-card">
+          <div class="dashboard-tag">Connections</div>
+          <h3>Get Connected!</h3>
+          <p>
+            Quickly access chapter communication channels, important documents, and
+            chapter resources used by active brothers and alumni.
+          </p>
+          <a href="important-links.html" class="dashboard-link">Go to Important Links</a>
         </div>
-        <div class="card">
-          <h3>Upcoming Events</h3>
-          <p>Add links to work weeks, socials, philanthropy events, and formals.</p>
+
+        <!-- Help us Grow -->
+        <div class="dashboard-card">
+          <div class="dashboard-tag">Support</div>
+          <h3>Help Us Grow!</h3>
+          <p>
+            Donations and dues directly support the growth, operations, and philanthropy
+            of Delta Gamma Iota, ensuring the chapter’s long-term success.
+          </p>
+          <a href="dues-donations.html" class="dashboard-link">Visit Dues &amp; Donations</a>
         </div>
-        <div class="card">
-          <h3>Resources</h3>
-          <p>Space for bylaws, contact lists, academic resources, and more.</p>
+
+        <!-- Fundraiser section -->
+        <div class="dashboard-card">
+          <div class="dashboard-tag">Fundraising</div>
+          <h3>Fundraiser Opportunities</h3>
+          <p>
+            Stay tuned for upcoming fundraisers, campaigns, and initiatives designed to
+            support chapter projects, scholarships, and philanthropy efforts.
+          </p>
+          <p>
+            Details about active fundraisers will be posted here once finalized.
+          </p>
         </div>
+
+        <!-- Alumni Newsletter -->
+        <div class="dashboard-card">
+          <div class="dashboard-tag">Alumni</div>
+          <h3>Alumni Newsletter (Coming Soon)</h3>
+          <p>
+            A dedicated newsletter for alumni is coming soon, featuring important dates,
+            opportunities to engage, and updates on chapter achievements.
+          </p>
+          <p class="dashboard-note">
+            This will become a regular message system for sharing fraternity-related news.
+          </p>
+        </div>
+
+        <!-- Brotherhood Development Events -->
+        <div class="dashboard-card">
+          <div class="dashboard-tag">Brotherhood</div>
+          <h3>Brotherhood Development Events</h3>
+          <p>
+            Programming focused on leadership, mentorship, and personal growth. Events
+            will be planned throughout the year to strengthen bonds between brothers.
+          </p>
+          <p>
+            Check this section for scheduled brotherhood events and opportunities to get involved.
+          </p>
+        </div>
+
+        <!-- First Fridays / Indy Monthly -->
+        <div class="dashboard-card">
+          <div class="dashboard-tag">Gatherings</div>
+          <h3>Regional Monthly Meetups</h3>
+          <p>
+            <strong>First Fridays up North</strong><br>
+            Established monthly gathering of brothers in the northern region of Indiana.
+          </p>
+          <p>
+            <strong>Indianapolis Monthly Event</strong><br>
+            A recurring event in the Indianapolis area is coming very soon. Final details
+            will be announced once logistics are set.
+          </p>
+        </div>
+
       </section>
+
     </div>
   </main>
 
@@ -104,14 +243,13 @@
     </div>
   </footer>
 
-  <!-- AUTH + MENU SCRIPTS -->
   <script src="auth.js"></script>
   <script>
     function toggleMobileMenu() {
       document.getElementById('main-nav').classList.toggle('open');
     }
 
-    // Enforce that only logged-in users can see this page
+    // Lock this page behind Auth0
     requireAuth();
   </script>
 </body>
