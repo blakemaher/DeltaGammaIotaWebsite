@@ -3,291 +3,293 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Member Dashboard · Delta Gamma Iota</title>
-  <link rel="stylesheet" href="../css/styles.css" />
+  <title>Delta Gamma Iota</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
 
   <style>
-    .dashboard-header {
-      text-align: center;
-      margin-bottom: 2rem;
+    /* --------------------------
+        FULL-WIDTH HERO
+    --------------------------- */
+    .hero-bg {
+      width: 100%;
+      height: 85vh;
+      background-image: url('assets/your-hero-image.jpg'); /* Optional: replace with a real image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .dashboard-title {
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      max-width: 850px;
+      padding: 2rem;
+    }
+
+    .hero-content img {
+      height: 170px;
+      filter: drop-shadow(0 0 12px rgba(0,0,0,0.4));
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 900;
       font-family: "Merriweather", serif;
-      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    /* --------------------------
+        CONTENT SECTIONS
+    --------------------------- */
+    .section-title {
+      text-align: center;
+      font-size: 2.3rem;
+      font-family: "Merriweather", serif;
       font-weight: 900;
       color: #7A0E19;
-      margin-bottom: 0.4rem;
+      margin: 3.5rem 0 1.5rem;
     }
 
-    .dashboard-subtitle {
-      color: #555;
-      font-size: 1.02rem;
-      max-width: 700px;
-      margin: 0.5rem auto 0;
-      line-height: 1.6;
+    .history-text {
+      max-width: 900px;
+      margin: 0 auto 1.3rem;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #444;
     }
 
-    .dashboard-grid {
+    .quick-links {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
-      margin-bottom: 3rem;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto 5rem;
+      padding: 1rem;
     }
 
-    .dash-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 1.7rem 1.6rem;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-      border: 1px solid rgba(0,0,0,0.06);
+    .card {
+      background: white;
+      padding: 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      text-align: center;
     }
 
-    .dash-card h3 {
-      font-family: "Merriweather", serif;
-      font-size: 1.35rem;
+    .card h3 {
       margin-bottom: 0.5rem;
-      color: #222;
     }
 
-    .dash-card p {
-      font-size: 0.98rem;
+    .card p {
+      font-size: 0.95rem;
       color: #555;
       line-height: 1.6;
-      margin-bottom: 0.9rem;
     }
 
-    .dash-link {
+    .link {
       display: inline-block;
-      font-size: 0.92rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08rem;
+      margin-top: 1rem;
       color: #7A0E19;
+      font-weight: bold;
     }
 
-    .dash-link:hover {
+    .link:hover {
       text-decoration: underline;
     }
 
-    .dashboard-section-title {
-      font-family: "Merriweather", serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      margin: 0 0 1rem;
-      color: #333;
-    }
-
-    .events-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 4rem;
-    }
-
-    .event-tag {
-      display: inline-block;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      font-weight: 600;
-      color: #7A0E19;
-      margin-bottom: 0.4rem;
-    }
-
-    .event-location {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #333;
-      margin-bottom: 0.4rem;
-    }
-
-    .event-note {
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    @media (max-width: 768px) {
-      .dashboard-title {
-        font-size: 2rem;
-      }
-    }
+    /* Reveal Animation (optional but nice) */
+    .reveal { opacity: 0; transform: translateY(45px); transition: 1s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
   </style>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="top-bar">
-      <span>1965</span>
-      <span>1998</span>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="top-bar">
+    <span>1965</span>
+    <span>1998</span>
+  </div>
+
+  <div class="header-main">
+    <div class="greek-letters">
+      <span>Δ</span><span>Γ</span><span>Ι</span>
+    </div>
+    <div class="chapter-name">
+      <span>DELTA</span><span>GAMMA</span><span>IOTA</span>
+    </div>
+  </div>
+
+  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+  <nav id="main-nav" class="main-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="cardinal-beliefs.html">Beliefs</a>
+    <a href="philanthropy.html">Philanthropy</a>
+    <a href="community-service.html">Community Service</a>
+    <a href="executive-council.html">Executive Council</a>
+    <a href="shop.html">Shop</a>
+    <a href="dues-donations.html">Dues &amp; Donations</a>
+    <a href="login.html">Login</a> <!-- <- PUBLIC LOGIN ONLY, NO DASHBOARD HERE -->
+  </nav>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero-bg">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <img src="assets/crest.png" alt="Delta Gamma Iota Crest">
+
+    <h1 class="hero-title">Shaping Men of Honor, Purpose, and Brotherhood.</h1>
+
+    <p class="hero-sub">
+      For generations, Delta Gamma Iota has fostered excellence through leadership,
+      academic ambition, resilience, and an unbreakable bond of brotherhood. We are 
+      committed to forming men of integrity who uplift their communities and each other.
+    </p>
+  </div>
+</section>
+
+
+<!-- HISTORY SECTION -->
+<section class="reveal">
+  <h2 class="section-title">Our History</h2>
+
+  <p class="history-text">
+    Delta Gamma Iota was founded in 1965 at Vincennes University in Vincennes, IN.
+    Delta Gamma Iota was founded on 3 principals: Diligence, Brotherhood, and Integrity.
+    In hopes of betterment, Delta Gamma Iota went national as Sigma Phi Epsilon in 1973.
+    In 1992, Sigma Phi Epsilon pulled out all charters at 2 year schools because of revenue.
+    The remaining Brothers were determined to start over and continue the tradition of 
+    Brotherhood, and did so by re-founding themselves as Delta Gamma Iota on December 5, 1993.
+  </p>
+
+  <p class="history-text">
+    In the Fall of 1997, two Brothers from the Alpha Chapter went on to continue their 
+    education at Ball State University. These two men wanted to bring the bond they 
+    shared among their Brothers at Vincennes to Ball State. They sat in a dorm room with 
+    an incredibly large Greek community and began to form the newest chapter of 
+    Delta Gamma Iota. A few more brothers from the Alpha Chapter enrolled at Ball State, 
+    Founding Fathers were recruited, and the Gamma Chapter of Delta Gamma Iota was 
+    founded on February 7, 1998. Ball State University officially recognized the Gamma 
+    Chapter of Delta Gamma Iota on February 17th, 1999.
+  </p>
+
+  <p class="history-text">
+    Since our founding, many pledge classes have passed through the halls of Delta 
+    Gamma Iota, and all these men continue to pass the bond of Brotherhood to future 
+    Brothers. These young men that are involved in the active chapter continue to 
+    carry out our legacy, now 60 years of excellence!
+  </p>
+</section>
+
+
+<!-- EXPLORE SECTION -->
+<section class="reveal">
+  <h2 class="section-title">Explore Delta Gamma Iota</h2>
+
+  <div class="quick-links">
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>
+        We develop leaders, scholars, and men of character—anchored in brotherhood,
+        guided by purpose, and united through shared values.
+      </p>
+      <a class="link" href="cardinal-beliefs.html">Read our beliefs</a>
     </div>
 
-    <div class="header-main">
-      <div class="greek-letters">
-        <span>Δ</span><span>Γ</span><span>Ι</span>
-      </div>
-      <div class="chapter-name">
-        <span>DELTA</span><span>GAMMA</span><span>IOTA</span>
-      </div>
+    <div class="card">
+      <h3>Philanthropy</h3>
+      <p>
+        Through service and charity, our brothers create meaningful impact in Muncie and beyond.
+      </p>
+      <a class="link" href="philanthropy.html">View philanthropy</a>
     </div>
 
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-
-    <!-- MEMBER-ONLY NAV -->
-    <nav id="main-nav" class="main-nav">
-      <!-- Home takes you out of member area back to public site -->
-      <a href="../index.html">Home</a>
-
-      <a href="dashboard.html" class="active">Member Dashboard</a>
-      <a href="brother-map.html">Brother Map</a>
-      <a href="phone-book.html">Phone Book</a>
-
-      <a href="executive-council.html">Executive Council</a>
-      <a href="shop.html">Shop</a>
-      <a href="dues-donations.html">Dues &amp; Donations</a>
-
-      <a href="important-links.html">Important Links</a>
-      <a href="annual-schedule.html">Annual Schedule</a>
-
-      <a href="#" onclick="logout(); return false;">Logout</a>
-    </nav>
-  </header>
-
-  <!-- MAIN -->
-  <main class="page-main">
-    <div class="container">
-
-      <!-- DASHBOARD HEADER -->
-      <div class="dashboard-header">
-        <h1 class="dashboard-title">Member Dashboard</h1>
-        <p class="dashboard-subtitle">
-          Welcome to the private member hub of Delta Gamma Iota. Use this space to stay connected,
-          support the chapter, and stay informed about upcoming events and opportunities.
-        </p>
-      </div>
-
-      <!-- TOP DASHBOARD CARDS -->
-      <section class="dashboard-grid">
-        <!-- Get Connected -->
-        <div class="dash-card">
-          <h3>Get Connected!</h3>
-          <p>
-            Stay in the loop with key chapter links, group chats, and platforms that keep
-            brothers and alumni plugged in to everything Delta Gamma Iota.
-          </p>
-          <a href="important-links.html" class="dash-link">Go to Important Links →</a>
-        </div>
-
-        <!-- Help Us Grow -->
-        <div class="dash-card">
-          <h3>Help Us Grow!</h3>
-          <p>
-            Every contribution—large or small—helps support scholarships, events, and the
-            long-term stability of our brotherhood. Your support directly fuels our mission.
-          </p>
-          <a href="dues-donations.html" class="dash-link">Support Dues &amp; Donations →</a>
-        </div>
-
-        <!-- Fundraiser Section -->
-        <div class="dash-card">
-          <h3>Fundraisers</h3>
-          <p>
-            Stay tuned for active and upcoming fundraisers that support the chapter's
-            operations, philanthropy efforts, and long-term projects.
-          </p>
-          <p class="event-note">
-            Upcoming fundraiser details will appear here as they are scheduled.
-          </p>
-        </div>
-
-        <!-- Alumni Newsletter -->
-        <div class="dash-card">
-          <h3>Alumni Newsletter (Coming Soon)</h3>
-          <p>
-            We are developing an Alumni Newsletter system that will send out important 
-            dates, opportunities, and information about anything fraternity related.
-          </p>
-          <p class="event-note">
-            Once live, brothers and alumni will be able to opt in to regular email updates.
-          </p>
-        </div>
-      </section>
-
-      <!-- BROTHERHOOD DEVELOPMENT EVENTS -->
-      <section>
-        <h2 class="dashboard-section-title">Brotherhood Development Events</h2>
-        <div class="events-grid">
-
-          <!-- First Fridays up North -->
-          <div class="dash-card">
-            <div class="event-tag">Ongoing Event</div>
-            <h3>First Fridays up North</h3>
-            <p class="event-location">Northern Indiana Region</p>
-            <p>
-              Established monthly gathering of brothers in the northern region of Indiana.
-              A space to reconnect, network, and continue building the bond of brotherhood
-              beyond the college years.
-            </p>
-          </div>
-
-          <!-- Indianapolis Monthly Event -->
-          <div class="dash-card">
-            <div class="event-tag">Coming Soon</div>
-            <h3>Indianapolis Monthly Event</h3>
-            <p class="event-location">Indianapolis Area</p>
-            <p>
-              A dedicated monthly event in the Indianapolis area is coming soon. This will serve
-              as a regular touchpoint for brothers living in or around Indy to stay connected and
-              engaged with the fraternity.
-            </p>
-            <p class="event-note">
-              Details will be announced on the Member Dashboard and in future communications.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
+    <div class="card">
+      <h3>Members Area</h3>
+      <p>
+        Access schedules, announcements, and chapter resources in the secure member portal.
+      </p>
+      <a class="link" href="login.html">Login to members area</a>
     </div>
-  </main>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-title">Contact Us</div>
 
-      <div class="footer-contact">
-        <a href="mailto:deltagammaiota2@gmail.com">
-          <img src="../assets/mail.png" class="icon" alt="Email Icon">
-          deltagammaiota2@gmail.com
-        </a>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
 
-        <a href="https://www.instagram.com/deltagammaiota" target="_blank">
-          <img src="../assets/instagram.webp" class="icon" alt="Instagram Icon">
-          Instagram
-        </a>
+    <div class="footer-title">Contact Us</div>
 
-        <a href="https://www.linkedin.com/company/delta-gamma-iota/" target="_blank">
-          <img src="../assets/linkedin.webp" class="icon" alt="LinkedIn Icon">
-          LinkedIn
-        </a>
-      </div>
+    <div class="footer-contact">
+      <a href="mailto:deltagammaiota2@gmail.com">
+        <img src="assets/mail.png" class="icon" alt="Email Icon">
+        deltagammaiota2@gmail.com
+      </a>
 
-      <div class="footer-copy">
-        © 2025 Delta Gamma Iota — All Rights Reserved
-      </div>
+      <a href="https://www.instagram.com/deltagammaiota" target="_blank">
+        <img src="assets/instagram.webp" class="icon" alt="Instagram Icon">
+        Instagram
+      </a>
+
+      <a href="https://www.linkedin.com/company/delta-gamma-iota/" target="_blank">
+        <img src="assets/linkedin.webp" class="icon" alt="LinkedIn Icon">
+        LinkedIn
+      </a>
     </div>
-  </footer>
 
-  <script src="auth.js"></script>
-  <script>
-    function toggleMobileMenu() {
-      document.getElementById('main-nav').classList.toggle('open');
-    }
+    <div class="footer-copy">
+      © 2025 Delta Gamma Iota — All Rights Reserved
+    </div>
 
-    // Require login for this page
-    requireAuth();
-  </script>
+  </div>
+</footer>
+
+
+<script>
+  function toggleMobileMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+
+  // Optional: simple scroll reveal
+  function revealOnScroll() {
+    document.querySelectorAll(".reveal").forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
+</script>
+
 </body>
 </html>
