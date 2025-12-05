@@ -5,6 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Annual Schedule · Delta Gamma Iota</title>
   <link rel="stylesheet" href="../css/styles.css" />
+
+  <style>
+    .schedule-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .schedule-title {
+      font-family: "Merriweather", serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #7A0E19;
+      margin-bottom: 0.4rem;
+    }
+
+    .schedule-subtitle {
+      font-size: 1rem;
+      color: #555;
+      max-width: 700px;
+      margin: 0.5rem auto 0;
+      line-height: 1.6;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 4rem;
+    }
+
+    .schedule-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .schedule-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      color: #7A0E19;
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-card h3 {
+      font-family: "Merriweather", serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+      color: #222;
+    }
+
+    .schedule-when {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.4rem;
+    }
+
+    .schedule-desc {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .schedule-note {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 768px) {
+      .schedule-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -48,26 +128,89 @@
   <!-- MAIN -->
   <main class="page-main">
     <div class="container">
-      <h1 class="page-title">Annual Schedule</h1>
-      <p class="page-subtitle">
-        High-level view of DGI events across the full academic year.
-      </p>
 
-      <section class="card">
-        <h3>Semester Overview</h3>
-        <p>
-          Use this section to outline major events: recruitment, initiation, formals, philanthropy,
-          service projects, and key chapter deadlines.
+      <div class="schedule-header">
+        <h1 class="schedule-title">Annual Schedule</h1>
+        <p class="schedule-subtitle">
+          A high-level look at key events, traditions, and upcoming dates for Delta Gamma Iota.
+          Check back frequently as details are announced and finalized throughout the year.
         </p>
+      </div>
+
+      <section class="schedule-grid">
+
+        <!-- RIT SCHEDULE -->
+        <div class="schedule-card">
+          <div class="schedule-tag">Chapter Rites</div>
+          <h3>Rit Schedule</h3>
+          <p class="schedule-when">
+            To be announced before the date of January 5th 2026!
+          </p>
+          <p class="schedule-desc">
+            Formal rites and associated events will be communicated to all active members and
+            invited alumni well in advance. Ensure your contact information is up to date so
+            you receive all official notices.
+          </p>
+        </div>
+
+        <!-- SPRING RUSH -->
+        <div class="schedule-card">
+          <div class="schedule-tag">Recruitment</div>
+          <h3>Spring 2026 Rush</h3>
+          <p class="schedule-when">
+            Spring 2026 Rush Schedule coming soon!
+          </p>
+          <p class="schedule-desc">
+            The Spring 2026 Rush period will introduce potential new members to the values,
+            traditions, and brotherhood of Delta Gamma Iota. Specific dates, events, and
+            requirements will be published as we approach the term.
+          </p>
+        </div>
+
+        <!-- FOUNDER'S DAY -->
+        <div class="schedule-card">
+          <div class="schedule-tag">Tradition</div>
+          <h3>Founder’s Day Festivities</h3>
+          <p class="schedule-when">
+            February 7th — More details soon.
+          </p>
+          <p class="schedule-desc">
+            Founder’s Day is an annual celebration of the men who established our brotherhood
+            and the legacy we continue to build today. Expect a mix of formal programming and
+            opportunities for connection among active brothers and alumni.
+          </p>
+        </div>
+
+        <!-- POTLUCK -->
+        <div class="schedule-card">
+          <div class="schedule-tag">Family Friendly</div>
+          <h3>Upcoming Family Friendly Potluck</h3>
+          <p class="schedule-when">
+            To be announced…
+          </p>
+          <p class="schedule-desc">
+            A relaxed, family-inclusive gathering where brothers can bring loved ones, share a
+            meal, and strengthen bonds across generations. Final date, time, and location will
+            be announced as plans are confirmed.
+          </p>
+        </div>
+
+        <!-- SUMMER CHAPTER DATE -->
+        <div class="schedule-card">
+          <div class="schedule-tag">Summer Gathering</div>
+          <h3>Summer Chapter Date</h3>
+          <p class="schedule-when">
+            To be announced…
+          </p>
+          <p class="schedule-desc">
+            A summertime opportunity for brothers and alumni to reconnect, reflect on the
+            chapter’s progress, and look ahead to the coming academic year. More information
+            will be shared as details are finalized.
+          </p>
+        </div>
+
       </section>
 
-      <section class="card">
-        <h3>Downloadable Calendars</h3>
-        <p>
-          Link downloadable PDFs, Google Calendar links, or ICS files so brothers can quickly
-          add events to their personal calendars.
-        </p>
-      </section>
     </div>
   </main>
 
