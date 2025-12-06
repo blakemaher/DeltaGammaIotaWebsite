@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Community Service – Delta Gamma Iota</title>
   <link rel="stylesheet" href="../css/styles.css">
+
   <style>
     body, h1, h2, p, a, span {
       font-family: "Segoe UI", "Inter", Helvetica, Arial, sans-serif;
@@ -29,6 +30,7 @@
       line-height: 1.7;
     }
 
+    /* GRID FOR EACH SERVICE BLOCK */
     .service-section {
       max-width: 1100px;
       margin: 0 auto 4rem;
@@ -40,14 +42,17 @@
 
     @media (min-width: 900px) {
       .service-section {
-        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-columns: 0.9fr 1.1fr;
         align-items: center;
+      }
+      .reverse {
+        grid-template-columns: 1.1fr 0.9fr;
       }
     }
 
     .service-card {
       background: #fff;
-      padding: 2rem 2rem;
+      padding: 2rem;
       border-radius: 14px;
       border: 1px solid rgba(0,0,0,0.08);
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
@@ -75,7 +80,6 @@
     }
   </style>
 </head>
-
 <body>
 
 <!-- HEADER -->
@@ -83,7 +87,6 @@
   <div class="top-bar">
     <span>1965</span><span>1998</span>
   </div>
-
   <div class="header-main">
     <div class="greek-letters"><span>Δ</span><span>Γ</span><span>Ι</span></div>
     <div class="chapter-name"><span>DELTA</span><span>GAMMA</span><span>IOTA</span></div>
@@ -106,45 +109,20 @@
 <!-- MAIN CONTENT -->
 <main>
   <h1 class="page-title">Community Service</h1>
-
   <p class="page-subtitle">
-    Delta Gamma Iota is committed to serving the Muncie community through hands-on volunteerism.
-    Below are some of the major service efforts our active chapter participates in throughout the year.
+    Delta Gamma Iota is committed to serving the Muncie community through meaningful and consistent volunteer work.
+    Below are two highlights of our chapter’s annual service efforts.
   </p>
 
-  <!-- ===========================================================
-       NEW SECTION: MUNCIE ANIMAL SHELTER (with image0 + image1)
-  ============================================================ -->
-  <div class="service-section">
-
-    <!-- TEXT -->
-    <div class="service-card">
-      <h2>Muncie Animal Shelter Support</h2>
-      <p>
-        Brothers of Delta Gamma Iota dedicate time each semester to assisting the Muncie Animal
-        Shelter. Our service includes cleaning kennels, organizing supplies, walking dogs,
-        and spending time socializing with animals waiting for adoption.
-      </p>
-      <p>
-        This volunteer work is meaningful to our chapter because it directly benefits vulnerable
-        animals in our community while supporting an organization that relies heavily on
-        volunteer assistance. The shelter staff consistently praises the professionalism,
-        kindness, and hard work of our brothers.
-      </p>
-    </div>
-
+  <!-- SECTION 1 — HOLIDAYS AT GRESHAM (IMAGES LEFT, TEXT RIGHT) -->
+  <div class="service-section reverse">
     <!-- IMAGES -->
     <div class="image-stack">
-      <img src="../assets/image0.jpeg" alt="Brothers helping at Muncie Animal Shelter">
-      <img src="../assets/image1.jpeg" alt="Delta Gamma Iota volunteering with animals">
+      <img src="../assets/greshamone.png" alt="Holidays at Gresham Event">
+      <img src="../assets/greshamtwo.png" alt="Gresham Christmas Lights">
+      <img src="../assets/image0.jpeg" alt="Chapter volunteering at Gresham">
+      <img src="../assets/image1.jpeg" alt="Brothers helping with event setup">
     </div>
-
-  </div>
-
-  <!-- ===========================================================
-       EXISTING SECTION: HOLIDAYS AT GRESHAM
-  ============================================================ -->
-  <div class="service-section">
 
     <!-- TEXT -->
     <div class="service-card">
@@ -152,21 +130,36 @@
       <p>
         Holidays at Gresham is an annual drive-through Christmas light experience hosted by
         Meridian Health Services at the Suzanne Gresham Center. Thousands of families attend
-        each year to enjoy the festive displays.
+        each year to enjoy the beautiful displays and holiday atmosphere.
       </p>
       <p>
-        Our brothers volunteer by dressing in holiday-themed outfits and assisting with traffic
-        flow, greeting families, and ensuring the event runs smoothly. It is one of our most
-        cherished opportunities to give back and bring joy to the Muncie community.
+        Our brothers volunteer by assisting with traffic flow, greeting families, supporting
+        event staff, and contributing to the cheerful atmosphere. It is one of our most
+        cherished long-standing traditions of giving back to the Muncie community.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 2 — MUNCIE ANIMAL SHELTER -->
+  <div class="service-section">
+    <div class="service-card">
+      <h2>Muncie Animal Shelter Support</h2>
+      <p>
+        The brothers of Delta Gamma Iota proudly support the Muncie Animal Shelter through
+        ongoing volunteer initiatives. Members participate in shelter clean‑ups, dog walking,
+        play sessions, and event support — helping improve the day‑to‑day comfort and
+        well‑being of the animals.
+      </p>
+      <p>
+        This service not only strengthens our chapter’s commitment to compassion and community,
+        but also provides much‑needed hands‑on help to a vital local organization.
       </p>
     </div>
 
-    <!-- IMAGES -->
     <div class="image-stack">
-      <img src="../assets/greshamone.png" alt="Holidays at Gresham Event">
-      <img src="../assets/greshamtwo.png" alt="Gresham Christmas Lights">
+      <img src="../assets/image0.jpeg" alt="Brothers volunteering at the animal shelter">
+      <img src="../assets/image1.jpeg" alt="Cleaning and supporting the Muncie Animal Shelter">
     </div>
-
   </div>
 
 </main>
@@ -175,6 +168,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-title">Contact Us</div>
+
     <div class="footer-contact">
       <a href="mailto:deltagammaiota2@gmail.com">
         <img src="assets/mail.png" class="icon" alt="Email Icon">
