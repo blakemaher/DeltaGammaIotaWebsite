@@ -1,123 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Community Service – Delta Gamma Iota</title>
-
-  <link rel="stylesheet" href="../css/styles.css">
-
-  <style>
-    body, h1, h2, p, a, span {
-      font-family: "Segoe UI", "Inter", Helvetica, Arial, sans-serif;
-      letter-spacing: .2px;
-    }
-
-    .page-title {
-      font-family: "Merriweather", serif;
-      font-size: 2.6rem;
-      font-weight: 900;
-      text-align: center;
-      color: #7A0E19;
-      margin-top: 3rem;
-    }
-
-    .page-subtitle {
-      text-align: center;
-      color: #555;
-      font-size: 1.05rem;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-      line-height: 1.7;
-    }
-
-    .service-section {
-      max-width: 1100px;
-      margin: 0 auto 4rem;
-      padding: 0 1rem;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    @media (min-width: 900px) {
-      .service-section {
-        grid-template-columns: 1.1fr 0.9fr;
-        align-items: center;
-      }
-    }
-
-    .service-card {
-      background: #fff;
-      padding: 2rem 2rem;
-      border-radius: 14px;
-      border: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-    }
-
-    .service-card h2 {
-      font-family: "Merriweather", serif;
-      font-size: 1.9rem;
-      margin-bottom: 0.7rem;
-      color: #222;
-    }
-
-    .service-card p {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: #333;
-      margin-bottom: 0.8rem;
-    }
-
-    .image-stack img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header class="site-header">
-  <div class="top-bar">
-    <span>1965</span><span>1998</span>
-  </div>
-
-  <div class="header-main">
-    <div class="greek-letters"><span>Δ</span><span>Γ</span><span>Ι</span></div>
-    <div class="chapter-name"><span>DELTA</span><span>GAMMA</span><span>IOTA</span></div>
-  </div>
-
-  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-
-  <nav id="main-nav" class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="cardinal-beliefs.html">Beliefs</a>
-    <a href="philanthropy.html">Philanthropy</a>
-    <a href="community-service.html" class="active">Community Service</a>
-    <a href="executive-council.html">Executive Council</a>
-    <a href="shop.html">Shop</a>
-    <a href="dues-donations.html">Dues & Donations</a>
-    <a href="login.html">Login</a>
-  </nav>
-</header>
-
-
-<!-- MAIN CONTENT -->
 <main>
-
   <h1 class="page-title">Community Service</h1>
   <p class="page-subtitle">
     Delta Gamma Iota is committed to serving the Muncie community through hands-on volunteerism.
-    One of our signature annual service traditions is highlighted below.
+    Below are a few highlights of our chapter's contributions.
   </p>
 
+  <!-- ========================= -->
+  <!-- NEW ANIMAL SHELTER SECTION -->
+  <!-- ========================= -->
   <div class="service-section">
+    <!-- IMAGES FIRST -->
+    <div class="image-stack">
+      <img src="../assets/image0.jpeg" alt="Brothers volunteering at Muncie Animal Shelter">
+      <img src="../assets/image1.jpeg" alt="Community service with Muncie Animal Shelter">
+    </div>
 
     <!-- TEXT CARD -->
+    <div class="service-card">
+      <h2>Muncie Animal Shelter Volunteer Work</h2>
+      <p>
+        Our active chapter regularly volunteers at the Muncie Animal Shelter,
+        assisting with cleaning, organizing supplies, walking dogs, and supporting
+        day‑to‑day operations.
+      </p>
+      <p>
+        These visits strengthen our commitment to community engagement and provide
+        essential help to an organization that serves hundreds of animals every year.
+        Brothers enjoy making a direct impact and giving their time to improve the
+        wellbeing of animals in need.
+      </p>
+    </div>
+  </div>
+
+  <!-- ====================== -->
+  <!-- EXISTING GRESHAM EVENT -->
+  <!-- ====================== -->
+  <div class="service-section">
     <div class="service-card">
       <h2>Holidays at Gresham</h2>
       <p>
@@ -132,56 +50,9 @@
       </p>
     </div>
 
-    <!-- IMAGES -->
     <div class="image-stack">
       <img src="../assets/greshamone.png" alt="Holidays at Gresham Event">
       <img src="../assets/greshamtwo.png" alt="Gresham Christmas Lights">
     </div>
-
   </div>
-
 </main>
-
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <div class="footer-title">Contact Us</div>
-
-    <div class="footer-contact">
-
-      <a href="mailto:deltagammaiota2@gmail.com">
-        <img src="assets/mail.png" class="icon" alt="Email Icon">
-        deltagammaiota2@gmail.com
-      </a>
-
-      <a href="https://www.instagram.com/deltagammaiota" target="_blank">
-        <img src="assets/instagram.webp" class="icon" alt="Instagram Icon">
-        Instagram
-      </a>
-
-      <a href="https://www.linkedin.com/company/delta-gamma-iota/" target="_blank">
-        <img src="assets/linkedin.webp" class="icon" alt="LinkedIn Icon">
-        LinkedIn
-      </a>
-
-    </div>
-
-    <div class="footer-copy">
-      © 2025 Delta Gamma Iota — All Rights Reserved
-    </div>
-
-  </div>
-</footer>
-
-
-
-<script>
-function toggleMobileMenu() {
-  document.getElementById('main-nav').classList.toggle('open');
-}
-</script>
-
-</body>
-</html>
