@@ -157,17 +157,117 @@
         </div>
 
         <!-- Fundraiser section -->
-        <div class="dashboard-card">
-          <div class="dashboard-tag">Fundraising</div>
-          <h3>Fundraiser Opportunities</h3>
-          <p>
-            Stay tuned for upcoming fundraisers, campaigns, and initiatives designed to
-            support chapter projects, scholarships, and philanthropy efforts.
-          </p>
-          <p>
-            Details about active fundraisers will be posted here once finalized.
-          </p>
-        </div>
+<div class="dashboard-card">
+  <div class="dashboard-tag">Fundraising</div>
+  <h3>Active Fundraisers</h3>
+
+  <!-- STAR WARS SHADOW BOX AUCTION -->
+  <h4 style="margin-top: 0.6rem; color:#7A0E19;">⭐ Star Wars Shadow Box Auction</h4>
+  <p>
+    Two handcrafted Star Wars shadow boxes are being auctioned to raise funds for chapter operations.
+    <br><strong>1 entry for $5 • 3 entries for $10</strong>
+    <br>Deadline: <strong>Friday, December 19th</strong>
+    <br>Drawing: <strong>December 20th</strong>
+  </p>
+
+  <!-- Shadow box slider -->
+  <div class="shadow-slider" style="margin: 0.8rem 0;">
+    <div class="shadow-slides" style="position:relative; width:100%; max-width:440px; margin:0 auto;">
+      <img src="../assets/box-1.jpg" alt="Shadow Box 1"
+           style="width:100%; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.15); display:block;">
+      <img src="../assets/box-2.jpg" alt="Shadow Box 2"
+           style="width:100%; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.15); display:none;">
+    </div>
+
+    <div style="display:flex; justify-content:center; align-items:center; gap:0.75rem; margin-top:0.6rem;">
+      <button type="button" class="shadow-prev"
+              style="border:none; background:#7A0E19; color:#fff; border-radius:50%; width:32px; height:32px; font-size:1.1rem; cursor:pointer;">
+        ‹
+      </button>
+
+      <div class="shadow-dots" style="display:flex; gap:0.4rem; font-size:0.7rem;">
+        <span data-slide="0" style="cursor:pointer; opacity:1;">●</span>
+        <span data-slide="1" style="cursor:pointer; opacity:0.4;">●</span>
+      </div>
+
+      <button type="button" class="shadow-next"
+              style="border:none; background:#7A0E19; color:#fff; border-radius:50%; width:32px; height:32px; font-size:1.1rem; cursor:pointer;">
+        ›
+      </button>
+    </div>
+  </div>
+
+  <hr style="margin: 1.4rem 0; border: none; border-top: 1px solid #eee;">
+
+  <!-- DELT WORK FORCE AUCTION -->
+  <h4 style="color:#7A0E19;">💼 Delt Work Force Auction</h4>
+  <p>
+    Support the chapter by bidding on labor groups of hardworking brothers.
+    <br><strong>No money will be collected until the group has fulfilled their work.</strong>
+  </p>
+
+  <div style="margin-top: 0.8rem;">
+    <strong>Group 1:</strong><br>
+    Lanzell Monroe (Neophyte), Jacob Thompson (172), Dylan Cakora (164), Trevor Kilgore (Neophyte)
+    <br><br>
+
+    <strong>Group 2:</strong><br>
+    Taven Schrock (173), Jordan Dick (171), Dabrion Eversley (176), Nick Williams (Neophyte)
+    <br><br>
+
+    <strong>Group 3:</strong><br>
+    Colin Yoder (174), Alexander Lammers (175), Isaiah Grady (169), William Rouse (170)
+  </div>
+
+  <hr style="margin: 1.4rem 0; border: none; border-top: 1px solid #eee;">
+
+  <!-- GUN RAFFLE -->
+  <h4 style="color:#7A0E19;">🔫 Gun Raffle – Highsmith Guns</h4>
+  <p>
+    A new firearm raffle is being organized in partnership with Highsmith Guns.
+    Full details, pricing, and official rules will be announced soon.
+  </p>
+</div>
+
+<script>
+  (function () {
+    const slider = document.querySelector('.shadow-slider');
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll('.shadow-slides img');
+    const dots = slider.querySelectorAll('.shadow-dots span');
+    const prevBtn = slider.querySelector('.shadow-prev');
+    const nextBtn = slider.querySelector('.shadow-next');
+
+    let current = 0;
+
+    function showSlide(index) {
+      if (!slides.length) return;
+      slides[current].style.display = 'none';
+      dots[current].style.opacity = '0.4';
+
+      current = (index + slides.length) % slides.length;
+
+      slides[current].style.display = 'block';
+      dots[current].style.opacity = '1';
+    }
+
+    prevBtn.addEventListener('click', function () {
+      showSlide(current - 1);
+    });
+
+    nextBtn.addEventListener('click', function () {
+      showSlide(current + 1);
+    });
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        showSlide(i);
+      });
+    });
+  })();
+</script>
+
 
         <!-- Alumni Newsletter -->
         <div class="dashboard-card">
