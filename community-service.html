@@ -30,24 +30,15 @@
       line-height: 1.7;
     }
 
-    /* GRID FOR EACH SERVICE BLOCK */
+    /* Shared Section Layout */
     .service-section {
       max-width: 1100px;
       margin: 0 auto 4rem;
       padding: 0 1rem;
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 2rem;
-    }
-
-    @media (min-width: 900px) {
-      .service-section {
-        grid-template-columns: 0.9fr 1.1fr;
-        align-items: center;
-      }
-      .reverse {
-        grid-template-columns: 1.1fr 0.9fr;
-      }
+      align-items: center;
     }
 
     .service-card {
@@ -78,8 +69,21 @@
       box-shadow: 0 4px 18px rgba(0,0,0,0.1);
       margin-bottom: 1rem;
     }
+
+    /* Reverse layout for second section */
+    .reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    @media (max-width: 900px) {
+      .service-section,
+      .service-section.reverse {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -108,58 +112,58 @@
 
 <!-- MAIN CONTENT -->
 <main>
+
   <h1 class="page-title">Community Service</h1>
+
   <p class="page-subtitle">
-    Delta Gamma Iota is committed to serving the Muncie community through meaningful and consistent volunteer work.
-    Below are two highlights of our chapter’s annual service efforts.
+    Delta Gamma Iota actively participates in community support projects throughout Muncie. Below are two of our most meaningful annual service efforts.
   </p>
 
-  <!-- SECTION 1 — HOLIDAYS AT GRESHAM (IMAGES LEFT, TEXT RIGHT) -->
+  <!-- SECTION 1 — MUNCIE ANIMAL SHELTER (text left, images right) -->
+  <div class="service-section">
+    <!-- TEXT -->
+    <div class="service-card">
+      <h2>Muncie Animal Shelter Support</h2>
+      <p>
+        Our brothers volunteer regularly at the Muncie Animal Shelter, helping clean facilities,
+        walk dogs, organize supplies, and support staff with daily care needs.
+      </p>
+      <p>
+        This partnership reflects our commitment to improving the lives of animals in our community
+        while promoting responsible pet care and compassionate service.
+      </p>
+    </div>
+
+    <!-- IMAGES -->
+    <div class="image-stack">
+      <img src="../assets/image0.jpeg" alt="Shelter Volunteer Photo 1">
+      <img src="../assets/image1.jpeg" alt="Shelter Volunteer Photo 2">
+    </div>
+  </div>
+
+  <!-- SECTION 2 — HOLIDAYS AT GRESHAM (images left, text right) -->
   <div class="service-section reverse">
+
     <!-- IMAGES -->
     <div class="image-stack">
       <img src="../assets/greshamone.png" alt="Holidays at Gresham Event">
-      <img src="../assets/greshamtwo.png" alt="Gresham Christmas Lights">
-      <img src="../assets/image0.jpeg" alt="Chapter volunteering at Gresham">
-      <img src="../assets/image1.jpeg" alt="Brothers helping with event setup">
+      <img src="../assets/greshamtwo.png" alt="Gresham Lights Event">
     </div>
 
     <!-- TEXT -->
     <div class="service-card">
       <h2>Holidays at Gresham</h2>
       <p>
-        Holidays at Gresham is an annual drive-through Christmas light experience hosted by
-        Meridian Health Services at the Suzanne Gresham Center. Thousands of families attend
-        each year to enjoy the beautiful displays and holiday atmosphere.
+        Holidays at Gresham is a drive-through Christmas light experience hosted by Meridian
+        Health Services at the Suzanne Gresham Center. Thousands of families visit each year
+        to enjoy the festive displays.
       </p>
       <p>
-        Our brothers volunteer by assisting with traffic flow, greeting families, supporting
-        event staff, and contributing to the cheerful atmosphere. It is one of our most
-        cherished long-standing traditions of giving back to the Muncie community.
-      </p>
-    </div>
-  </div>
-
-  <!-- SECTION 2 — MUNCIE ANIMAL SHELTER -->
-  <div class="service-section">
-    <div class="service-card">
-      <h2>Muncie Animal Shelter Support</h2>
-      <p>
-        The brothers of Delta Gamma Iota proudly support the Muncie Animal Shelter through
-        ongoing volunteer initiatives. Members participate in shelter clean‑ups, dog walking,
-        play sessions, and event support — helping improve the day‑to‑day comfort and
-        well‑being of the animals.
-      </p>
-      <p>
-        This service not only strengthens our chapter’s commitment to compassion and community,
-        but also provides much‑needed hands‑on help to a vital local organization.
+        Delta Gamma Iota volunteers assist with traffic flow, greet families, and help ensure
+        the event runs smoothly. It’s one of our most joyful and impactful annual service projects.
       </p>
     </div>
 
-    <div class="image-stack">
-      <img src="../assets/image0.jpeg" alt="Brothers volunteering at the animal shelter">
-      <img src="../assets/image1.jpeg" alt="Cleaning and supporting the Muncie Animal Shelter">
-    </div>
   </div>
 
 </main>
