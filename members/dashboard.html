@@ -28,17 +28,10 @@
       line-height: 1.6;
     }
 
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
-      margin-bottom: 4rem;
-    }
-
     .dashboard-card {
       background: #fff;
       border-radius: 14px;
-      padding: 1.8rem 1.6rem;
+      padding: 1.6rem 1.5rem;
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
       border: 1px solid rgba(0,0,0,0.06);
     }
@@ -78,6 +71,141 @@
 
     .dashboard-link:hover {
       text-decoration: underline;
+    }
+
+    /* --- NEW LAYOUT: LEFT FUNDRAISER + RIGHT CARDS --- */
+    .dashboard-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: 4rem;
+    }
+
+    .dashboard-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .dashboard-right-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    /* stack right side into two-column on wider screens */
+    @media (min-width: 900px) {
+      .dashboard-right-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* Fundraiser section styling */
+    .fund-title {
+      color: #7A0E19;
+      font-size: 1.05rem;
+      margin: 0.6rem 0 0.3rem;
+      font-weight: 700;
+      font-family: "Merriweather", serif;
+    }
+
+    .fund-subtext {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .fund-slider {
+      text-align: center;
+      margin: 0.6rem 0 1rem;
+    }
+
+    .fund-slide-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .fund-slide {
+      width: 100%;
+      border-radius: 10px;
+      display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .fund-slide.active {
+      display: block;
+    }
+
+    .fund-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.7rem;
+      margin-top: 0.4rem;
+    }
+
+    .fund-prev,
+    .fund-next {
+      background: #7A0E19;
+      border: none;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .fund-dots .dot {
+      font-size: 0.7rem;
+      cursor: pointer;
+      color: #7A0E19;
+      opacity: 0.3;
+    }
+
+    .fund-dots .dot.active {
+      opacity: 1;
+    }
+
+    .fund-divider {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 0.9rem 0;
+    }
+
+    .fund-list {
+      padding-left: 0;
+      list-style: none;
+      margin: 0 0 0.4rem;
+      font-size: 0.94rem;
+    }
+
+    .fund-list li + li {
+      margin-top: 0.25rem;
+    }
+
+    .group-label {
+      font-weight: 700;
+      font-family: "Merriweather", serif;
+      letter-spacing: 0.03em;
+    }
+
+    /* Mobile layout: single column */
+    @media (max-width: 768px) {
+      .dashboard-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-right-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fund-slide-wrapper {
+        max-width: 260px;
+      }
     }
   </style>
 </head>
@@ -132,238 +260,130 @@
         </p>
       </div>
 
-     <section class="dashboard-grid">
+      <!-- NEW TWO-COLUMN LAYOUT -->
+      <section class="dashboard-layout">
 
-  <!-- Get Connected -->
-  <div class="dashboard-card uniform-card">
-    <div class="dashboard-tag">Connections</div>
-    <h3>Get Connected!</h3>
-    <p>
-      Quickly access chapter communication channels, important documents,
-      and chapter resources used by active brothers and alumni.
-    </p>
-    <a href="important-links.html" class="dashboard-link">Go to Important Links</a>
-  </div>
+        <!-- LEFT: FUNDRAISERS -->
+        <div class="dashboard-left">
+          <div class="dashboard-card">
+            <div class="dashboard-tag">Fundraising</div>
+            <h3>Active Fundraisers</h3>
 
-  <!-- Help Us Grow -->
-  <div class="dashboard-card uniform-card">
-    <div class="dashboard-tag">Support</div>
-    <h3>Help Us Grow!</h3>
-    <p>
-      Donations and dues directly support the growth, operations, and philanthropy
-      of Delta Gamma Iota, ensuring the chapter’s long-term success.
-    </p>
-    <a href="dues-donations.html" class="dashboard-link">Visit Dues &amp; Donations</a>
-  </div>
+            <!-- Shadow Box Auction -->
+            <h4 class="fund-title">Star Wars Shadow Box Auction</h4>
+            <p>
+              Two handcrafted Star Wars shadow boxes are being auctioned to support chapter
+              initiatives and future events.
+            </p>
+            <p class="fund-subtext">
+              <strong>1 entry for $5 • 3 entries for $10</strong><br>
+              Deadline: <strong>Friday, December 19</strong><br>
+              Drawing: <strong>Saturday, December 20</strong>
+            </p>
 
-  <!-- Fundraiser Section -->
-  <div class="dashboard-card uniform-card">
-    <div class="dashboard-tag">Fundraising</div>
-    <h3>Active Fundraisers</h3>
+            <!-- Slider -->
+            <div class="fund-slider">
+              <div class="fund-slide-wrapper">
+                <img src="../assets/box-1.jpg" alt="Star Wars Shadow Box 1" class="fund-slide active">
+                <img src="../assets/box-2.jpg" alt="Star Wars Shadow Box 2" class="fund-slide">
+              </div>
 
-    <!-- Shadow Box Auction -->
-    <h4 class="fund-title"> Star Wars Shadow Box Auction</h4>
-    <p>
-      Two handcrafted Star Wars shadow boxes are being auctioned.
-      <br><strong>1 entry for $5 • 3 entries for $10</strong>
-      <br>Deadline: <strong>Dec 19</strong> — Drawing: <strong>Dec 20</strong>
-    </p>
+              <div class="fund-controls">
+                <button class="fund-prev" type="button">‹</button>
+                <div class="fund-dots">
+                  <span data-slide="0" class="dot active">●</span>
+                  <span data-slide="1" class="dot">●</span>
+                </div>
+                <button class="fund-next" type="button">›</button>
+              </div>
+            </div>
 
-    <!-- Compact Slider -->
-    <div class="fund-slider">
-      <div class="fund-slide-wrapper">
-        <img src="../assets/box-1.jpg" class="fund-slide active">
-        <img src="../assets/box-2.jpg" class="fund-slide">
-      </div>
+            <hr class="fund-divider">
 
-      <div class="fund-controls">
-        <button class="fund-prev">‹</button>
-        <div class="fund-dots">
-          <span data-slide="0" class="dot active"></span>
-          <span data-slide="1" class="dot"></span>
+            <!-- Workforce Auction -->
+            <h4 class="fund-title">Delt Work Force Auction</h4>
+            <p class="fund-subtext">
+              Brothers are auctioning work groups for projects, moves, yard work, and more.
+              <strong>No money will be collected until the group has fulfilled their work.</strong>
+            </p>
+
+            <ul class="fund-list">
+              <li><span class="group-label">Group 1:</span> Lanzell Monroe (Neophyte), Jacob Thompson (172), Dylan Cakora (164), Trevor Kilgore (Neophyte)</li>
+              <li><span class="group-label">Group 2:</span> Taven Schrock (173), Jordan Dick (171), Dabrion Eversley (176), Nick Williams (Neophyte)</li>
+              <li><span class="group-label">Group 3:</span> Colin Yoder (174), Alexander Lammers (175), Isaiah Grady (169), William Rouse (170)</li>
+            </ul>
+
+            <hr class="fund-divider">
+
+            <!-- Gun Raffle -->
+            <h4 class="fund-title">Gun Raffle – Highsmith Guns</h4>
+            <p class="fund-subtext">
+              A raffle partnership with Highsmith Guns is currently being finalized.
+              Full details, rules, and ticket information will be posted here once confirmed.
+            </p>
+          </div>
         </div>
-        <button class="fund-next">›</button>
-      </div>
-    </div>
 
-    <hr class="fund-divider">
+        <!-- RIGHT: OTHER DASHBOARD CARDS -->
+        <div class="dashboard-right-grid">
 
-    <!-- Workforce Auction -->
-    <h4 class="fund-title"> Delt Work Force Auction</h4>
-    <p>No money is collected until work is completed.</p>
+          <!-- Get Connected -->
+          <div class="dashboard-card">
+            <div class="dashboard-tag">Connections</div>
+            <h3>Get Connected!</h3>
+            <p>
+              Quickly access chapter communication channels, important documents,
+              and chapter resources used by active brothers and alumni.
+            </p>
+            <a href="important-links.html" class="dashboard-link">Go to Important Links</a>
+          </div>
 
-    <ul class="fund-list">
-      <li><strong>Group 1:</strong> Lanzell, Jacob (172), Dylan (164), Trevor</li>
-      <li><strong>Group 2:</strong> Taven (173), Jordan (171), Dabrion (176), Nick</li>
-      <li><strong>Group 3:</strong> Colin (174), Alex (175), Isaiah (169), William (170)</li>
-    </ul>
+          <!-- Help Us Grow -->
+          <div class="dashboard-card">
+            <div class="dashboard-tag">Support</div>
+            <h3>Help Us Grow!</h3>
+            <p>
+              Donations and dues directly support the growth, operations, and philanthropy
+              of Delta Gamma Iota, ensuring the chapter’s long-term success.
+            </p>
+            <a href="dues-donations.html" class="dashboard-link">Visit Dues &amp; Donations</a>
+          </div>
 
-    <hr class="fund-divider">
+          <!-- Alumni Newsletter -->
+          <div class="dashboard-card">
+            <div class="dashboard-tag">Alumni</div>
+            <h3>Alumni Newsletter (Coming Soon)</h3>
+            <p>
+              A dedicated newsletter for alumni is coming soon, featuring important dates,
+              opportunities to engage, and updates on chapter achievements and events.
+            </p>
+          </div>
 
-    <!-- Gun Raffle -->
-    <h4 class="fund-title"> Gun Raffle – Highsmith Guns</h4>
-    <p>Details are being finalized. Updates will be posted soon.</p>
-  </div>
+          <!-- Brotherhood Development -->
+          <div class="dashboard-card">
+            <div class="dashboard-tag">Brotherhood</div>
+            <h3>Brotherhood Development</h3>
+            <p>
+              Programming focused on leadership, mentorship, and personal growth.
+              Watch this space for upcoming brotherhood development events throughout the year.
+            </p>
+          </div>
 
-  <!-- Alumni Newsletter -->
-  <div class="dashboard-card uniform-card">
-    <div class="dashboard-tag">Alumni</div>
-    <h3>Alumni Newsletter (Coming Soon)</h3>
-    <p>
-      A scheduled newsletter containing updates, announcements, and opportunities for alumni.
-      This will become part of our long-term communication system.
-    </p>
-  </div>
+          <!-- Regional Meetups -->
+          <div class="dashboard-card">
+            <div class="dashboard-tag">Gatherings</div>
+            <h3>Regional Monthly Meetups</h3>
+            <p>
+              <strong>First Fridays Up North:</strong> Established monthly gathering of brothers
+              in the northern region of Indiana.
+            </p>
+            <p>
+              <strong>Indianapolis Monthly Event:</strong> A recurring event in the Indianapolis
+              area is coming very soon. Final details will be shared once logistics are set.
+            </p>
+          </div>
 
-  <!-- Brotherhood Development -->
-  <div class="dashboard-card uniform-card">
-    <div class="dashboard-tag">Brotherhood</div>
-    <h3>Brotherhood Development</h3>
-    <p>
-      Leadership, mentorship, and personal-development events will occur throughout the year.
-      Watch this section for new opportunities.
-    </p>
-  </div>
-
-  <!-- Regional Meetups -->
-  <div class="dashboard-card uniform-card">
-    <div class="dashboard-tag">Gatherings</div>
-    <h3>Regional Monthly Meetups</h3>
-    <p>
-      <strong>First Fridays Up North:</strong> Monthly gathering for northern Indiana brothers.
-    </p>
-    <p>
-      <strong>Indianapolis Monthly Meetup:</strong> Details coming soon.
-    </p>
-  </div>
-
-</section>
-
-<style>
-  /* Make all cards equal height */
-  .uniform-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 430px;
-  }
-
-  /* Fundraiser Section Styling */
-  .fund-title {
-    color: #7A0E19;
-    font-size: 1.05rem;
-    margin-bottom: 0.4rem;
-    font-weight: 700;
-  }
-
-  .fund-slider {
-    text-align: center;
-    margin: 0.6rem 0 1rem;
-  }
-
-  .fund-slide-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .fund-slide {
-    width: 100%;
-    border-radius: 10px;
-    display: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  .fund-slide.active {
-    display: block;
-  }
-
-  .fund-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.7rem;
-    margin-top: 0.4rem;
-  }
-
-  .fund-prev, .fund-next {
-    background: #7A0E19;
-    border: none;
-    color: #fff;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  .fund-dots .dot {
-    font-size: 0.7rem;
-    cursor: pointer;
-    color: #7A0E19;
-    opacity: 0.4;
-  }
-
-  .fund-dots .dot.active {
-    opacity: 1;
-  }
-
-  .fund-divider {
-    border: none;
-    border-top: 1px solid #eee;
-    margin: 0.9rem 0;
-  }
-
-  .fund-list {
-    padding-left: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  /* MOBILE FIXES */
-  @media (max-width: 600px) {
-    .uniform-card {
-      min-height: auto;
-    }
-
-    .fund-slide-wrapper {
-      max-width: 240px;
-    }
-  }
-</style>
-
-<script>
-  (function () {
-    const slides = document.querySelectorAll('.fund-slide');
-    const dots = document.querySelectorAll('.fund-dots .dot');
-    const prev = document.querySelector('.fund-prev');
-    const next = document.querySelector('.fund-next');
-
-    let current = 0;
-
-    function show(n) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-
-      current = (n + slides.length) % slides.length;
-
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
-    }
-
-    prev.addEventListener('click', () => show(current - 1));
-    next.addEventListener('click', () => show(current + 1));
-
-    dots.forEach((dot, i) =>
-      dot.addEventListener('click', () => show(i))
-    );
-  })();
-</script>
-
-
-
-
-        
-
+        </div>
       </section>
 
     </div>
@@ -405,6 +425,35 @@
 
     // Lock this page behind Auth0
     requireAuth();
+
+    // Simple slider for the shadow box images
+    (function () {
+      const slides = document.querySelectorAll('.fund-slide');
+      const dots = document.querySelectorAll('.fund-dots .dot');
+      const prev = document.querySelector('.fund-prev');
+      const next = document.querySelector('.fund-next');
+
+      if (!slides.length) return;
+
+      let current = 0;
+
+      function show(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+
+        current = (n + slides.length) % slides.length;
+
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      prev.addEventListener('click', () => show(current - 1));
+      next.addEventListener('click', () => show(current + 1));
+
+      dots.forEach((dot, i) =>
+        dot.addEventListener('click', () => show(i))
+      );
+    })();
   </script>
 </body>
 </html>
