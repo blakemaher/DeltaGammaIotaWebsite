@@ -4,7 +4,7 @@
 const AUTH0_DOMAIN    = "dev-vrv7ebflsu4wba1z.us.auth0.com";
 const AUTH0_CLIENT_ID = "oh3uJuWWaU7CMQYLLtY0I9lDxIQyRKRu";
 
-// Where to send people if they are NOT logged in
+// Where to send people if they are NOT logged in (for protected pages)
 const LOGIN_PAGE_URL  = "../login.html";
 
 // === TOKEN STORAGE HELPERS ===
@@ -85,7 +85,11 @@ function loadUserProfile(token) {
       return res.json();
     })
     .then((profile) => {
-      const displayName = profile.name || profile.nickname || profile.email || "Member";
+      const displayName =
+        profile.name ||
+        profile.nickname ||
+        profile.email ||
+        "Member";
       nameSpan.textContent = displayName;
     })
     .catch((err) => {
@@ -94,13 +98,15 @@ function loadUserProfile(token) {
     });
 }
 
-// === LOGOUT HELPER (optional, can be used from a button) ===
+// === LOGOUT HELPER (used by navbar Logout link) ===
 function logout() {
+  // Clear local session
   sessionStorage.removeItem("dgi_access_token");
   sessionStorage.removeItem("dgi_expires_at");
 
-  // Also log out of Auth0
-  const returnTo = encodeURIComponent(window.location.origin + "/login.html");
+  // Also log out of Auth0 and then return to the public site
+  const returnTo = encodeURIComponent(window.location.origin + "/"); // homepage
+
   const logoutUrl =
     `https://${AUTH0_DOMAIN}/v2/logout?client_id=${encodeURIComponent(AUTH0_CLIENT_ID)}` +
     `&returnTo=${returnTo}`;
