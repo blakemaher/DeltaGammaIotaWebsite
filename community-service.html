@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Community Service – Delta Gamma Iota</title>
   <link rel="stylesheet" href="../css/styles.css">
-
   <style>
     body, h1, h2, p, a, span {
       font-family: "Segoe UI", "Inter", Helvetica, Arial, sans-serif;
@@ -30,20 +29,26 @@
       line-height: 1.7;
     }
 
-    /* Shared Section Layout */
+    /* --- SECTION SHARED STYLE --- */
     .service-section {
       max-width: 1100px;
       margin: 0 auto 4rem;
       padding: 0 1rem;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr;
       gap: 2rem;
-      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .service-section {
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+      }
     }
 
     .service-card {
       background: #fff;
-      padding: 2rem;
+      padding: 2rem 2rem;
       border-radius: 14px;
       border: 1px solid rgba(0,0,0,0.08);
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
@@ -63,6 +68,7 @@
       margin-bottom: 0.8rem;
     }
 
+    /* --- IMAGES STACK --- */
     .image-stack img {
       width: 100%;
       border-radius: 12px;
@@ -70,27 +76,23 @@
       margin-bottom: 1rem;
     }
 
-    /* Reverse layout for second section */
-    .reverse {
-      grid-template-columns: 0.9fr 1.1fr;
-    }
-
-    @media (max-width: 900px) {
-      .service-section,
-      .service-section.reverse {
-        grid-template-columns: 1fr;
-      }
+    /* Larger top image */
+    .large-image {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
     }
   </style>
 </head>
-
 <body>
-
 <!-- HEADER -->
 <header class="site-header">
   <div class="top-bar">
     <span>1965</span><span>1998</span>
   </div>
+
   <div class="header-main">
     <div class="greek-letters"><span>Δ</span><span>Γ</span><span>Ι</span></div>
     <div class="chapter-name"><span>DELTA</span><span>GAMMA</span><span>IOTA</span></div>
@@ -112,55 +114,65 @@
 
 <!-- MAIN CONTENT -->
 <main>
-
   <h1 class="page-title">Community Service</h1>
 
   <p class="page-subtitle">
-    Delta Gamma Iota actively participates in community support projects throughout Muncie. Below are two of our most meaningful annual service efforts.
+    Delta Gamma Iota is committed to serving the Muncie community through hands-on volunteerism.
+    Below are a few of our most impactful service projects.
   </p>
 
-  <!-- SECTION 1 — MUNCIE ANIMAL SHELTER (text left, images right) -->
+  <!-- ---------------------- -->
+  <!-- MUNCIE ANIMAL SHELTER -->
+  <!-- ---------------------- -->
+
   <div class="service-section">
-    <!-- TEXT -->
+
+    <!-- TEXT LEFT -->
     <div class="service-card">
-      <h2>Muncie Animal Shelter Support</h2>
+      <h2>Muncie Animal Shelter</h2>
       <p>
-        Our brothers volunteer regularly at the Muncie Animal Shelter, helping clean facilities,
-        walk dogs, organize supplies, and support staff with daily care needs.
+        Our chapter volunteers regularly at the Muncie Animal Shelter, helping with cleaning,
+        organizing supplies, walking dogs, and supporting adoption events. This partnership allows 
+        our chapter to give back directly to the animals and families of the Muncie community.
       </p>
       <p>
-        This partnership reflects our commitment to improving the lives of animals in our community
-        while promoting responsible pet care and compassionate service.
+        Brothers work hands-on to maintain a safe and loving environment for the animals while also
+        assisting shelter staff with daily tasks. This service project continues to be one of our 
+        chapter’s most rewarding opportunities.
       </p>
     </div>
 
-    <!-- IMAGES -->
+    <!-- IMAGES RIGHT -->
     <div class="image-stack">
-      <img src="../assets/image0.jpeg" alt="Shelter Volunteer Photo 1">
-      <img src="../assets/image1.jpeg" alt="Shelter Volunteer Photo 2">
+      <img src="../assets/image1.jpeg" class="large-image" alt="Muncie Animal Shelter volunteering">
+      <img src="../assets/image0.jpeg" alt="Brothers helping at the animal shelter">
     </div>
+
   </div>
 
-  <!-- SECTION 2 — HOLIDAYS AT GRESHAM (images left, text right) -->
-  <div class="service-section reverse">
+  <!-- ---------------------- -->
+  <!-- HOLIDAYS AT GRESHAM -->
+  <!-- ---------------------- -->
 
-    <!-- IMAGES -->
+  <div class="service-section" style="grid-template-columns: 0.9fr 1.1fr;">
+
+    <!-- IMAGES LEFT -->
     <div class="image-stack">
       <img src="../assets/greshamone.png" alt="Holidays at Gresham Event">
-      <img src="../assets/greshamtwo.png" alt="Gresham Lights Event">
+      <img src="../assets/greshamtwo.png" alt="Gresham Christmas Lights">
     </div>
 
-    <!-- TEXT -->
+    <!-- TEXT RIGHT -->
     <div class="service-card">
       <h2>Holidays at Gresham</h2>
       <p>
-        Holidays at Gresham is a drive-through Christmas light experience hosted by Meridian
-        Health Services at the Suzanne Gresham Center. Thousands of families visit each year
-        to enjoy the festive displays.
+        Holidays at Gresham is an annual drive-through Christmas light experience hosted by
+        Meridian Health Services at the Suzanne Gresham Center. Thousands of families attend each
+        year to enjoy the festive displays.
       </p>
       <p>
-        Delta Gamma Iota volunteers assist with traffic flow, greet families, and help ensure
-        the event runs smoothly. It’s one of our most joyful and impactful annual service projects.
+        Our brothers volunteer by assisting with traffic flow, greeting families, and helping
+        maintain a smooth and joyful event. It remains one of our most cherished service traditions.
       </p>
     </div>
 
@@ -178,10 +190,12 @@
         <img src="assets/mail.png" class="icon" alt="Email Icon">
         deltagammaiota2@gmail.com
       </a>
+
       <a href="https://www.instagram.com/deltagammaiota" target="_blank">
         <img src="assets/instagram.webp" class="icon" alt="Instagram Icon">
         Instagram
       </a>
+
       <a href="https://www.linkedin.com/company/delta-gamma-iota/" target="_blank">
         <img src="assets/linkedin.webp" class="icon" alt="LinkedIn Icon">
         LinkedIn
