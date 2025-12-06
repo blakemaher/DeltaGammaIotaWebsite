@@ -5,6 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Phone Book · Delta Gamma Iota</title>
   <link rel="stylesheet" href="../css/styles.css" />
+
+  <style>
+    /* Match other member pages */
+    .page-title {
+      font-family: "Merriweather", serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #7A0E19;
+      text-align: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+      max-width: 720px;
+      margin: 0.5rem auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* Wrapper so table scrolls on mobile */
+    .phone-table-wrapper {
+      overflow-x: auto;
+    }
+
+    /* Table styling with clear dividers */
+    .phone-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 640px; /* keeps structure on smaller screens */
+      border: 1px solid #e0e0e0; /* outer border */
+    }
+
+    .phone-table thead th {
+      background: #7A0E19;
+      color: #fff;
+      text-align: left;
+      padding: 10px 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      border-bottom: 2px solid #5a0a13; /* stronger bottom divider */
+      border-right: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .phone-table thead th:last-child {
+      border-right: none;
+    }
+
+    .phone-table tbody td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #e6e6e6; /* horizontal dividers */
+      border-right: 1px solid #e6e6e6;  /* vertical dividers */
+      white-space: nowrap;
+    }
+
+    .phone-table tbody td:last-child {
+      border-right: none;
+    }
+
+    /* Column alignment */
+    .phone-table th:nth-child(1),
+    .phone-table td:nth-child(1) {
+      text-align: left;   /* Chapter */
+    }
+
+    .phone-table th:nth-child(2),
+    .phone-table td:nth-child(2),
+    .phone-table th:nth-child(3),
+    .phone-table td:nth-child(3) {
+      text-align: center; /* Grand & Local Card # */
+      width: 90px;
+    }
+
+    .phone-table th:nth-child(4),
+    .phone-table td:nth-child(4),
+    .phone-table th:nth-child(5),
+    .phone-table td:nth-child(5) {
+      text-align: left;   /* Name & Phone */
+    }
+
+    /* Zebra striping for readability */
+    .phone-table tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    @media (max-width: 600px) {
+      .phone-table {
+        font-size: 0.85rem;
+        min-width: 600px;
+      }
+
+      .phone-table thead th,
+      .phone-table tbody td {
+        padding: 6px 8px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -45,163 +144,163 @@
     </nav>
   </header>
 
+  <!-- MAIN -->
   <main class="page-main">
-  <div class="container">
-    <h1 class="page-title">Phone Book</h1>
-    <p class="page-subtitle">
-      A directory of DGI Brothers sorted by Chapter, Card Numbers, and Name.
-    </p>
+    <div class="container">
+      <h1 class="page-title">Phone Book</h1>
+      <p class="page-subtitle">
+        A directory of DGI Brothers sorted by Chapter, Card Numbers, and Name.
+      </p>
 
-    <section class="card" style="overflow-x:auto;">
-      <table style="width:100%; border-collapse:collapse; font-size:1rem;">
-        <thead>
-          <tr style="background:#7A0E19; color:white; text-align:left;">
-            <th style="padding:10px;">Chapter</th>
-            <th style="padding:10px;">Grand Card #</th>
-            <th style="padding:10px;">Local Card #</th>
-            <th style="padding:10px;">Name</th>
-            <th style="padding:10px;">Phone Number</th>
-          </tr>
-        </thead>
+      <section class="card phone-table-wrapper">
+        <table class="phone-table">
+          <thead>
+            <tr>
+              <th>Chapter</th>
+              <th>Grand Card #</th>
+              <th>Local Card #</th>
+              <th>Name</th>
+              <th>Phone Number</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <!-- ===================== -->
-          <!--       ALPHA          -->
-          <!-- ===================== -->
-          <tr><td>Alpha</td><td>1</td><td>1</td><td>Derek Ogawa</td><td>(574) 315-6587</td></tr>
-          <tr><td>Alpha</td><td>5</td><td>5</td><td>Scott Brewton</td><td>(920) 209-6345</td></tr>
-          <tr><td>Alpha</td><td>11</td><td>11</td><td>Scott Cramer</td><td>(574) 220-7855</td></tr>
-          <tr><td>Alpha</td><td>24</td><td>24</td><td>Joshua Bach</td><td>(317) 418-7411</td></tr>
-          <tr><td>Alpha</td><td>25</td><td>25</td><td>Chuck Bates</td><td>(386) 299-2300</td></tr>
-          <tr><td>Alpha</td><td>28</td><td>28</td><td>Aaron French</td><td>(765) 376-4556</td></tr>
-          <tr><td>Alpha</td><td>44</td><td>44</td><td>Greg Duncan</td><td>(317) 918-2936</td></tr>
-          <tr><td>Alpha</td><td>81</td><td>69</td><td>Todd Little</td><td>(317) 441-8119</td></tr>
-          <tr><td>Alpha</td><td>85</td><td>73</td><td>Jasen Vaughan</td><td>(219) 561-3073</td></tr>
-          <tr><td>Alpha</td><td>93</td><td>81</td><td>John Neidlinger</td><td>(574) 806-5610</td></tr>
-          <tr><td>Alpha</td><td>122</td><td>105</td><td>Coby Osborne</td><td>(513) 227-7669</td></tr>
-          <tr><td>Alpha</td><td>123</td><td>106</td><td>Ward Hessig</td><td>(407) 375-7229</td></tr>
-          <tr><td>Alpha</td><td>124</td><td>107</td><td>Todd Boyer</td><td>(317) 701-0092</td></tr>
-          <tr><td>Alpha</td><td>125</td><td>108</td><td>Justin Tyree</td><td>(812) 881-0755</td></tr>
-          <tr><td>Alpha</td><td>133</td><td>116</td><td>David C Coates</td><td>(219) 575-0863</td></tr>
-          <tr><td>Alpha</td><td>143</td><td>121</td><td>Shaun Schlag</td><td>(773) 510-7297</td></tr>
-          <tr><td>Alpha</td><td>147</td><td>128</td><td>Jeremy Wagner</td><td>(317) 931-9005</td></tr>
-          <tr><td>Alpha</td><td>153</td><td>134</td><td>John Dulhanty</td><td>(765) 661-6489</td></tr>
-          <tr><td>Alpha</td><td>168</td><td>137</td><td>David James</td><td>(949) 247-9807</td></tr>
-          <tr><td>Alpha</td><td>169</td><td>138</td><td>Jeremy Noble</td><td>(603) 661-7342</td></tr>
-          <tr><td>Alpha</td><td>171</td><td>140</td><td>Josh Ahnert</td><td>(317) 919-5737</td></tr>
-          <tr><td>Alpha</td><td>191</td><td>149</td><td>Brandon Sciotto</td><td>(812) 841-1259</td></tr>
-          <tr><td>Alpha</td><td>196</td><td>154</td><td>Chris Hunt</td><td>(317) 385-4730</td></tr>
-          <tr><td>Alpha</td><td>228</td><td>166</td><td>Chad Buehler</td><td>(812) 552-6144</td></tr>
-          <tr><td>Alpha</td><td>231</td><td>169</td><td>David Dillinger</td><td>(317) 586-7859</td></tr>
-          <tr><td>Alpha</td><td>238</td><td>176</td><td>Jason Bertsch</td><td>(317) 512-4272</td></tr>
-          <tr><td>Alpha</td><td>251</td><td>189</td><td>Kenneth Lloyd</td><td>(812) 396-3061</td></tr>
-          <tr><td>Alpha</td><td>282</td><td>205</td><td>Christopher Baxter Jr</td><td>(773) 932-7153</td></tr>
-          <tr><td>Alpha</td><td>320</td><td>226</td><td>Jedidiah Herrmann</td><td>(317) 690-6583</td></tr>
-          <tr><td>Alpha</td><td>329</td><td>229</td><td>Ryan Upchurch</td><td>(765) 610-4856</td></tr>
-          <tr><td>Alpha</td><td>332</td><td>232</td><td>Shannon Mathies</td><td>(812) 276-6371</td></tr>
-          <tr><td>Alpha</td><td>361</td><td>247</td><td>Cody Bex</td><td>(765) 541-1044</td></tr>
-          <tr><td>Alpha</td><td>369</td><td>256</td><td>Adam Wright (Dankert)</td><td>(317) 703-0218</td></tr>
-          <tr><td>Alpha</td><td>373</td><td>260</td><td>Kirk Martin</td><td>(812) 319-2292</td></tr>
-          <tr><td>Alpha</td><td>385</td><td>261</td><td>Andrew Piggott</td><td>(734) 787-7080</td></tr>
-          <tr><td>Alpha</td><td>398</td><td>268</td><td>Kit Aldridge</td><td>(812) 306-5784</td></tr>
-          <tr><td>Alpha</td><td>405</td><td>275</td><td>Jacub Sadler</td><td>(765) 432-4099</td></tr>
-          <tr><td>Alpha</td><td>431</td><td>287</td><td>Jason Rankin</td><td>(574) 340-8459</td></tr>
-          <tr><td>Alpha</td><td>449</td><td>297</td><td>Derek Covey</td><td>(812) 929-2413</td></tr>
-          <tr><td>Alpha</td><td>454</td><td>299</td><td>Dylan Gibbs</td><td>(812) 212-6904</td></tr>
-          <tr><td>Alpha</td><td>455</td><td>300</td><td>Daniel Shannon</td><td>(765) 240-7008</td></tr>
-          <tr><td>Alpha</td><td>458</td><td>302</td><td>Brayton Fish</td><td>(317) 460-5753</td></tr>
-          <tr><td>Alpha</td><td>459</td><td>303</td><td>Collin Milbrath</td><td>(317) 694-3139</td></tr>
-          <tr><td>Alpha</td><td>460</td><td>304</td><td>Colin Wood</td><td>(317) 213-8735</td></tr>
-          <tr><td>Alpha</td><td>482</td><td>317</td><td>LaRon Patterson</td><td>(678) 848-6847</td></tr>
-          <tr><td>Alpha</td><td>?</td><td>335</td><td>Kyle Wojciechowski</td><td>(269) 503-2713</td></tr>
-          <tr><td>Alpha</td><td>N/A</td><td>Neophyte</td><td>Brent Adams</td><td>(219) 869-7068</td></tr>
+          <tbody>
+            <!-- ===================== -->
+            <!--       ALPHA          -->
+            <!-- ===================== -->
+            <tr><td>Alpha</td><td>1</td><td>1</td><td>Derek Ogawa</td><td>(574) 315-6587</td></tr>
+            <tr><td>Alpha</td><td>5</td><td>5</td><td>Scott Brewton</td><td>(920) 209-6345</td></tr>
+            <tr><td>Alpha</td><td>11</td><td>11</td><td>Scott Cramer</td><td>(574) 220-7855</td></tr>
+            <tr><td>Alpha</td><td>24</td><td>24</td><td>Joshua Bach</td><td>(317) 418-7411</td></tr>
+            <tr><td>Alpha</td><td>25</td><td>25</td><td>Chuck Bates</td><td>(386) 299-2300</td></tr>
+            <tr><td>Alpha</td><td>28</td><td>28</td><td>Aaron French</td><td>(765) 376-4556</td></tr>
+            <tr><td>Alpha</td><td>44</td><td>44</td><td>Greg Duncan</td><td>(317) 918-2936</td></tr>
+            <tr><td>Alpha</td><td>81</td><td>69</td><td>Todd Little</td><td>(317) 441-8119</td></tr>
+            <tr><td>Alpha</td><td>85</td><td>73</td><td>Jasen Vaughan</td><td>(219) 561-3073</td></tr>
+            <tr><td>Alpha</td><td>93</td><td>81</td><td>John Neidlinger</td><td>(574) 806-5610</td></tr>
+            <tr><td>Alpha</td><td>122</td><td>105</td><td>Coby Osborne</td><td>(513) 227-7669</td></tr>
+            <tr><td>Alpha</td><td>123</td><td>106</td><td>Ward Hessig</td><td>(407) 375-7229</td></tr>
+            <tr><td>Alpha</td><td>124</td><td>107</td><td>Todd Boyer</td><td>(317) 701-0092</td></tr>
+            <tr><td>Alpha</td><td>125</td><td>108</td><td>Justin Tyree</td><td>(812) 881-0755</td></tr>
+            <tr><td>Alpha</td><td>133</td><td>116</td><td>David C Coates</td><td>(219) 575-0863</td></tr>
+            <tr><td>Alpha</td><td>143</td><td>121</td><td>Shaun Schlag</td><td>(773) 510-7297</td></tr>
+            <tr><td>Alpha</td><td>147</td><td>128</td><td>Jeremy Wagner</td><td>(317) 931-9005</td></tr>
+            <tr><td>Alpha</td><td>153</td><td>134</td><td>John Dulhanty</td><td>(765) 661-6489</td></tr>
+            <tr><td>Alpha</td><td>168</td><td>137</td><td>David James</td><td>(949) 247-9807</td></tr>
+            <tr><td>Alpha</td><td>169</td><td>138</td><td>Jeremy Noble</td><td>(603) 661-7342</td></tr>
+            <tr><td>Alpha</td><td>171</td><td>140</td><td>Josh Ahnert</td><td>(317) 919-5737</td></tr>
+            <tr><td>Alpha</td><td>191</td><td>149</td><td>Brandon Sciotto</td><td>(812) 841-1259</td></tr>
+            <tr><td>Alpha</td><td>196</td><td>154</td><td>Chris Hunt</td><td>(317) 385-4730</td></tr>
+            <tr><td>Alpha</td><td>228</td><td>166</td><td>Chad Buehler</td><td>(812) 552-6144</td></tr>
+            <tr><td>Alpha</td><td>231</td><td>169</td><td>David Dillinger</td><td>(317) 586-7859</td></tr>
+            <tr><td>Alpha</td><td>238</td><td>176</td><td>Jason Bertsch</td><td>(317) 512-4272</td></tr>
+            <tr><td>Alpha</td><td>251</td><td>189</td><td>Kenneth Lloyd</td><td>(812) 396-3061</td></tr>
+            <tr><td>Alpha</td><td>282</td><td>205</td><td>Christopher Baxter Jr</td><td>(773) 932-7153</td></tr>
+            <tr><td>Alpha</td><td>320</td><td>226</td><td>Jedidiah Herrmann</td><td>(317) 690-6583</td></tr>
+            <tr><td>Alpha</td><td>329</td><td>229</td><td>Ryan Upchurch</td><td>(765) 610-4856</td></tr>
+            <tr><td>Alpha</td><td>332</td><td>232</td><td>Shannon Mathies</td><td>(812) 276-6371</td></tr>
+            <tr><td>Alpha</td><td>361</td><td>247</td><td>Cody Bex</td><td>(765) 541-1044</td></tr>
+            <tr><td>Alpha</td><td>369</td><td>256</td><td>Adam Wright (Dankert)</td><td>(317) 703-0218</td></tr>
+            <tr><td>Alpha</td><td>373</td><td>260</td><td>Kirk Martin</td><td>(812) 319-2292</td></tr>
+            <tr><td>Alpha</td><td>385</td><td>261</td><td>Andrew Piggott</td><td>(734) 787-7080</td></tr>
+            <tr><td>Alpha</td><td>398</td><td>268</td><td>Kit Aldridge</td><td>(812) 306-5784</td></tr>
+            <tr><td>Alpha</td><td>405</td><td>275</td><td>Jacub Sadler</td><td>(765) 432-4099</td></tr>
+            <tr><td>Alpha</td><td>431</td><td>287</td><td>Jason Rankin</td><td>(574) 340-8459</td></tr>
+            <tr><td>Alpha</td><td>449</td><td>297</td><td>Derek Covey</td><td>(812) 929-2413</td></tr>
+            <tr><td>Alpha</td><td>454</td><td>299</td><td>Dylan Gibbs</td><td>(812) 212-6904</td></tr>
+            <tr><td>Alpha</td><td>455</td><td>300</td><td>Daniel Shannon</td><td>(765) 240-7008</td></tr>
+            <tr><td>Alpha</td><td>458</td><td>302</td><td>Brayton Fish</td><td>(317) 460-5753</td></tr>
+            <tr><td>Alpha</td><td>459</td><td>303</td><td>Collin Milbrath</td><td>(317) 694-3139</td></tr>
+            <tr><td>Alpha</td><td>460</td><td>304</td><td>Colin Wood</td><td>(317) 213-8735</td></tr>
+            <tr><td>Alpha</td><td>482</td><td>317</td><td>LaRon Patterson</td><td>(678) 848-6847</td></tr>
+            <tr><td>Alpha</td><td>?</td><td>335</td><td>Kyle Wojciechowski</td><td>(269) 503-2713</td></tr>
+            <tr><td>Alpha</td><td>N/A</td><td>Neophyte</td><td>Brent Adams</td><td>(219) 869-7068</td></tr>
 
-          <!-- ===================== -->
-          <!--        BETA           -->
-          <!-- ===================== -->
-          <tr><td>Beta</td><td>69</td><td>1</td><td>Erik Ivarson</td><td>(269) 313-2650</td></tr>
-          <tr><td>Beta</td><td>78</td><td>10</td><td>Dave Parker</td><td>(229) 327-4101</td></tr>
-          <tr><td>Beta</td><td>204</td><td>26</td><td>Blaine Shaw</td><td>(574) 354-0842</td></tr>
-          <tr><td>Beta</td><td>205</td><td>27</td><td>Gavin Schill</td><td>(574) 358-1361</td></tr>
-          <tr><td>Beta</td><td>254</td><td>34</td><td>Robert Gibbons</td><td>(574) 514-7292</td></tr>
-          <tr><td>Beta</td><td>278</td><td>40</td><td>Dave Muntz</td><td>(317) 430-7058</td></tr>
-          <tr><td>Beta</td><td>279</td><td>41</td><td>Toby Cripe</td><td>(574) 849-7837</td></tr>
+            <!-- ===================== -->
+            <!--        BETA           -->
+            <!-- ===================== -->
+            <tr><td>Beta</td><td>69</td><td>1</td><td>Erik Ivarson</td><td>(269) 313-2650</td></tr>
+            <tr><td>Beta</td><td>78</td><td>10</td><td>Dave Parker</td><td>(229) 327-4101</td></tr>
+            <tr><td>Beta</td><td>204</td><td>26</td><td>Blaine Shaw</td><td>(574) 354-0842</td></tr>
+            <tr><td>Beta</td><td>205</td><td>27</td><td>Gavin Schill</td><td>(574) 358-1361</td></tr>
+            <tr><td>Beta</td><td>254</td><td>34</td><td>Robert Gibbons</td><td>(574) 514-7292</td></tr>
+            <tr><td>Beta</td><td>278</td><td>40</td><td>Dave Muntz</td><td>(317) 430-7058</td></tr>
+            <tr><td>Beta</td><td>279</td><td>41</td><td>Toby Cripe</td><td>(574) 849-7837</td></tr>
 
-          <!-- ===================== -->
-          <!--        GAMMA          -->
-          <!-- ===================== -->
-          <tr><td>Gamma</td><td>24</td><td>4</td><td>Josh Bach</td><td>(317) 418-7411</td></tr>
-          <tr><td>Gamma</td><td>143</td><td>8</td><td>Shawn Schlag</td><td>(773) 510-7297</td></tr>
-          <tr><td>Gamma</td><td>159</td><td>9</td><td>Casey Renick</td><td>(765) 327-5686</td></tr>
-          <tr><td>Gamma</td><td>160</td><td>10</td><td>Andy Finchum</td><td>(765) 215-9028</td></tr>
-          <tr><td>Gamma</td><td>161</td><td>11</td><td>Adrian Robinson</td><td>(317) 752-2978</td></tr>
-          <tr><td>Gamma</td><td>181</td><td>24</td><td>Dave Penrod</td><td>(260) 273-3943</td></tr>
-          <tr><td>Gamma</td><td>212</td><td>27</td><td>Chance Kolarick</td><td>(812) 642-9167</td></tr>
-          <tr><td>Gamma</td><td>215</td><td>30</td><td>Nathan Boyer</td><td>(317) 701-4400</td></tr>
-          <tr><td>Gamma</td><td>218</td><td>33</td><td>Matthew "Shaggy" Kennedy</td><td>(317) 373-9116</td></tr>
-          <tr><td>Gamma</td><td>220</td><td>35</td><td>Ryan Schenkel</td><td>(773) 837-1696</td></tr>
-          <tr><td>Gamma</td><td>263</td><td>40</td><td>Steve Rickson</td><td>(219) 743-0564</td></tr>
-          <tr><td>Gamma</td><td>287</td><td>44</td><td>Zach Paschal</td><td>(317) 531-1423</td></tr>
-          <tr><td>Gamma</td><td>288</td><td>45</td><td>Isaac Wagner</td><td>(765) 760-4396</td></tr>
-          <tr><td>Gamma</td><td>290</td><td>47</td><td>Chris Armbruster</td><td>(630) 253-4474</td></tr>
-          <tr><td>Gamma</td><td>292</td><td>49</td><td>Ryan Mendenhall</td><td>(765) 729-1654</td></tr>
-          <tr><td>Gamma</td><td>293</td><td>50</td><td>Ryan Caudill</td><td>(808) 638-1824</td></tr>
-          <tr><td>Gamma</td><td>317</td><td>56</td><td>Ryan Hite</td><td>(317) 372-0778</td></tr>
-          <tr><td>Gamma</td><td>318</td><td>57</td><td>Dan Sandman</td><td>(812) 212-2666</td></tr>
-          <tr><td>Gamma</td><td>324</td><td>61</td><td>Chris Rickey</td><td>(317) 650-0490</td></tr>
-          <tr><td>Gamma</td><td>327</td><td>64</td><td>Brandon Armacost</td><td>(317) 294-6907</td></tr>
-          <tr><td>Gamma</td><td>348</td><td>69</td><td>Steve Miller</td><td>(219) 221-2713</td></tr>
-          <tr><td>Gamma</td><td>354</td><td>75</td><td>Carter Wykoff</td><td>(765) 532-4302</td></tr>
-          <tr><td>Gamma</td><td>356</td><td>77</td><td>Chris Peters</td><td>(765) 714-9831</td></tr>
-          <tr><td>Gamma</td><td>374</td><td>79</td><td>Joe Ihnat</td><td>(317) 697-7542</td></tr>
-          <tr><td>Gamma</td><td>378</td><td>83</td><td>Jeremy Sullivan</td><td>(614) 795-6336</td></tr>
-          <tr><td>Gamma</td><td>390</td><td>93</td><td>Maxim Clare</td><td>(260) 348-1459</td></tr>
-          <tr><td>Gamma</td><td>393</td><td>94</td><td>Nick Moser</td><td>(252) 548-0052</td></tr>
-          <tr><td>Gamma</td><td>416</td><td>100</td><td>Paul Ingersoll</td><td>(317) 989-9036</td></tr>
-          <tr><td>Gamma</td><td>417</td><td>101</td><td>Adam Shulaw</td><td>(574) 229-4736</td></tr>
-          <tr><td>Gamma</td><td>418</td><td>102</td><td>Shawn Casseday</td><td>(765) 228-8013</td></tr>
-          <tr><td>Gamma</td><td>419</td><td>103</td><td>Brad Miller</td><td>(219) 575-3404</td></tr>
-          <tr><td>Gamma</td><td>420</td><td>104</td><td>Jack Cadman</td><td>(219) 314-6478</td></tr>
-          <tr><td>Gamma</td><td>421</td><td>105</td><td>Luke keay</td><td>(574) 808-9455</td></tr>
-          <tr><td>Gamma</td><td>422</td><td>106</td><td>Matt Spoljoric</td><td>(512) 944-7183</td></tr>
-          <tr><td>Gamma</td><td>424</td><td>108</td><td>Alec Lapierre</td><td>(574) 596-2203</td></tr>
-          <tr><td>Gamma</td><td>425</td><td>109</td><td>Alex Miller</td><td>(219) 575-4405</td></tr>
-          <tr><td>Gamma</td><td>426</td><td>110</td><td>Rob Caird</td><td>(317) 777-3992</td></tr>
-          <tr><td>Gamma</td><td>435</td><td>115</td><td>Mike Ihnat</td><td>(317) 697-7814</td></tr>
-          <tr><td>Gamma</td><td>441</td><td>118</td><td>Nick Disher</td><td>(317) 850-2854</td></tr>
-          <tr><td>Gamma</td><td>442</td><td>119</td><td>Bobby Grossnickle</td><td>(574) 993-4123</td></tr>
-          <tr><td>Gamma</td><td>456</td><td>123</td><td>Joe Robinson</td><td>(765) 918-0808</td></tr>
-          <tr><td>Gamma</td><td>466</td><td>124</td><td>Colton Fang</td><td>(630) 460-4616</td></tr>
-          <tr><td>Gamma</td><td>467</td><td>126</td><td>Jordan Tromp</td><td>(219) 713-5256</td></tr>
-          <tr><td>Gamma</td><td>470</td><td>129</td><td>Patrick Kluger</td><td>(317) 430-6255</td></tr>
-          <tr><td>Gamma</td><td>476</td><td>131</td><td>Tyler Woolen</td><td>(317) 777-8519</td></tr>
-          <tr><td>Gamma</td><td>490</td><td>135</td><td>David E Copher II</td><td>(317) 869-9777</td></tr>
-          <tr><td>Gamma</td><td>503</td><td>140</td><td>Josh Wright</td><td>(317) 373-3793</td></tr>
-          <tr><td>Gamma</td><td>504</td><td>141</td><td>Max Dillman</td><td>(317) 657-3705</td></tr>
-          <tr><td>Gamma</td><td>505</td><td>142</td><td>Javan Johnson</td><td>(765) 610-4382</td></tr>
-          <tr><td>Gamma</td><td>507</td><td>144</td><td>Vance Neace</td><td>(812) 599-3746</td></tr>
-          <tr><td>Gamma</td><td>508</td><td>145</td><td>Ryan Busse</td><td>(260) 442-2289</td></tr>
-          <tr><td>Gamma</td><td>516</td><td>153</td><td>Jarod Vandrunen</td><td>(574) 806-7482</td></tr>
-          <tr><td>Gamma</td><td>517</td><td>154</td><td>Ryan Clancy</td><td>(219) 728-7717</td></tr>
-          <tr><td>Gamma</td><td>519</td><td>156</td><td>Ryan Turner</td><td>(765) 561-0790</td></tr>
-          <tr><td>Gamma</td><td>524</td><td>161</td><td>Blake Maher</td><td>(317) 851-6842</td></tr>
-          <tr><td>Gamma</td><td>526</td><td>163</td><td>Caleb Seymour</td><td>(219) 448-0553</td></tr>
-          <tr><td>Gamma</td><td>528</td><td>165</td><td>Ryan Gregor</td><td>(574) 847-4245</td></tr>
-          <tr><td>Gamma</td><td>530</td><td>167</td><td>Jon Williams</td><td>(708) 856-2971</td></tr>
-          <tr><td>Gamma</td><td>532</td><td>169</td><td>Isaiah Grady</td><td>(765) 891-1490</td></tr>
-          <tr><td>Gamma</td><td>534</td><td>171</td><td>Jordan Dick</td><td>(765) 891-8698</td></tr>
-          <tr><td>Gamma</td><td>536</td><td>173</td><td>Taven Schrock</td><td>(574) 361-0199</td></tr>
-          <tr><td>Gamma</td><td>538</td><td>175</td><td>Alexander Lammers</td><td>(765) 609-0029</td></tr>
-          <tr><td>Gamma</td><td>539</td><td>176</td><td>Dabrion Eversley</td><td>(317) 499-2135</td></tr>
-          <tr><td>Gamma</td><td>N/A</td><td>Neophyte</td><td>Issiah Butler</td><td>(765) 749-6358</td></tr>
-          <tr><td>Gamma</td><td>N/A</td><td>Neophyte</td><td>Chris Mitchell</td><td>(513) 569-1691</td></tr>
+            <!-- ===================== -->
+            <!--        GAMMA          -->
+            <!-- ===================== -->
+            <tr><td>Gamma</td><td>24</td><td>4</td><td>Josh Bach</td><td>(317) 418-7411</td></tr>
+            <tr><td>Gamma</td><td>143</td><td>8</td><td>Shawn Schlag</td><td>(773) 510-7297</td></tr>
+            <tr><td>Gamma</td><td>159</td><td>9</td><td>Casey Renick</td><td>(765) 327-5686</td></tr>
+            <tr><td>Gamma</td><td>160</td><td>10</td><td>Andy Finchum</td><td>(765) 215-9028</td></tr>
+            <tr><td>Gamma</td><td>161</td><td>11</td><td>Adrian Robinson</td><td>(317) 752-2978</td></tr>
+            <tr><td>Gamma</td><td>181</td><td>24</td><td>Dave Penrod</td><td>(260) 273-3943</td></tr>
+            <tr><td>Gamma</td><td>212</td><td>27</td><td>Chance Kolarick</td><td>(812) 642-9167</td></tr>
+            <tr><td>Gamma</td><td>215</td><td>30</td><td>Nathan Boyer</td><td>(317) 701-4400</td></tr>
+            <tr><td>Gamma</td><td>218</td><td>33</td><td>Matthew "Shaggy" Kennedy</td><td>(317) 373-9116</td></tr>
+            <tr><td>Gamma</td><td>220</td><td>35</td><td>Ryan Schenkel</td><td>(773) 837-1696</td></tr>
+            <tr><td>Gamma</td><td>263</td><td>40</td><td>Steve Rickson</td><td>(219) 743-0564</td></tr>
+            <tr><td>Gamma</td><td>287</td><td>44</td><td>Zach Paschal</td><td>(317) 531-1423</td></tr>
+            <tr><td>Gamma</td><td>288</td><td>45</td><td>Isaac Wagner</td><td>(765) 760-4396</td></tr>
+            <tr><td>Gamma</td><td>290</td><td>47</td><td>Chris Armbruster</td><td>(630) 253-4474</td></tr>
+            <tr><td>Gamma</td><td>292</td><td>49</td><td>Ryan Mendenhall</td><td>(765) 729-1654</td></tr>
+            <tr><td>Gamma</td><td>293</td><td>50</td><td>Ryan Caudill</td><td>(808) 638-1824</td></tr>
+            <tr><td>Gamma</td><td>317</td><td>56</td><td>Ryan Hite</td><td>(317) 372-0778</td></tr>
+            <tr><td>Gamma</td><td>318</td><td>57</td><td>Dan Sandman</td><td>(812) 212-2666</td></tr>
+            <tr><td>Gamma</td><td>324</td><td>61</td><td>Chris Rickey</td><td>(317) 650-0490</td></tr>
+            <tr><td>Gamma</td><td>327</td><td>64</td><td>Brandon Armacost</td><td>(317) 294-6907</td></tr>
+            <tr><td>Gamma</td><td>348</td><td>69</td><td>Steve Miller</td><td>(219) 221-2713</td></tr>
+            <tr><td>Gamma</td><td>354</td><td>75</td><td>Carter Wykoff</td><td>(765) 532-4302</td></tr>
+            <tr><td>Gamma</td><td>356</td><td>77</td><td>Chris Peters</td><td>(765) 714-9831</td></tr>
+            <tr><td>Gamma</td><td>374</td><td>79</td><td>Joe Ihnat</td><td>(317) 697-7542</td></tr>
+            <tr><td>Gamma</td><td>378</td><td>83</td><td>Jeremy Sullivan</td><td>(614) 795-6336</td></tr>
+            <tr><td>Gamma</td><td>390</td><td>93</td><td>Maxim Clare</td><td>(260) 348-1459</td></tr>
+            <tr><td>Gamma</td><td>393</td><td>94</td><td>Nick Moser</td><td>(252) 548-0052</td></tr>
+            <tr><td>Gamma</td><td>416</td><td>100</td><td>Paul Ingersoll</td><td>(317) 989-9036</td></tr>
+            <tr><td>Gamma</td><td>417</td><td>101</td><td>Adam Shulaw</td><td>(574) 229-4736</td></tr>
+            <tr><td>Gamma</td><td>418</td><td>102</td><td>Shawn Casseday</td><td>(765) 228-8013</td></tr>
+            <tr><td>Gamma</td><td>419</td><td>103</td><td>Brad Miller</td><td>(219) 575-3404</td></tr>
+            <tr><td>Gamma</td><td>420</td><td>104</td><td>Jack Cadman</td><td>(219) 314-6478</td></tr>
+            <tr><td>Gamma</td><td>421</td><td>105</td><td>Luke keay</td><td>(574) 808-9455</td></tr>
+            <tr><td>Gamma</td><td>422</td><td>106</td><td>Matt Spoljoric</td><td>(512) 944-7183</td></tr>
+            <tr><td>Gamma</td><td>424</td><td>108</td><td>Alec Lapierre</td><td>(574) 596-2203</td></tr>
+            <tr><td>Gamma</td><td>425</td><td>109</td><td>Alex Miller</td><td>(219) 575-4405</td></tr>
+            <tr><td>Gamma</td><td>426</td><td>110</td><td>Rob Caird</td><td>(317) 777-3992</td></tr>
+            <tr><td>Gamma</td><td>435</td><td>115</td><td>Mike Ihnat</td><td>(317) 697-7814</td></tr>
+            <tr><td>Gamma</td><td>441</td><td>118</td><td>Nick Disher</td><td>(317) 850-2854</td></tr>
+            <tr><td>Gamma</td><td>442</td><td>119</td><td>Bobby Grossnickle</td><td>(574) 993-4123</td></tr>
+            <tr><td>Gamma</td><td>456</td><td>123</td><td>Joe Robinson</td><td>(765) 918-0808</td></tr>
+            <tr><td>Gamma</td><td>466</td><td>124</td><td>Colton Fang</td><td>(630) 460-4616</td></tr>
+            <tr><td>Gamma</td><td>467</td><td>126</td><td>Jordan Tromp</td><td>(219) 713-5256</td></tr>
+            <tr><td>Gamma</td><td>470</td><td>129</td><td>Patrick Kluger</td><td>(317) 430-6255</td></tr>
+            <tr><td>Gamma</td><td>476</td><td>131</td><td>Tyler Woolen</td><td>(317) 777-8519</td></tr>
+            <tr><td>Gamma</td><td>490</td><td>135</td><td>David E Copher II</td><td>(317) 869-9777</td></tr>
+            <tr><td>Gamma</td><td>503</td><td>140</td><td>Josh Wright</td><td>(317) 373-3793</td></tr>
+            <tr><td>Gamma</td><td>504</td><td>141</td><td>Max Dillman</td><td>(317) 657-3705</td></tr>
+            <tr><td>Gamma</td><td>505</td><td>142</td><td>Javan Johnson</td><td>(765) 610-4382</td></tr>
+            <tr><td>Gamma</td><td>507</td><td>144</td><td>Vance Neace</td><td>(812) 599-3746</td></tr>
+            <tr><td>Gamma</td><td>508</td><td>145</td><td>Ryan Busse</td><td>(260) 442-2289</td></tr>
+            <tr><td>Gamma</td><td>516</td><td>153</td><td>Jarod Vandrunen</td><td>(574) 806-7482</td></tr>
+            <tr><td>Gamma</td><td>517</td><td>154</td><td>Ryan Clancy</td><td>(219) 728-7717</td></tr>
+            <tr><td>Gamma</td><td>519</td><td>156</td><td>Ryan Turner</td><td>(765) 561-0790</td></tr>
+            <tr><td>Gamma</td><td>524</td><td>161</td><td>Blake Maher</td><td>(317) 851-6842</td></tr>
+            <tr><td>Gamma</td><td>526</td><td>163</td><td>Caleb Seymour</td><td>(219) 448-0553</td></tr>
+            <tr><td>Gamma</td><td>528</td><td>165</td><td>Ryan Gregor</td><td>(574) 847-4245</td></tr>
+            <tr><td>Gamma</td><td>530</td><td>167</td><td>Jon Williams</td><td>(708) 856-2971</td></tr>
+            <tr><td>Gamma</td><td>532</td><td>169</td><td>Isaiah Grady</td><td>(765) 891-1490</td></tr>
+            <tr><td>Gamma</td><td>534</td><td>171</td><td>Jordan Dick</td><td>(765) 891-8698</td></tr>
+            <tr><td>Gamma</td><td>536</td><td>173</td><td>Taven Schrock</td><td>(574) 361-0199</td></tr>
+            <tr><td>Gamma</td><td>538</td><td>175</td><td>Alexander Lammers</td><td>(765) 609-0029</td></tr>
+            <tr><td>Gamma</td><td>539</td><td>176</td><td>Dabrion Eversley</td><td>(317) 499-2135</td></tr>
+            <tr><td>Gamma</td><td>N/A</td><td>Neophyte</td><td>Issiah Butler</td><td>(765) 749-6358</td></tr>
+            <tr><td>Gamma</td><td>N/A</td><td>Neophyte</td><td>Chris Mitchell</td><td>(513) 569-1691</td></tr>
 
-        </tbody>
-      </table>
-    </section>
-  </div>
-</main>
-
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
