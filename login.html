@@ -139,6 +139,47 @@
       color: #666;
       margin-top: 0.25rem;
     }
+
+    /* IN-APP BROWSER WARNING (FB/IG/Snap/Etc.) */
+    .inapp-warning {
+      display: none;
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      color: #664d03;
+      border-radius: 12px;
+      padding: 12px 12px;
+      margin: 0 0 14px;
+      text-align: left;
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .inapp-warning strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .open-browser-btn {
+      width: 100%;
+      padding: 10px;
+      background: #7A0E19;
+      border: none;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .open-browser-btn:hover {
+      background: #5a0a13;
+    }
+
+    .inapp-tip {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      color: #5c4a00;
+    }
   </style>
 </head>
 
@@ -174,11 +215,20 @@
     </nav>
   </header>
 
-
-
   <!-- LOGIN CONTENT -->
   <main>
     <div class="login-box">
+
+      <!-- In-app browser warning -->
+      <div id="inapp-warning" class="inapp-warning">
+        <strong>Login may not work inside Facebook / Snapchat.</strong>
+        Please open this page in your device browser (Safari/Chrome) to sign in.
+        <button id="open-browser-btn" class="open-browser-btn">Open in Browser</button>
+        <div class="inapp-tip">
+          iPhone: tap the share icon → “Open in Safari”.<br>
+          Android: tap ⋮ menu → “Open in Chrome”.
+        </div>
+      </div>
 
       <!-- Crest -->
       <img src="assets/crest.png" alt="Delta Gamma Iota Crest" class="crest-login" />
@@ -231,8 +281,6 @@
     <div class="footer-spacer"></div>
   </main>
 
-
-
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
@@ -265,8 +313,6 @@
     </div>
   </footer>
 
-
-
   <!-- AUTH0 REDIRECT + PASSCODE LOGIC -->
   <script>
     const AUTH0_DOMAIN    = "dev-vrv7ebflsu4wba1z.us.auth0.com";
@@ -281,7 +327,9 @@
         "?response_type=" + encodeURIComponent("token") +
         "&client_id="     + encodeURIComponent(AUTH0_CLIENT_ID) +
         "&redirect_uri="  + encodeURIComponent(REDIRECT_URI) +
-        "&scope="         + encodeURIComponent("openid profile email");
+        "&scope="         + encodeURIComponent("openid profile email") +
+        "&prompt="        + encodeURIComponent("login") +
+        "&connection="    + encodeURIComponent("google-oauth2"); // forces Google login
 
       window.location.href = authUrl;
     }
@@ -305,6 +353,41 @@
     function toggleMobileMenu() {
       document.getElementById('main-nav').classList.toggle('open');
     }
+
+    // Detect in-app browsers (FB/IG/Snap/Etc.) and show the warning
+    (function () {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      const isFacebook = /FBAN|FBAV|Facebook|FB_IAB/i.test(ua);
+      const isInstagram = /Instagram/i.test(ua);
+      const isSnapchat = /Snapchat/i.test(ua);
+      const isGenericWebView =
+        (/(iPhone|iPad|iPod).*AppleWebKit/i.test(ua) && !/Safari/i.test(ua)) ||
+        (/\bwv\b/.test(ua) || /Android.*Version\/\d+\.\d+/i.test(ua));
+
+      const isInApp = isFacebook || isInstagram || isSnapchat || isGenericWebView;
+
+      const warn = document.getElementById("inapp-warning");
+      const openBtn = document.getElementById("open-browser-btn");
+
+      if (isInApp && warn) {
+        warn.style.display = "block";
+      }
+
+      if (openBtn) {
+        openBtn.addEventListener("click", function () {
+          const url = window.location.href;
+
+          // Best effort to break out of some Android webviews:
+          window.location.href = url;
+
+          // Also try opening a new tab if allowed:
+          setTimeout(() => {
+            window.open(url, "_blank", "noopener,noreferrer");
+          }, 200);
+        });
+      }
+    })();
   </script>
 
 </body>
